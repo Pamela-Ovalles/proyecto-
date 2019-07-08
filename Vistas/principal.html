@@ -17,66 +17,74 @@
 
   <body>
     <!--para el boton de inicio-->
-    <nav class="navbar navbar-expand-lg navbar-light bg-light">
-      <a class="navbar-brand" href="#">Inicio</a>
-      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
 
-      <div class="collapse navbar-collapse" id="navbarSupportedContent">
-        <ul class="navbar-nav mr-auto">
-          <!--para el boton de sobre nosotros-->
-          <li class="nav-item dropdown"> <!--te dice la clase que estas usando -->
-            <a class="nav-link dropdown-toggle" href="#" id= "navbarDropdownsobrenosotros" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-              Sobre nosotros <span class="sr-only">(current)</span></a>
+        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <a class="navbar-brand" href="#">Inicio</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
 
-              <div class="dropdown-menu" aria-labelledby="navbarDropdownsobrenosotros">
-                <a class="dropdown-item" href="#">Institución</a>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav mr-auto">
+            <!--para el boton de sobre nosotros-->
+            <li class="nav-item dropdown"> <!--te dice la clase que estas usando -->
+              <a class="nav-link dropdown-toggle" href="#" id= "navbarDropdownsobrenosotros" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                Sobre nosotros <span class="sr-only">(current)</span></a>
+
+                <div class="dropdown-menu" aria-labelledby="navbarDropdownsobrenosotros">
+                  <a class="dropdown-item" href="#">Institución</a>
+                  <div class="dropdown-divider"></div>
+                  <a class="dropdown-item" href="#">Marco legal</a>
+                  <div class="dropdown-divider"></div>
+                  <a class="dropdown-item" href="#">Procurador general</a>
+                </div>
+            </li>
+
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" id= "navbarDropdowndependencia" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                Dependencias
+              </a>
+              <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                <a class="dropdown-item" href="#">Fiscalías</a>
                 <div class="dropdown-divider"></div>
-                <a class="dropdown-item" href="#">Marco legal</a>
+                <a class="dropdown-item" href="#">Direciones</a>
                 <div class="dropdown-divider"></div>
-                <a class="dropdown-item" href="#">Procurador general</a>
-          </li>
+                <a class="dropdown-item" href="#">Escuelas</a>
+              </div>
 
-          <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle" href="#" id= "navbarDropdowndependencia" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-              Dependencias
-            </a>
-            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-              <a class="dropdown-item" href="#">Fiscalías</a>
-              <div class="dropdown-divider"></div>
-              <a class="dropdown-item" href="#">Direciones</a>
-              <div class="dropdown-divider"></div>
-              <a class="dropdown-item" href="#">Escuelas</a>
+            </li>
 
-          </li>
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                Servicios
+              </a>
+              <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                <a class="dropdown-item" href="#">Login</a>
+                <div class="dropdown-divider"></div>
+                <a class="dropdown-item" href="#">Registrarse</a>
+                <div class="dropdown-divider"></div>
+                <a class="dropdown-item" href="#">Algo mas</a>
+              </div>
+            </li>
 
-          <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-              Servicios
-            </a>
-            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-              <a class="dropdown-item" href="#">Login</a>
-              <div class="dropdown-divider"></div>
-              <a class="dropdown-item" href="#">hola</a>
-              <div class="dropdown-divider"></div>
-              <a class="dropdown-item" href="#">Algo mas</a>
-            </div>
-          </li>
+          <!-- <li class="nav-item">
+              <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
+            </li>-->
+          </ul>
+          <form class="form-inline my-2 my-lg-0">
+            <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+            <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Buscar</button>
+          </form>
+        </div>
 
-        <!-- <li class="nav-item">
-            <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
-          </li>-->
-        </ul>
-        <form class="form-inline my-2 my-lg-0">
-          <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
-          <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Buscar</button>
-        </form>
-      </div>
-    </nav>
+      </nav>
+
+
+
 
 <!--carrusel de imagenes -->
-<div class="bd-example">
+
+
       <div id="carouselExampleCaptions" class="carousel slide" data-ride="carousel">
          <ol class="carousel-indicators">
            <li data-target="#carouselExampleCaptions" data-slide-to="0" class="active"></li>
@@ -92,14 +100,14 @@
               </div>
             </div>
           <div class="carousel-item">
-             <img src="imagenes/investigacion.png" class="d-block w-100" class="img-responsive" alt="...">
+             <img src="imagenes/viajesIlegales.png" class="d-block w-100" class="img-responsive" alt="...">
                <div class="carousel-caption d-none d-md-block">
                  <h5>Second slide label</h5>
                  <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
                </div>
           </div>
           <div class="carousel-item">
-            <img src="imagenes/viajesIlegales.png" class="d-block w-100" class="img-responsive" alt="...">
+            <img src="imagenes/procuradorGeneral.png" class="d-block w-100" class="img-responsive" alt="...">
             <div class="carousel-caption d-none d-md-block">
               <h5>Third slide label</h5>
               <p>Praesent commodo cursus magna, vel scelerisque nisl consectetur.</p>
@@ -115,7 +123,10 @@
       <span class="sr-only">Next</span>
     </a>
   </div>
-</div>
+
+
+
+
 
 <!--fin carrusel de imagenes -->
 
