@@ -1,7 +1,7 @@
-@import url('https://fonts.googleapis.com/css?family=Numans');
+/* @import url('https://fonts.googleapis.com/css?family=Numans'); */
 
 html,body{
-background-image: url('../imagenes/investigacion.png');
+background-image: url('../imagenes/background.jpg');
 background-size: cover;
 background-repeat: no-repeat;
 height: 100%;
@@ -14,35 +14,35 @@ align-content: center;
 }
 
 .card{
-height: 370px;
+height: 500px;
 margin-top: auto;
 margin-bottom: auto;
-width: 400px;
+width: 500px;
 
 background-color: rgba(0,0,0,0.5) !important;
 }
 
-/*.social_icon span{
-font-size: 60px;
+/* .logo_icon span{
+font-size: 30px;
 margin-left: 10px;
 color: #FFC312;
-}
+} */
 
-.social_icon span:hover{
+/* .logo_icon span:hover{
 color: white;
 cursor: pointer;
-}*/
+} */
 
 .card-header h3{
 color: white;
 }
 
-/*.social_icon{
-position: absolute;
+/* .logo_icon{
+position:static;
 right: 20px;
-top: -45px;
+top: -10px;
 
-}*/
+} */
 
 .input-group-prepend span{
 width: 50px;
@@ -64,7 +64,7 @@ color: white;
 .remember input
 {
 width: 20px;
-height: 20px;
+height: 30px;
 margin-left: 15px;
 margin-right: 5px;
 }
@@ -74,14 +74,11 @@ color: black;
 background-color: #08aa36;
 width: 100%;
 height: 40px;
-/* background:#178b10; */
-border: 0/
+border: 0;
 font-size: 16px;
 font-weight: 500;
-/* line-height: 40px; */
-/* color: #fff; */
-/* border: 6px; */
-border:  4px;
+line-height: 40px;
+border-radius:  4px;
 }
 
 .login_btn:hover{
