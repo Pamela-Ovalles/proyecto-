@@ -35,16 +35,6 @@
         <form>
           <div class="form-row">
 
-            <!-- <label for="primernombre">Primer nombre:</label>
-            <div class="input-group form-group">
-  						<div class="input-group-prepend">
-                <span class="input-group-text"><i class="fas fa-user"></i></span>
-  						</div>
-  						<input type="text" class="form-control" id="primernombre" placeholder="">
-
-  					</div> -->
-
-
                 <div class="col-md-3">
                     <label for="primernombre">Primer nombre:</label>
                     <div class="input-group form-group">
@@ -59,104 +49,198 @@
                   <label for="primernombre">Primer nombre:</label>
                   <input type="text" class="form-control" id="primernombre" placeholder="">
               </div> -->
-
-              <div class="form-group col-md-3">
-                <label for="segundonombre">Segundo nombre:</label>
-                <input type="text" class="form-control" id="segundonombre" placeholder="">
+              <div class="col-md-3">
+                  <label for="segundonombre">Segundo nombre:</label>
+                  <div class="input-group form-group">
+                    <div class="input-group-prepend">
+                        <span class="input-group-text"><i class="fas fa-user"></i></span>
+                    </div>
+                      <input type="text" class="form-control" id="segundonombre" placeholder="">
+                  </div>
               </div>
 
-              <div class="form-group col-md-3">
+              <div class="col-md-3">
                   <label for="primerapellido">Primer apellido:</label>
-                  <input type="text" class="form-control" id="primerapellido" placeholder="">
+                  <div class="input-group form-group">
+                    <div class="input-group-prepend">
+                        <span class="input-group-text"><i class="fas fa-user"></i></span>
+                    </div>
+                      <input type="text" class="form-control" id="primerapellido" placeholder="">
+                  </div>
               </div>
 
-              <div class="form-group col-md-3">
-                <label for="segundoapellido">Segundo apellido:</label>
-                <input type="text" class="form-control" id="segundoapellido" placeholder="">
+              <div class="col-md-3">
+                  <label for="segundoapellido">Segundo apellido:</label>
+                  <div class="input-group form-group">
+                    <div class="input-group-prepend">
+                        <span class="input-group-text"><i class="fas fa-user"></i></span>
+                    </div>
+                      <input type="text" class="form-control" id="segundoapellido" placeholder="">
+                  </div>
               </div>
+
           </div>
 
           <div class="form-row">
-              <div class="form-group col-md-3">
+
+              <div class="col-md-3">
                   <label for="cedula">Cédula:</label>
-                  <input type="text" class="form-control" id="cedula">
+                  <div class="input-group form-group">
+                    <div class="input-group-prepend">
+                        <span class="input-group-text"><i class="fas fa-address-card"></i></span>
+                    </div>
+                      <input type="text" class="form-control" id="cedula">
+                  </div>
               </div>
 
-              <div class="form-group col-md-3">
+              <div class="col-md-3">
                   <label for="telefonousuario">Teléfono:</label>
-                  <input type="text" class="form-control" id="telefonousuario">
+                  <div class="input-group form-group">
+                    <div class="input-group-prepend">
+                        <span class="input-group-text"><i class="fas fa-mobile-alt"></i></span>
+                    </div>
+                    <input type="text" class="form-control" id="telefonousuario">
+                  </div>
               </div>
 
-              <div class="form-group col-md-3">
+              <div class="col-md-3">
                   <label for="fechanacimiento">Fecha de nacimiento:</label>
-                  <input type="date" class="form-control" id="fechanacimiento">
+                  <div class="input-group form-group">
+                    <div class="input-group-prepend">
+                        <span class="input-group-text"><i class="fas fa-calendar-alt"></i></span>
+                    </div>
+                    <input type="date" class="form-control" id="fechanacimiento">
+                  </div>
               </div>
 
-              <div class="form-group col-md-3">
+              <div class="col-md-3">
                   <label for="sexo">Sexo:</label>
-                  <select id="sexo" class="form-control">
-                      <option>Elegir...</option>
-                      <option>Femenino</option>
-                      <option>Masculino</option>
-                  </select>
+                  <div class="input-group form-group">
+                    <div class="input-group-prepend">
+                        <span class="input-group-text"><i class="fas fa-user-friends"></i></span>
+                    </div>
+                    <select id="sexo" class="form-control">
+                        <option>Elegir...</option>
+                        <option>Femenino</option>
+                        <option>Masculino</option>
+                    </select>
+                  </div>
               </div>
+
           </div>
 
-
           <div class="form-row">
-              <div class="form-group col-md-6">
+
+              <div class="col-md-6">
                   <label for="emailusuario">Correo:</label>
-                  <input type="email" class="form-control" id="emailusuario">
+                  <div class="input-group form-group">
+                    <div class="input-group-prepend">
+                        <span class="input-group-text"><i class="fas fa-envelope"></i></span>
+                    </div>
+                      <input type="email" class="form-control" id="emailusuario">
+                  </div>
               </div>
 
-              <div class="form-group col-md-3">
+              <div class="col-md-3">
                   <label for="contrasenausuario">Contraseña:</label>
-                  <input type="password" class="form-control" id="contrasenausuario">
+                  <div class="input-group form-group">
+                    <div class="input-group-prepend">
+                        <span class="input-group-text"><i class="fas fa-lock"></i></span>
+                    </div>
+                        <input type="password" class="form-control" id="contrasenausuario">
+                  </div>
               </div>
 
-              <div class="form-group col-md-3">
+              <div class="col-md-3">
                   <label for="confcontrasenausuario">Confimar Contraseña:</label>
-                  <input type="password" class="form-control" id="confcontrasenausuario">
+                  <div class="input-group form-group">
+                    <div class="input-group-prepend">
+                        <span class="input-group-text"><i class="fas fa-lock"></i></span>
+                    </div>
+                        <input type="password" class="form-control" id="confcontrasenausuario">
+                  </div>
               </div>
+
+
           </div>
 
           <div class="form-row">
-              <div class="form-group col-md-3">
+
+              <div class="col-md-3">
                   <label for="provincia">Provincia:</label>
-                  <select id="provincia" class="form-control">
-                      <option selected>Elegir...</option>
-                      <option>...</option>
-                  </select>
+                  <div class="input-group form-group">
+                    <div class="input-group-prepend">
+                        <span class="input-group-text"><i class="fas fa-map-marker-alt"></i></span>
+                    </div>
+                    <select id="provincia" class="form-control">
+                        <option selected>Elegir...</option>
+                        <option>...</option>
+                    </select>
+                  </div>
               </div>
 
-              <div class="form-group col-md-3">
+              <div class="col-md-3">
                   <label for="municipio">Municipio:</label>
-                  <select id="municipio" class="form-control">
-                      <option selected>Elegir...</option>
-                      <option>...</option>
-                  </select>
+                  <div class="input-group form-group">
+                    <div class="input-group-prepend">
+                        <span class="input-group-text"><i class="fas fa-map-marker-alt"></i></span>
+                    </div>
+                    <select id="municipio" class="form-control">
+                        <option selected>Elegir...</option>
+                        <option>...</option>
+                    </select>
+                  </div>
               </div>
 
-              <div class="form-group col-md-3">
+              <div class="col-md-3">
                   <label for="ciudad">Ciudad:</label>
-                  <select id="ciudad" class="form-control">
-                      <option selected>Elegir...</option>
-                      <option>...</option>
-                  </select>
+                  <div class="input-group form-group">
+                    <div class="input-group-prepend">
+                        <span class="input-group-text"><i class="fas fa-map-marker-alt"></i></span>
+                    </div>
+                    <select id="ciudad" class="form-control">
+                        <option selected>Elegir...</option>
+                        <option>...</option>
+                    </select>
+                  </div>
               </div>
 
-              <div class="form-group col-md-3">
+              <div class="col-md-3">
                   <label for="sector">Sector:</label>
-                  <input type="text" class="form-control" id="sector">
+                  <div class="input-group form-group">
+                    <div class="input-group-prepend">
+                        <span class="input-group-text"><i class="fas fa-map-marker-alt"></i></span>
+                    </div>
+                        <input type="text" class="form-control" id="sector">
+                  </div>
               </div>
+
           </div>
 
           <div class="form-row">
-              <div class="form-group col-md-3">
+
+              <div class="col-md-3">
+                  <label for="calle">Calle:</label>
+                  <div class="input-group form-group">
+                    <div class="input-group-prepend">
+                        <span class="input-group-text"><i class="fas fa-map-marker-alt"></i></span>
+                    </div>
+                        <input type="text" class="form-control" id="calle">
+                  </div>
+              </div>
+
+              <div class="col-md-3">
                   <label for="nacionalidad">Nacionalidad:</label>
-                  <input type="text" class="form-control" id="nacionalidad">
+                  <div class="input-group form-group">
+                    <div class="input-group-prepend">
+                        <span class="input-group-text"><i class="fas fa-globe-americas"></i></span>
+                    </div>
+                        <input type="text" class="form-control" id="nacionalidad">
+                  </div>
               </div>
           </div>
+
+      </div>
 
         <!-- <div class="form-group">
     <div class="form-check">

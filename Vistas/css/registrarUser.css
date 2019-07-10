@@ -26,11 +26,12 @@ background-color: rgba(0,0,0,0.5) !important;
 
 }
 #fechanacimiento,#municipio,#provincia,#ciudad,#sexo,{
-  height: 35px;
+  height: 40px;
 }
 
-#primernombre,#primerapellido,#segundonombre,#segundoapellido,#cedula,#nacionalidad{
-  height: 35px;
+#primernombre,#primerapellido,#segundonombre,#segundoapellido,#cedula,#nacionalidad,#emailusuario,
+#contrasenausuario,#confcontrasenausuario,#telefonousuario,#calle{
+  height: 40px;
 }
 
 .card-body h3{
