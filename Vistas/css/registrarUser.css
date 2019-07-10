@@ -46,6 +46,18 @@ label{
   height: 5px;
 }
 
+.input-group-prepend span{
+width: 40px;
+background-color: #08aa36;
+color: black;
+border:0 !important;
+}
+
+.input-group-text span{
+width: 10px;
+
+}
+
 .registrar_btn{
 float: right;
 color: black;
