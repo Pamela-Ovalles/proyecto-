@@ -9,6 +9,7 @@ font-family: "Times New Roman", Times, serif;
 .container{
 height: 100%;
 align-content: center;
+font-family: "Times New Roman", Times, serif;
 }
 
 .card{
@@ -16,7 +17,6 @@ height: 600px;
 margin-top: auto;
 margin-bottom: auto;
 width: 1400px;
-
 background-color: rgba(0,0,0,0.5) !important;
 }
 
@@ -36,7 +36,9 @@ color: white;
 
 label{
   color: white;
+  font-size: 18px;
 }
+
 
 .registrar_btn{
   float: right;
@@ -45,7 +47,7 @@ background-color: #08aa36;
 width: 100px;
 height: 40px;
 border: 0;
-font-size: 16px;
+font-size: 18px;
 font-weight: 500;
 line-height: 40px;
 border-radius:  4px;
