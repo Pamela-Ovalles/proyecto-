@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
 <head>
+
   <meta charset="utf-8">
   <title>Registrarse</title>
 
@@ -22,12 +23,14 @@
     <div class="container">
   <div class="d-flex justify-content-center h-100">
     <div class="card">
-      <div class="card-header">
+      <!-- <div class="card-header">
         <img src="imagenes/digesettLogo.png"></img>
-        <h3>Registrarse</h3>
+        <h3><strong>Registrarse</strong></h3>
 
-      </div>
+      </div> -->
       <div class="card-body">
+        <img src="imagenes/digesettLogo.png"></img>
+        <h3><strong>Registrarse</strong></h3>
         <form>
           <div class="form-row">
               <div class="form-group col-md-3">
@@ -48,67 +51,89 @@
               </div>
           </div>
 
+          <div class="form-row">
+              <div class="form-group col-md-3">
+                  <label for="cedula">Cédula:</label>
+                  <input type="text" class="form-control" id="cedula">
+              </div>
+
+              <div class="form-group col-md-3">
+                  <label for="telefonousuario">Teléfono:</label>
+                  <input type="text" class="form-control" id="telefonousuario">
+              </div>
+
+              <div class="form-group col-md-3">
+                  <label for="fechanacimiento">Fecha de nacimiento:</label>
+                  <input type="date" class="form-control" id="fechanacimiento">
+              </div>
+
+              <div class="form-group col-md-3">
+                  <label for="sexo">Sexo:</label>
+                  <select id="sexo" class="form-control">
+                      <option>Elegir...</option>
+                      <option>Femenino</option>
+                      <option>Masculino</option>
+                  </select>
+              </div>
+          </div>
 
 
-  <!-- <div class="form-group">
-    <label for="inputAddress">Address</label>
-    <input type="text" class="form-control" id="inputAddress" placeholder="1234 Main St">
-  </div>
-  <div class="form-group">
-    <label for="inputAddress2">Address 2</label>
-    <input type="text" class="form-control" id="inputAddress2" placeholder="Apartment, studio, or floor">
-  </div> -->
-  <div class="form-row">
-    <div class="form-group col-md-3">
-      <label for="cedula">Cédula:</label>
-      <input type="text" class="form-control" id="cedula">
-    </div>
+          <div class="form-row">
+              <div class="form-group col-md-6">
+                  <label for="emailusuario">Correo:</label>
+                  <input type="email" class="form-control" id="emailusuario">
+              </div>
 
-    <div class="form-group col-md-3">
-      <label for="telefonousuario">Teléfono:</label>
-      <input type="text" class="form-control" id="telefonousuario">
-    </div>
+              <div class="form-group col-md-3">
+                  <label for="contrasenausuario">Contraseña:</label>
+                  <input type="password" class="form-control" id="contrasenausuario">
+              </div>
 
-    <div class="form-group col-md-3">
-      <label for="fechanacimiento">Fecha de nacimiento:</label>
-      <input type="date" class="form-control" id="fechanacimiento">
-    </div>
+              <div class="form-group col-md-3">
+                  <label for="confcontrasenausuario">Confimar Contraseña:</label>
+                  <input type="password" class="form-control" id="confcontrasenausuario">
+              </div>
+          </div>
 
-    <div class="form-group col-md-3">
-      <label for="sexo">Sexo:</label>
-      <select id="sexo" class="form-control">
-        <option selected>Elegir...</option>
-        <option>Femenino</option>
-        <option>Masculino</option>
-      </select>
-    </div>
+          <div class="form-row">
+              <div class="form-group col-md-3">
+                  <label for="provincia">Provincia:</label>
+                  <select id="provincia" class="form-control">
+                      <option selected>Choose...</option>
+                      <option>...</option>
+                  </select>
+              </div>
 
-  </div>
+              <div class="form-group col-md-3">
+                  <label for="municipio">Municipio:</label>
+                  <select id="municipio" class="form-control">
+                      <option selected>Choose...</option>
+                      <option>...</option>
+                  </select>
+              </div>
 
+              <div class="form-group col-md-3">
+                  <label for="ciudad">Ciudad:</label>
+                  <select id="ciudad" class="form-control">
+                      <option selected>Choose...</option>
+                      <option>...</option>
+                  </select>
+              </div>
 
-  <div class="form-row">
-    <div class="form-group col-md-6">
-      <label for="emailusuario">Correo:</label>
-      <input type="email" class="form-control" id="emailusuario">
-    </div>
-    <!-- <div class="form-group col-md-4">
-      <label for="inputState">State</label>
-      <select id="inputState" class="form-control">
-        <option selected>Choose...</option>
-        <option>...</option>
-      </select>
-    </div> -->
-    <div class="form-group col-md-3">
-      <label for="contrasenausuario">Contraseña:</label>
-      <input type="password" class="form-control" id="contrasenausuario">
-    </div>
+              <div class="form-group col-md-3">
+                  <label for="sector">Sector:</label>
+                  <input type="text" class="form-control" id="sector">
+              </div>
+          </div>
 
-    <div class="form-group col-md-3">
-      <label for="confcontrasenausuario">Confimar Contraseña:</label>
-      <input type="password" class="form-control" id="confcontrasenausuario">
-    </div>
-  </div>
-  <!-- <div class="form-group">
+          <div class="form-row">
+              <div class="form-group col-md-3">
+                  <label for="nacionalidad">Nacionalidad:</label>
+                  <input type="text" class="form-control" id="nacionalidad">
+              </div>
+          </div>
+
+        <!-- <div class="form-group">
     <div class="form-check">
       <input class="form-check-input" type="checkbox" id="gridCheck">
       <label class="form-check-label" for="gridCheck">
@@ -116,49 +141,18 @@
       </label>
     </div>
   </div> -->
-  <div class="form-group">
-    <input type="submit" value="Registrar" class=" registrar_btn">
-  </div>
-
-  <!-- <button type="submit" class="btn btn-primary">Registrar</button> -->
-          <!-- <div class="input-group form-group">
-            <div class="input-group-prepend">
-              <span class="input-group-text"><i class="fas fa-user"></i></span>
-            </div>
-            <input type="text" class="form-control" placeholder="">
-          </div>
-
-          <div class="input-group form-group">
-            <div class="input-group-prepend">
-              <span class="input-group-text"><i class="fas fa-user"></i></span>
-            </div>
-            <input type="text" class="form-control" placeholder="">
-
-          </div>
-
-
-          <div class="input-group form-group">
-            <div class="input-group-prepend">
-              <span class="input-group-text"><i class="fas fa-key"></i></span>
-            </div>
-            <input type="password" class="form-control" placeholder="">
-          </div> -->
-
-
-          <!-- <div class="row align-items-center remember">
-            <input type="checkbox">Recuerdame
-          </div>
-          <div class="form-group">
-            <input type="submit" value="Iniciar sesion" class=" login_btn">
-            <button type="submit" class="btn float-right login_btn">Entrar</button>
-          </div> -->
-        </form>
+      <div class="form-group">
+          <input type="submit" value="Registrar" class=" registrar_btn">
       </div>
-      <div class="card-footer">
+
+      </form>
+
+      </div>
+      <!-- <div class="card-footer">
         <div class="d-flex justify-content-center">
           <a href="#">¿Olvidaste tu contraseña?</a>
         </div>
-      </div>
+      </div> -->
     </div>
   </div>
   </div>

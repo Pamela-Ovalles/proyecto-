@@ -20,28 +20,35 @@ width: 1400px;
 background-color: rgba(0,0,0,0.5) !important;
 }
 
-.card-header img{
+.card-body img{
   display: block;
   margin: auto;
 
 }
+#fechanacimiento,#municipio,#provincia,#ciudad,#sexo,{
+  height: 35px;
+}
 
-.card-header h3{
+#primernombre,#primerapellido,#segundonombre,#segundoapellido,#cedula,#nacionalidad{
+  height: 35px;
+}
+
+.card-body h3{
 color: white;
 }
 .card-body h5{
 color: white;
 }
 
-
 label{
   color: white;
   font-size: 18px;
+  height: 5px;
 }
 
 
 .registrar_btn{
-  float: right;
+float: right;
 color: black;
 background-color: #08aa36;
 width: 100px;
@@ -51,6 +58,12 @@ font-size: 18px;
 font-weight: 500;
 line-height: 40px;
 border-radius:  4px;
+}
+
+.registrar_btn{
+  position:static;
+  right: 20px;
+  top: 60px;
 }
 
 .registrar_btn:hover{
