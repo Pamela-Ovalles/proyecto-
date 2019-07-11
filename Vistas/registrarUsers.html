@@ -31,8 +31,10 @@
       <div class="card-body">
         <img src="imagenes/digesettLogo.png"></img>
         <h3><strong>Registrarse</strong></h3>
-
+        <br>
         <form>
+          <fieldset>
+            <legend><h4>Información personal</h4></legend>
           <div class="form-row">
 
                 <div class="col-md-3">
@@ -94,12 +96,16 @@
               </div>
 
               <div class="col-md-3">
-                  <label for="telefonousuario">Teléfono:</label>
+                  <label for="nacionalidad">Nacionalidad:</label>
                   <div class="input-group form-group">
                     <div class="input-group-prepend">
-                        <span class="input-group-text"><i class="fas fa-mobile-alt"></i></span>
+                        <span class="input-group-text"><i class="fas fa-globe-americas"></i></span>
                     </div>
-                    <input type="text" class="form-control" id="telefonousuario">
+                    <select id="nacionalidad" class="form-control">
+                        <option selected>Elegir...</option>
+                        <option>Dominicano</option>
+                        <option>Extranjero</option>
+                    </select>
                   </div>
               </div>
 
@@ -128,7 +134,12 @@
               </div>
 
           </div>
+        </fieldset>
 
+        <br>
+
+        <fieldset>
+          <legend><h4>Información de cuenta</h4></legend>
           <div class="form-row">
 
               <div class="col-md-6">
@@ -163,8 +174,21 @@
 
 
           </div>
-
+        </fieldset>
+        <br>
+        <fieldset>
+          <legend><h4>Información de contacto</h4></legend>
           <div class="form-row">
+
+              <div class="col-md-3">
+                  <label for="telefonousuario">Teléfono:</label>
+                  <div class="input-group form-group">
+                    <div class="input-group-prepend">
+                        <span class="input-group-text"><i class="fas fa-mobile-alt"></i></span>
+                    </div>
+                    <input type="tel" class="form-control" id="telefonousuario">
+                  </div>
+              </div>
 
               <div class="col-md-3">
                   <label for="provincia">Provincia:</label>
@@ -174,7 +198,38 @@
                     </div>
                     <select id="provincia" class="form-control">
                         <option selected>Elegir...</option>
-                        <option>...</option>
+                        <option>Azua </option>
+                        <option>Bahoruco </option>
+                        <option>Barahona </option>
+                        <option>Dajabón </option>
+                        <option>Distrito Nacional </option>
+                        <option>Duarte </option>
+                        <option>Elías Piña </option>
+                        <option>El Seibo </option>
+                        <option>Espaillat </option>
+                        <option>Hato Mayor </option>
+                        <option>Hermanas Mirabal </option>
+                        <option>Independencia </option>
+                        <option>La Altagracia </option>
+                        <option>La Romana </option>
+                        <option>La Vega </option>
+                        <option>María Trinidad Sánchez </option>
+                        <option>Monseñor Nouel </option>
+                        <option>Monte Cristi </option>
+                        <option>Monte Plata </option>
+                        <option>Pedernales </option>
+                        <option>Peravia </option>
+                        <option>Puerto Plata </option>
+                        <option>Samaná </option>
+                        <option>Sánchez Ramírez </option>
+                        <option>San Cristóbal </option>
+                        <option>San José de Ocoa </option>
+                        <option>San Juan </option>
+                        <option>San Pedro de Macorís </option>
+                        <option>Santiago </option>
+                        <option>Santiago Rodríguez </option>
+                        <option>Santo Domingo </option>
+                        <option>Valverde </option>
                     </select>
                   </div>
               </div>
@@ -187,7 +242,7 @@
                     </div>
                     <select id="municipio" class="form-control">
                         <option selected>Elegir...</option>
-                        <option>...</option>
+
                     </select>
                   </div>
               </div>
@@ -200,24 +255,24 @@
                     </div>
                     <select id="ciudad" class="form-control">
                         <option selected>Elegir...</option>
-                        <option>...</option>
+                        
                     </select>
-                  </div>
-              </div>
-
-              <div class="col-md-3">
-                  <label for="sector">Sector:</label>
-                  <div class="input-group form-group">
-                    <div class="input-group-prepend">
-                        <span class="input-group-text"><i class="fas fa-map-marker-alt"></i></span>
-                    </div>
-                        <input type="text" class="form-control" id="sector">
                   </div>
               </div>
 
           </div>
 
           <div class="form-row">
+
+            <div class="col-md-3">
+                <label for="sector">Sector:</label>
+                <div class="input-group form-group">
+                  <div class="input-group-prepend">
+                      <span class="input-group-text"><i class="fas fa-map-marker-alt"></i></span>
+                  </div>
+                      <input type="text" class="form-control" id="sector">
+                </div>
+            </div>
 
               <div class="col-md-3">
                   <label for="calle">Calle:</label>
@@ -228,17 +283,8 @@
                         <input type="text" class="form-control" id="calle">
                   </div>
               </div>
-
-              <div class="col-md-3">
-                  <label for="nacionalidad">Nacionalidad:</label>
-                  <div class="input-group form-group">
-                    <div class="input-group-prepend">
-                        <span class="input-group-text"><i class="fas fa-globe-americas"></i></span>
-                    </div>
-                        <input type="text" class="form-control" id="nacionalidad">
-                  </div>
-              </div>
           </div>
+        </fieldset>
 
       </div>
 

@@ -16,8 +16,12 @@ font-family: "Times New Roman", Times, serif;
 height:auto;
 margin-top: auto;
 margin-bottom: auto;
-width: 1400px;
+width: 100%;
 background-color: rgba(0,0,0,0.5) !important;
+}
+
+fieldset{
+  color: white;
 }
 
 .card-body img{
@@ -59,8 +63,11 @@ width: 10px;
 
 } */
 
+
+
 .registrar_btn{
 float: right;
+right: 40px;
 color: black;
 background-color: #08aa36;
 width: 100px;
@@ -70,13 +77,12 @@ font-size: 18px;
 font-weight: 500;
 line-height: 40px;
 border-radius:  4px;
+
 }
 
-/* .registrar_btn{
-  position:absolute;
-  right: 20px;
-  top: 540px;
-} */
+.registrar_btn{
+  position:relative;
+}
 
 .registrar_btn:hover{
 color: black;
