@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+  <title>RegistrarMulta</title>
+
+   <!--Fontawesome CDN-->
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
+
+<!--Custom styles-->
+<link rel="stylesheet" href="css/colocacionMultas.css">
+
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+
+</head>
+
+  <body>
+    <div class="container">
+  <div class="d-flex justify-content-center h-100">
+    <div class="card">
+      <div class="card-header">
+        <img src="imagenes/digesettLogo.png"></img>
+        <h3>Acta de Infracción</h3>
+        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <a class="navbar-brand" href="#">Navbar</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item active">
+        <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#">Link</a>
+      </li>
+      <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          Dropdown
+        </a>
+        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+          <a class="dropdown-item" href="#">Action</a>
+          <a class="dropdown-item" href="#">Another action</a>
+          <div class="dropdown-divider"></div>
+          <a class="dropdown-item" href="#">Something else here</a>
+        </div>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
+      </li>
+    </ul>
+    <form class="form-inline my-2 my-lg-0">
+      <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+      <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+    </form>
+  </div>
+</nav>
+
+        <div class="custom-control custom-label custom-control-inline">
+          <div class="input-group-prepend">
+              <span class="input-group-text"><i class="fas fa-calendar-alt"></i></span>
+          </div>
+          <label class="" for="fecha">   Fecha:</label>
+        <script>
+
+        var mydate=new Date();
+        var year=mydate.getYear();
+        if (year < 1000)
+        year+=1900;
+        var day=mydate.getDay();
+        var month=mydate.getMonth()+1;
+        if (month<10)
+        month="0"+month;
+        var daym=mydate.getDate();
+        if (daym<10)
+        daym="0"+daym;
+        document.write("<small><font color='white' face='Times New Roman' size='4'>"+daym+"/"+month+"/"+year+"</font></small>")
+        </script>
+      </div>
+      <div class="custom-control custom-label custom-control-inline">
+        <div class="input-group-prepend">
+            <span class="input-group-text"><i class="fas fa-clock"></i></span>
+        </div>
+        <label class="" for="hora">Hora: </label>
+        <script>
+        var hora = new Date()
+        var hrs = hora.getHours();
+        var min = hora.getMinutes();
+        document.write("<small><font color='white' face='Times New Roman' size='4' >"+hrs+":"+min+ "</font></small>")
+        </script>
+    </div>
+
+      </div>
+
+      <div class="card-body">
+        <form>
+
+          <div class="form-row">
+              <div class="col-md-3">
+                <label for="primernombre">Primer nombre:</label>
+                <div class="input-group form-group">
+
+                  <div class="input-group-prepend">
+                      <span class="input-group-text"><i class="fas fa-clock"></i></span>
+                  </div>
+                  <input type="text" class="form-control" id="primernombre" placeholder="">
+                </div>
+
+              </div>
+
+              <div class="form-group col-md-3">
+                <label for="segundonombre">Segundo nombre:</label>
+                <input type="text" class="form-control" id="segundonombre" placeholder="">
+              </div>
+              <div class="form-group col-md-3">
+                  <label for="primerapellido">Primer apellido:</label>
+                  <input type="text" class="form-control" id="primerapellido" placeholder="">
+              </div>
+              <div class="form-group col-md-3">
+                <label for="segundoapellido">Segundo apellido:</label>
+                <input type="text" class="form-control" id="segundoapellido" placeholder="">
+              </div>
+
+              </div>
+
+              <div class="form-row">
+                <div class="form-group col-md-3">
+                  <label for="cedula">Cédula:</label>
+                  <input type="text" class="form-control" id="cedula">
+                </div>
+              <div class="form-group col-md-3">
+                <label for="telefonoconductor">Teléfono:</label>
+                <input type="text" class="form-control" id="telefonoconductor">
+              </div>
+              <div class="form-group col-md-3">
+                <label for="nacionalidad">Nacionalidad:</label>
+                <select id="nacionalidad" class="form-control">
+                  <option selected>Elegir...</option>
+                  <option>Dominicano</option>
+                  <option>Extranjero</option>
+                </select>
+              </div>
+            <div class="form-group col-md-3">
+              <label for="pais">País:</label>
+              <input type="text" class="form-control" id="pais" placeholder="">
+            </div>
+          </div>
+
+    <div class="form-row">
+    <div class="form-group col-md-3">
+      <label for="marca">Marca:</label>
+      <input type="text" class="form-control" id="marca" placeholder="">
+    </div>
+    <div class="form-group col-md-3">
+      <label for="modelo">Modelo:</label>
+      <input type="text" class="form-control" id="modelo" placeholder="">
+    </div>
+    <div class="form-group col-md-3">
+      <label for="placa">No. Placa:</label>
+      <input type="text" class="form-control" id="placa" placeholder="">
+    </div>
+    <div class="form-group col-md-3">
+      <label for="tipovehiculo">Tipo de Vehículo:</label>
+      <select id="tipovehiculo" class="form-control">
+        <option selected>Elegir...</option>
+        <option>Motocicleta</option>
+        <option>Automóvil</option>
+        <option>Camioneta</option>
+        <option>Autobús</option>
+        <option>Otros</option>
+      </select>
+    </div>
+
+  </div>
+
+
+  <div class="form-row">
+    <div class="form-group col-md-6">
+      <label for="emailusuario">Correo:</label>
+      <input type="email" class="form-control" id="emailusuario">
+    </div>
+
+    <div class="form-group col-md-3">
+      <label for="contrasenausuario">Contraseña:</label>
+      <input type="password" class="form-control" id="contrasenausuario">
+    </div>
+
+    <div class="form-group col-md-3">
+      <label for="confcontrasenausuario">Confimar Contraseña:</label>
+      <input type="password" class="form-control" id="confcontrasenausuario">
+    </div>
+  </div>
+  <div class="form-group">
+    <input type="submit" value="Registrar" class=" registrar_btn">
+  </div>
+
+        </form>
+      </div>
+      <div class="card-footer">
+        <div class="d-flex justify-content-center">
+          <a href="#"> Se levanta la presente acta de infracción que hace constar la violación al(los) artículo(s) de la ley 63-17 marcado(s) en la(s) casilla(s) de más arriba. El ciudadano cuneta con un plazo de treinta (30) días a partir de la fecha de emisión de esta acta que vale como citación legal, para a) pagar voluntariamente la multa en los puntos establecidos para estos fines, cuyo importe será el menor del rango contemplado en la Ley para la(s) sanción(es) correspondiente(s): o b) ejercer su derecho de impugnar en justicia en el Juzgado de Paz Ordinario de la demarcación done ocurrió el hecho o ante la Unidad de Transito del Ministerio Publico. De no pagar voluntariamente o no impugnar la infracción en el plazo establecido el infractor reconoce que no aplicaría el importe menor de rango contemplado en la Ley y que los pagos realizados después de vencido el citado plazo incluirán los recargos contemplados en el Código Tributario y en sus leyes complementarias, entre otras sanciones contempladas en la Ley, sin necesidad de nueva notificación. </a>
+        </div>
+      </div>
+    </div>
+  </div>
+  </div>
+
+ <script src="js/bootstrap.mim.js"></script>
+  </body>
+</html>
