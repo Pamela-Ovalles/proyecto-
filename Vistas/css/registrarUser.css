@@ -2,7 +2,7 @@ html,body{
 background-image: url('../imagenes/background.jpg');
 background-size: cover;
 background-repeat: no-repeat;
-height: 100%;
+height: auto;
 font-family: "Times New Roman", Times, serif;
 }
 
@@ -13,7 +13,7 @@ font-family: "Times New Roman", Times, serif;
 }
 
 .card{
-height: 600px;
+height:auto;
 margin-top: auto;
 margin-bottom: auto;
 width: 1400px;
@@ -72,11 +72,11 @@ line-height: 40px;
 border-radius:  4px;
 }
 
-.registrar_btn{
+/* .registrar_btn{
   position:absolute;
   right: 20px;
   top: 540px;
-}
+} */
 
 .registrar_btn:hover{
 color: black;
