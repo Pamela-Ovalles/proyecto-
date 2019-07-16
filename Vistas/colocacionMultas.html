@@ -27,46 +27,8 @@
       <div class="card-header">
         <img src="imagenes/digesettLogo.png"></img>
         <h3>Acta de Infracción</h3>
-        <nav class="navbar navbar-expand-lg navbar-light bg-light">
-  <a class="navbar-brand" href="#">Navbar</a>
-  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-    <span class="navbar-toggler-icon"></span>
-  </button>
-
-  <div class="collapse navbar-collapse" id="navbarSupportedContent">
-    <ul class="navbar-nav mr-auto">
-      <li class="nav-item active">
-        <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="#">Link</a>
-      </li>
-      <li class="nav-item dropdown">
-        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-          Dropdown
-        </a>
-        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-          <a class="dropdown-item" href="#">Action</a>
-          <a class="dropdown-item" href="#">Another action</a>
-          <div class="dropdown-divider"></div>
-          <a class="dropdown-item" href="#">Something else here</a>
-        </div>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
-      </li>
-    </ul>
-    <form class="form-inline my-2 my-lg-0">
-      <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
-      <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
-    </form>
-  </div>
-</nav>
 
         <div class="custom-control custom-label custom-control-inline">
-          <div class="input-group-prepend">
-              <span class="input-group-text"><i class="fas fa-calendar-alt"></i></span>
-          </div>
           <label class="" for="fecha">   Fecha:</label>
         <script>
 
@@ -85,9 +47,6 @@
         </script>
       </div>
       <div class="custom-control custom-label custom-control-inline">
-        <div class="input-group-prepend">
-            <span class="input-group-text"><i class="fas fa-clock"></i></span>
-        </div>
         <label class="" for="hora">Hora: </label>
         <script>
         var hora = new Date()
@@ -187,22 +146,119 @@
       <input type="email" class="form-control" id="emailusuario">
     </div>
 
-    <div class="form-group col-md-3">
-      <label for="contrasenausuario">Contraseña:</label>
-      <input type="password" class="form-control" id="contrasenausuario">
-    </div>
 
-    <div class="form-group col-md-3">
-      <label for="confcontrasenausuario">Confimar Contraseña:</label>
-      <input type="password" class="form-control" id="confcontrasenausuario">
-    </div>
   </div>
   <div class="form-group">
     <input type="submit" value="Registrar" class=" registrar_btn">
   </div>
+  <div class= "table-responsive">
+    <table class="table">
+      <caption>Listado de Infracción</caption>
+  <thead>
+    <tr>
+      <th scope="col">Código</th>
+      <th scope="col">Artículo</th>
+      <th scope="col">Seleccione</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th scope="row">01</th>
+      <td>Art-42</td>
+      <td>
+        <div class="input-group mb-3">
+  <div class="input-group-prepend">
+    <div class="input-group-text">
+      <input type="checkbox" value="" id="multa42">
+    </div>
+  </div>
+</div>
+      </td>
+    </tr>
+    <tr>
+      <th scope="row">03</th>
+      <td>Art-62</td>
+      <td>
+        <div class="input-group mb-3">
+    <div class="input-group-prepend">
+      <input type="checkbox"  value="" id="multa62">
+    </div>
+    </div>
+      </td>
+    </tr>
+    <tr>
+      <th scope="row">04</th>
+      <td>Art-63</td>
+      <td>
+        <div class="input-group mb-3">
+    <div class="input-group-prepend">
+      <input type="checkbox"  value="" id="multa63">
+    </div>
+    </div>
+      </td>
+    </tr>
+    <tr>
+      <th scope="row">05</th>
+      <td>Art-64 No.1</td>
+      <td>
+        <div class="input-group mb-3">
+    <div class="input-group-prepend">
+      <input type="checkbox"  value="" id="multa64-1">
+    </div>
+    </div>
+      </td>
+    </tr>
+    <tr>
+      <th scope="row">06</th>
+      <td>Art-64 No.2</td>
+      <td>
+        <div class="input-group mb-3">
+    <div class="input-group-prepend">
+      <input type="checkbox"  value="" id="multa64-2">
+    </div>
+    </div>
+      </td>
+    </tr>
+    <tr>
+      <th scope="row">07</th>
+      <td>Art-64 No.3</td>
+      <td>
+        <div class="input-group mb-3">
+    <div class="input-group-prepend">
+      <input type="checkbox"  value="" id="multa64-3">
+    </div>
+    </div>
+      </td>
+    </tr>
+    <tr>
+      <th scope="row">02</th>
+      <td>Art-44</td>
+      <td>
+        <div class="input-group mb-3">
+    <div class="input-group-prepend">
+      <input type="checkbox"  value="" id="multa44">
+    </div>
+    </div>
+      </td>
+    </tr>
+    <tr>
+      <th scope="row">02</th>
+      <td>Art-44</td>
+      <td>
+        <div class="input-group mb-3">
+    <div class="input-group-prepend">
+      <input type="checkbox"  value="" id="multa44">
+    </div>
+    </div>
+      </td>
+    </tr>
 
-        </form>
-      </div>
+
+  </tbody>
+  </table>
+  </div>
+</form>
+</div>
       <div class="card-footer">
         <div class="d-flex justify-content-center">
           <a href="#"> Se levanta la presente acta de infracción que hace constar la violación al(los) artículo(s) de la ley 63-17 marcado(s) en la(s) casilla(s) de más arriba. El ciudadano cuneta con un plazo de treinta (30) días a partir de la fecha de emisión de esta acta que vale como citación legal, para a) pagar voluntariamente la multa en los puntos establecidos para estos fines, cuyo importe será el menor del rango contemplado en la Ley para la(s) sanción(es) correspondiente(s): o b) ejercer su derecho de impugnar en justicia en el Juzgado de Paz Ordinario de la demarcación done ocurrió el hecho o ante la Unidad de Transito del Ministerio Publico. De no pagar voluntariamente o no impugnar la infracción en el plazo establecido el infractor reconoce que no aplicaría el importe menor de rango contemplado en la Ley y que los pagos realizados después de vencido el citado plazo incluirán los recargos contemplados en el Código Tributario y en sus leyes complementarias, entre otras sanciones contempladas en la Ley, sin necesidad de nueva notificación. </a>
