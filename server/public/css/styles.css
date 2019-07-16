@@ -1,0 +1,12 @@
+.cardContainer{
+position: absolute;
+padding-top: 50px !important;
+display: inline-block !important;
+justify-content: center !important;
+text-align: center !important;
+margin-left: 40%;
+margin-right: 50%;
+}
+.bg-dark {
+    background-color: #bdc6d0!important;
+}
