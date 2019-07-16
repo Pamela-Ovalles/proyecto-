@@ -65,9 +65,9 @@ width: 10px;
 
 
 
-.registrar_btn{
+.registrarvehiculo_btn{
 float: right;
-right: 40px;
+right: 2px;
 color: black;
 background-color: #08aa36;
 width: 100px;
@@ -80,11 +80,11 @@ border-radius:  4px;
 
 }
 
-.registrar_btn{
+.registrarvehiculo_btn{
   position:relative;
 }
 
-.registrar_btn:hover{
+.registrarvehiculo_btn:hover{
 color: black;
 background-color: white;
 }
