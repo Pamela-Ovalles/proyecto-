@@ -8,7 +8,7 @@ var controller = {
 	//	var params = req.body;
 
 	//	var email = params.email;
-		// return res.render('links/loginprueba');//aqui coloco el nombre del archivo que quiero renderizar *debe ser .ejs*
+ return res.render('links/loginprueba');//aqui coloco el nombre del archivo que quiero renderizar *debe ser .ejs*
 
 
 	//	var  multas =	pool.query('SELECT * FROM MULTAS');
@@ -23,11 +23,7 @@ var controller = {
 		var user = req.body;
 		var password = req.body;
 
-		console.log(user +'rtyu');
-		console.log(password +'rtyu');
-
-
-
+	
 		return res.render('links/pMenu');
 	},
 
