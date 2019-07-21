@@ -8,8 +8,8 @@ var router = express.Router();
 
 
 router.get('', UserController.home);
-router.get('/menu', UserController.menu);
-router.post('/principal', UserController.principal);
+//router.get('/menu', UserController.menu);
+router.post('/principalAmet', UserController.principalAmet);
 //router.put('')
 
 module.exports = router;

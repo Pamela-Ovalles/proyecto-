@@ -26,7 +26,7 @@ app.use((req, res, next) => {
 });
 
 // rutas
-app.use('/api', usuario_routes);
+app.use('/', usuario_routes);
 
 // exportar
 module.exports = app;

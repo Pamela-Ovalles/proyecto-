@@ -18,16 +18,16 @@ var controller = {
 
 
 	},
-	menu: function(req, res){
+	// menu: function(req, res){
+	//
+	// 	var user = req.body;
+	// 	var password = req.body;
+	//
+	//
+	// 	return res.render('links/pMenu');
+	// },
 
-		var user = req.body;
-		var password = req.body;
-
-
-		return res.render('links/pMenu');
-	},
-
-	principal: function(req, res){
+	principalAmet: function(req, res){
 		var params = req.body;
 
 		var user = params.email;
@@ -35,7 +35,7 @@ var controller = {
 
 		console.log(user);
 		console.log(password);
-		res.render('links/principal');
+		res.render('links/principalAmet');
 		// if( params.user !==null && params.user !== '' && params.password !== null && params.password !== '' ) {
 		// 	return res.render('links/registrarUser');
 		// } else {
