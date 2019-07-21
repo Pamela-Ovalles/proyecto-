@@ -9,7 +9,7 @@ var router = express.Router();
 
 router.get('', UserController.home);
 router.get('/menu', UserController.menu);
-//router.post('/save-user', UserController.saveUser);
+router.post('/principal', UserController.principal);
 //router.put('')
 
 module.exports = router;

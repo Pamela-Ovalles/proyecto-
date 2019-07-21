@@ -23,11 +23,11 @@ var controller = {
 		var user = req.body;
 		var password = req.body;
 
-	
+
 		return res.render('links/pMenu');
 	},
 
-	saveUser: function(req, res){
+	principal: function(req, res){
 		var params = req.body;
 
 		var user = params.email;
@@ -35,7 +35,7 @@ var controller = {
 
 		console.log(user);
 		console.log(password);
-		res.render('links/registrarUsers');
+		res.render('links/principal');
 		// if( params.user !==null && params.user !== '' && params.password !== null && params.password !== '' ) {
 		// 	return res.render('links/registrarUser');
 		// } else {
