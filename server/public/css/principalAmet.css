@@ -8,13 +8,99 @@ font-family: "Times New Roman", Times, serif;
 
 
 
-.navbar nav{
+.navbar {
   width: 100%;
 font-size: 25px;
 font-family: "Times New Roman", Times, serif;
-}
-.navbar-brand a{
 
+}
+
+#size_inicio{
   font-size: 25px;
-  font-family: "Times New Roman", Times, serif;
+}
+.navbar-light {
+ color: white;
+}
+
+.dropdown_divider {
+  height: 0;
+  margin: 0.5rem 0;
+  overflow: hidden;
+  border-top: 2px solid #cc2064 ;
+}
+
+.navbar-link{
+
+  color: white;
+}
+
+.dropdown-menu{
+  position: absolute;
+  top: 100%;
+  left: 0;
+  z-index: 1000;
+  display: none;
+  float: left;
+  min-width: 10rem;
+  padding: 0.5rem 0;
+  margin: 0.125rem 0 0;
+  font-size: 1rem;
+  color: white;
+  text-align: left;
+  list-style: none;
+  background-color:rgba(0,0,0,0.5);
+  background-clip: padding-box;
+  border: 1px solid rgba(0, 0, 0, 0.15);
+  border-radius: 0.25rem;
+}
+
+/* #dropdown_menu {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  z-index: 1000;
+  display: none;
+  float: left;
+  min-width: 10rem;
+  padding: 0.5rem 0;
+  margin: 0.125rem 0 0;
+  font-size: 1rem;
+  color: white;
+  text-align: left;
+  list-style: none;
+  background-color:rgba(0,0,0,0.5);
+  background-clip: padding-box;
+  border: 1px solid rgba(0, 0, 0, 0.15);
+  border-radius: 0.25rem;
+} */
+
+.dropdown_item {
+  display: block;
+  width: 100%;
+  padding: 0.25rem 1.5rem;
+  clear: both;
+  font-weight: 400;
+  color: #212529;
+  text-align: inherit;
+  white-space: nowrap;
+  background-color: transparent;
+  border: 0;
+}
+
+.dropdown_item:hover, .dropdown_item:focus {
+  color: #16181b;
+  text-decoration: none;
+  background-color: #08aa36;
+}
+
+.dropdown_item.active, .dropdown_item:active {
+  color: #fff;
+  text-decoration: none;
+  background-color: #007bff;
+}
+
+.dropdown_item.disabled, .dropdown_item:disabled {
+  color: #6c757d;
+  pointer-events: none;
+  background-color: transparent;
 }

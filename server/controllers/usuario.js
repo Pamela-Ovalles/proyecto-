@@ -22,6 +22,10 @@ var controller = {
  		 res.render('links/registrarUsers');
 	},
 
+	aplicarMulta: function(req, res){
+ 		 res.render('links/colocacionMultas');
+	},
+
 	principalAmet: function(req, res){
 		var params = req.body;
 
