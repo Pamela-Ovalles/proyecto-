@@ -8,7 +8,7 @@ var router = express.Router();
 
 
 router.get('', UserController.home);
-//router.get('/menu', UserController.menu);
+router.post('/registrarUsers', UserController.registrar);
 router.post('/principalAmet', UserController.principalAmet);
 //router.put('')
 

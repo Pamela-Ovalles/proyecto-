@@ -18,14 +18,9 @@ var controller = {
 
 
 	},
-	// menu: function(req, res){
-	//
-	// 	var user = req.body;
-	// 	var password = req.body;
-	//
-	//
-	// 	return res.render('links/pMenu');
-	// },
+	registrar: function(req, res){
+ 		 res.render('links/registrarUsers');
+	},
 
 	principalAmet: function(req, res){
 		var params = req.body;
