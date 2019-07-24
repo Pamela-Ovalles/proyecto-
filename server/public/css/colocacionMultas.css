@@ -2,7 +2,7 @@ html,body{
 background-image: url('../imagenes/background.jpg');
 background-size: cover;
 background-repeat: no-repeat;
-height: 100%;
+height: auto;
 font-family: "Times New Roman", Times, serif;
 }
 
@@ -13,10 +13,10 @@ font-family: "Times New Roman", Times, serif;
 }
 
 .card{
-height: 600px;
+height: auto;
 margin-top: auto;
 margin-bottom: auto;
-width: 1400px;
+width: 100%;
 background-color: rgba(0,0,0,0.5) !important;
 }
 
@@ -72,7 +72,13 @@ color: white;
 .links a{
 margin-left: 4px;
 }
-.table{
+.table {
 
-  float:left;
+
+  display: block;
+  overflow-y: scroll;
+  height:500px;
+  width:500px;
+
+
 }
