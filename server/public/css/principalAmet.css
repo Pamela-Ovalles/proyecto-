@@ -7,7 +7,6 @@ font-family: "Times New Roman", Times, serif;
 }
 
 
-
 .navbar {
   width: 100%;
 font-size: 25px;
@@ -80,7 +79,7 @@ font-family: "Times New Roman", Times, serif;
   padding: 0.25rem 1.5rem;
   clear: both;
   font-weight: 400;
-  color: #212529;
+  color: white;
   text-align: inherit;
   white-space: nowrap;
   background-color: transparent;
