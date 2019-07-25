@@ -77,8 +77,14 @@ margin-left: 4px;
 
   display: block;
   overflow-y: scroll;
-  height:500px;
+  overflow-x: scroll;
+  height:300px;
   width:500px;
 
+
+}
+
+.checkbox{
+align-content: center;
 
 }
