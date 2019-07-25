@@ -49,6 +49,7 @@ border:0 !important;
 
 .registrar_btn{
   float: right;
+  right: 20px;
 color: black;
 background-color: #08aa36;
 width: 100px;
@@ -58,6 +59,11 @@ font-size: 18px;
 font-weight: 500;
 line-height: 40px;
 border-radius:  4px;
+
+}
+
+.registrar_btn{
+position: relative;
 }
 
 .registrar_btn:hover{
@@ -77,14 +83,8 @@ margin-left: 4px;
 
   display: block;
   overflow-y: scroll;
-  overflow-x: scroll;
+
   height:300px;
-  width:500px;
-
-
-}
-
-.checkbox{
-align-content: center;
+  width:100%;
 
 }
