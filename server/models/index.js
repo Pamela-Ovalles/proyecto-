@@ -74,6 +74,27 @@ db.municipio.belongTo(db.ciudad,{foreignkey:'ciudad_id',foreignkeyConstraint:tru
 db.sector.hasOne(db.ciudad,{foreignkey:'sector_id',foreignkeyConstraint:true});
 db.ciudad.belongTo(db.sector,{foreignkey:'sector_id',foreignkeyConstraint:true});
 
+db.vehiculo.belongTo(db.conductor,{foreignkey:'conductor_id',foreignkeyConstraint:true});
+db.conductor.hasMany(db.vehiculo,{foreignkey:'conductor_id',foreignkeyConstraint:true});
+
+db.infracciones.belongTo(db.conductor,{foreignkey:'conductor_id',foreignkeyConstraint:true});
+db.conductor.hasMany(db.infracciones,{foreignkey:'conductor_id',foreignkeyConstraint:true});
+
+db.infracciones.belongTo(db.policia,{foreignkey:'policia_id',foreignkeyConstraint:true});
+db.policia.hasMany(db.infracciones,{foreignkey:'policia_id',foreignkeyConstraint:true});
+
+db.conductor.belongTo(db.infracciones,{foreignkey:'conductor_id',foreignkeyConstraint:true});
+db.infracciones.hasOne(db.conductor,{foreignkey:'conductor_id',foreignkeyConstraint:true});
+
+db.direccion.belongTo(db.infracciones,{foreignkey:'direccion_id',foreignkeyConstraint:true});
+db.infracciones.hasOne(db.direccion,{foreignkey:'direccion_id',foreignkeyConstraint:true});
+
+db.vehiculo.belongTo(db.infracciones,{foreignkey:'vehiculo_id',foreignkeyConstraint:true});
+db.infracciones.hasOne(db.vehiculo,{foreignkey:'vehiculo_id',foreignkeyConstraint:true});
+
+
+
+
 
 
 sequelize.sync();

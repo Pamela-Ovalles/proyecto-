@@ -1,48 +1,49 @@
 'use strict';
 module.exports= (sequelize, DataTypes)=>{
-    const modelo = sequelize.define('modelo',{
-        cod_modelo:{
+    const vehiculo = sequelize.define('vehiculo',{
+        placa:{
             type: DataTypes.STRING,
             autoIncrement: true,
             primaryKey: true,
             allowNull: false
         },
-        nombre_modelo:{
+        chasis:{
             type: DataTypes.STRING,
             allowNull: false
         },
-        marca:{
+        matricula:{
             type: DataTypes.STRING,
-            allowNull: true
+            allowNull:false
         },
-
-        ano_fabricante:{
+        fecha_expedicion:{
             type: DataTypes.DATE,
-              allowNull: false
+            allowNull: false
         },
-        no_motor:{
+        status:{
+            type: DataTypes.STRING
+        },
+        tipo_emision:{
             type: DataTypes.STRING,
               allowNull: false
         },
-        cant_pasajero:{
+        tipo_vehiculo:{
             type: DataTypes.STRING
         },
-        fuerza_motriz:{
+        color:{
+            type: DataTypes.STRING,
+              allowNull: false
+
+        },
+        modelo_id:{
             type: DataTypes.STRING,
               allowNull: false
         },
-        cap_carga:{
+        conductor_id:{
             type: DataTypes.STRING
-        },
-        cilindros:{
-            type: DataTypes.INTEGER
-        },
-        no_puerta:{
-            type: DataTypes.INTEGER
-        },
+        }
 
     },{
         freezeTableName: true,
     });
-    return modelo;
+    return vehiculo;
 };
