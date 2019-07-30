@@ -1,0 +1,1152 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+  <title>RegistrarMulta</title>
+
+   <!--Fontawesome CDN-->
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
+
+<!--Custom styles-->
+<link rel="stylesheet" href="css/colocacionMultas.css">
+
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+
+</head>
+
+  <body>
+    <div class="container">
+  <div class="d-flex justify-content-center h-100">
+    <div class="card">
+      <div class="card-header">
+        <img src="imagenes/digesettLogo.png"></img>
+        <h3>Acta de Infracción</h3>
+
+        <div class="custom-control custom-label custom-control-inline">
+          <label class="" for="fecha">   Fecha:</label>
+        <script>
+
+        var mydate=new Date();
+        var year=mydate.getYear();
+        if (year < 1000)
+        year+=1900;
+        var day=mydate.getDay();
+        var month=mydate.getMonth()+1;
+        if (month<10)
+        month="0"+month;
+        var daym=mydate.getDate();
+        if (daym<10)
+        daym="0"+daym;
+        document.write("<small><font color='white' face='Times New Roman' size='4'>"+daym+"/"+month+"/"+year+"</font></small>")
+        </script>
+      </div>
+      <div class="custom-control custom-label custom-control-inline">
+        <label class="" for="hora">Hora: </label>
+        <script>
+        var hora = new Date()
+        var hrs = hora.getHours();
+        var min = hora.getMinutes();
+        document.write("<small><font color='white' face='Times New Roman' size='4' >"+hrs+":"+min+ "</font></small>")
+        </script>
+    </div>
+
+      </div>
+
+      <div class="card-body">
+        <form>
+
+          <div class="form-row">
+              <div class="col-md-3">
+                <label for="primernombre">Primer nombre:</label>
+                <div class="input-group form-group">
+
+                  <div class="input-group-prepend">
+                      <span class="input-group-text"><i class="fas fa-clock"></i></span>
+                  </div>
+                  <input type="text" class="form-control" id="primernombre" placeholder="">
+                </div>
+
+              </div>
+
+              <div class="form-group col-md-3">
+                <label for="segundonombre">Segundo nombre:</label>
+                <input type="text" class="form-control" id="segundonombre" placeholder="">
+              </div>
+              <div class="form-group col-md-3">
+                  <label for="primerapellido">Primer apellido:</label>
+                  <input type="text" class="form-control" id="primerapellido" placeholder="">
+              </div>
+              <div class="form-group col-md-3">
+                <label for="segundoapellido">Segundo apellido:</label>
+                <input type="text" class="form-control" id="segundoapellido" placeholder="">
+              </div>
+
+              </div>
+
+              <div class="form-row">
+                <div class="form-group col-md-3">
+                  <label for="cedula">Cédula:</label>
+
+
+
+                  <input type="text" class="form-control" id="cedula">
+                </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+              <div class="form-group col-md-3">
+                <label for="telefonoconductor">Teléfono:</label>
+                <input type="text" class="form-control" id="telefonoconductor">
+              </div>
+              <div class="form-group col-md-3">
+                <label for="nacionalidad">Nacionalidad:</label>
+                <select id="nacionalidad" class="form-control">
+                  <option selected>Elegir...</option>
+                  <option>Dominicano</option>
+                  <option>Extranjero</option>
+                </select>
+              </div>
+            <div class="form-group col-md-3">
+              <label for="pais">País:</label>
+              <input type="text" class="form-control" id="pais" placeholder="">
+            </div>
+          </div>
+
+    <div class="form-row">
+    <div class="form-group col-md-3">
+      <label for="marca">Marca:</label>
+      <input type="text" class="form-control" id="marca" placeholder="">
+    </div>
+    <div class="form-group col-md-3">
+      <label for="modelo">Modelo:</label>
+      <input type="text" class="form-control" id="modelo" placeholder="">
+    </div>
+    <div class="form-group col-md-3">
+      <label for="placa">No. Placa:</label>
+      <input type="text" class="form-control" id="placa" placeholder="">
+    </div>
+    <div class="form-group col-md-3">
+      <label for="tipovehiculo">Tipo de Vehículo:</label>
+      <select id="tipovehiculo" class="form-control">
+        <option selected>Elegir...</option>
+        <option>Motocicleta</option>
+        <option>Automóvil</option>
+        <option>Camioneta</option>
+        <option>Autobús</option>
+        <option>Otros</option>
+      </select>
+    </div>
+
+  </div>
+
+
+  <div class="form-row">
+    <div class="form-group col-md-6">
+      <label for="emailusuario">Correo:</label>
+      <input type="email" class="form-control" id="emailusuario">
+    </div>
+
+
+  </div>
+  <div class="form-group">
+    <input type="submit" value="Registrar" class=" registrar_btn">
+  </div>
+  <div class= "table-responsive">
+    <table class="table">
+      <caption>Listado de Infracción</caption>
+  <thead>
+    <tr>
+      <th scope="col">Código</th>
+      <th scope="col">Artículo</th>
+      <th scope="col">Seleccione</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th scope="row">01</th>
+      <td>Art-42</td>
+      <td>
+        <div class="input-group mb-3">
+  <div class="input-group-prepend">
+    <div class="input-group-text">
+      <input type="checkbox" value="" id="multa42">
+    </div>
+  </div>
+</div>
+      </td>
+    </tr>
+    <tr>
+      <th scope="row">03</th>
+      <td>Art-62</td>
+      <td>
+        <div class="input-group mb-3">
+    <div class="input-group-prepend">
+      <input type="checkbox"  value="" id="multa62">
+    </div>
+    </div>
+      </td>
+    </tr>
+    <tr>
+      <th scope="row">04</th>
+      <td>Art-63</td>
+      <td>
+        <div class="input-group mb-3">
+    <div class="input-group-prepend">
+      <input type="checkbox"  value="" id="multa63">
+    </div>
+    </div>
+      </td>
+    </tr>
+    <tr>
+      <th scope="row">05</th>
+      <td>Art-64 No.1</td>
+      <td>
+        <div class="input-group mb-3">
+    <div class="input-group-prepend">
+      <input type="checkbox"  value="" id="multa64-1">
+    </div>
+    </div>
+      </td>
+    </tr>
+    <tr>
+      <th scope="row">06</th>
+      <td>Art-64 No.2</td>
+      <td>
+        <div class="input-group mb-3">
+    <div class="input-group-prepend">
+      <input type="checkbox"  value="" id="multa64-2">
+    </div>
+    </div>
+      </td>
+    </tr>
+    <tr>
+      <th scope="row">07</th>
+      <td>Art-64 No.3</td>
+      <td>
+        <div class="input-group mb-3">
+    <div class="input-group-prepend">
+      <input type="checkbox"  value="" id="multa64-3">
+    </div>
+    </div>
+      </td>
+    </tr>
+    <tr>
+      <th scope="row">08</th>
+      <td>Art-67</td>
+      <td>
+        <div class="input-group mb-3">
+    <div class="input-group-prepend">
+      <input type="checkbox"  value="" id="multa44">
+    </div>
+    </div>
+      </td>
+    </tr>
+
+
+    <tr>
+      <th scope="row">09</th>
+      <td>Art-68</td>
+      <td>
+        <div class="input-group mb-3">
+    <div class="input-group-prepend">
+      <input type="checkbox"  value="" id="multa44">
+    </div>
+    </div>
+      </td>
+    </tr><tr>
+      <th scope="row">10</th>
+      <td>Art-69</td>
+      <td>
+        <div class="input-group mb-3">
+    <div class="input-group-prepend">
+      <input type="checkbox"  value="" id="multa44">
+    </div>
+    </div>
+      </td>
+    </tr><tr>
+      <th scope="row">11</th>
+      <td>Art-78</td>
+      <td>
+        <div class="input-group mb-3">
+    <div class="input-group-prepend">
+      <input type="checkbox"  value="" id="multa44">
+    </div>
+    </div>
+      </td>
+    </tr><tr>
+      <th scope="row">12</th>
+      <td>Art-96</td>
+      <td>
+        <div class="input-group mb-3">
+    <div class="input-group-prepend">
+      <input type="checkbox"  value="" id="multa44">
+    </div>
+    </div>
+      </td>
+    </tr><tr>
+      <th scope="row">13</th>
+      <td>Art-98</td>
+      <td>
+        <div class="input-group mb-3">
+    <div class="input-group-prepend">
+      <input type="checkbox"  value="" id="multa44">
+    </div>
+    </div>
+      </td>
+    </tr><tr>
+      <th scope="row">14</th>
+      <td>Art-120</td>
+      <td>
+        <div class="input-group mb-3">
+    <div class="input-group-prepend">
+      <input type="checkbox"  value="" id="multa44">
+    </div>
+    </div>
+      </td>
+    </tr><tr>
+      <th scope="row">15</th>
+      <td>Art-122</td>
+      <td>
+        <div class="input-group mb-3">
+    <div class="input-group-prepend">
+      <input type="checkbox"  value="" id="multa44">
+    </div>
+    </div>
+      </td>
+    </tr><tr>
+      <th scope="row">16</th>
+      <td>Art-124</td>
+      <td>
+        <div class="input-group mb-3">
+    <div class="input-group-prepend">
+      <input type="checkbox"  value="" id="multa44">
+    </div>
+    </div>
+      </td>
+    </tr><tr>
+      <th scope="row">17</th>
+      <td>Art-133</td>
+      <td>
+        <div class="input-group mb-3">
+    <div class="input-group-prepend">
+      <input type="checkbox"  value="" id="multa44">
+    </div>
+    </div>
+      </td>
+    </tr><tr>
+      <th scope="row">18</th>
+      <td>Art-135</td>
+      <td>
+        <div class="input-group mb-3">
+    <div class="input-group-prepend">
+      <input type="checkbox"  value="" id="multa44">
+    </div>
+    </div>
+      </td>
+    </tr><tr>
+      <th scope="row">19</th>
+      <td>Art-137</td>
+      <td>
+        <div class="input-group mb-3">
+    <div class="input-group-prepend">
+      <input type="checkbox"  value="" id="multa44">
+    </div>
+    </div>
+      </td>
+    </tr><tr>
+      <th scope="row">20</th>
+      <td>Art-139</td>
+      <td>
+        <div class="input-group mb-3">
+    <div class="input-group-prepend">
+      <input type="checkbox"  value="" id="multa44">
+    </div>
+    </div>
+      </td>
+    </tr><tr>
+      <th scope="row">21</th>
+      <td>Art-140</td>
+      <td>
+        <div class="input-group mb-3">
+    <div class="input-group-prepend">
+      <input type="checkbox"  value="" id="multa44">
+    </div>
+    </div>
+      </td>
+    </tr><tr>
+      <th scope="row">22</th>
+      <td>Art-141</td>
+      <td>
+        <div class="input-group mb-3">
+    <div class="input-group-prepend">
+      <input type="checkbox"  value="" id="multa44">
+    </div>
+    </div>
+      </td>
+    </tr>
+
+    <tr>
+      <th scope="row">23</th>
+      <td>Art-142</td>
+      <td>
+        <div class="input-group mb-3">
+    <div class="input-group-prepend">
+      <input type="checkbox"  value="" id="multa44">
+    </div>
+    </div>
+      </td>
+    </tr>
+  </table>
+<table class="table">
+
+    <tr>
+      <th scope="row">24</th>
+      <td>Art-143</td>
+      <td>
+        <div class="input-group mb-3">
+    <div class="input-group-prepend">
+      <input type="checkbox"  value="" id="multa44">
+    </div>
+    </div>
+      </td>
+    </tr><tr>
+      <th scope="row">25</th>
+      <td>Art-144</td>
+      <td>
+        <div class="input-group mb-3">
+    <div class="input-group-prepend">
+      <input type="checkbox"  value="" id="multa44">
+    </div>
+    </div>
+      </td>
+    </tr><tr>
+      <th scope="row">26</th>
+      <td>Art-145</td>
+      <td>
+        <div class="input-group mb-3">
+    <div class="input-group-prepend">
+      <input type="checkbox"  value="" id="multa44">
+    </div>
+    </div>
+      </td>
+    </tr><tr>
+      <th scope="row">27</th>
+      <td>Art-146</td>
+      <td>
+        <div class="input-group mb-3">
+    <div class="input-group-prepend">
+      <input type="checkbox"  value="" id="multa44">
+    </div>
+    </div>
+      </td>
+    </tr><tr>
+      <th scope="row">28</th>
+      <td>Art-147</td>
+      <td>
+        <div class="input-group mb-3">
+    <div class="input-group-prepend">
+      <input type="checkbox"  value="" id="multa44">
+    </div>
+    </div>
+      </td>
+    </tr><tr>
+      <th scope="row">29</th>
+      <td>Art-155</td>
+      <td>
+        <div class="input-group mb-3">
+    <div class="input-group-prepend">
+      <input type="checkbox"  value="" id="multa44">
+    </div>
+    </div>
+      </td>
+    </tr><tr>
+      <th scope="row">30</th>
+      <td>Art-156</td>
+      <td>
+        <div class="input-group mb-3">
+    <div class="input-group-prepend">
+      <input type="checkbox"  value="" id="multa44">
+    </div>
+    </div>
+      </td>
+    </tr><tr>
+      <th scope="row">31</th>
+      <td>Art-158</td>
+      <td>
+        <div class="input-group mb-3">
+    <div class="input-group-prepend">
+      <input type="checkbox"  value="" id="multa44">
+    </div>
+    </div>
+      </td>
+    </tr><tr>
+      <th scope="row">32</th>
+      <td>Art-167</td>
+      <td>
+        <div class="input-group mb-3">
+    <div class="input-group-prepend">
+      <input type="checkbox"  value="" id="multa44">
+    </div>
+    </div>
+      </td>
+    </tr><tr>
+      <th scope="row">33</th>
+      <td>Art-170</td>
+      <td>
+        <div class="input-group mb-3">
+    <div class="input-group-prepend">
+      <input type="checkbox"  value="" id="multa44">
+    </div>
+    </div>
+      </td>
+    </tr><tr>
+      <th scope="row">34</th>
+      <td>Art-174</td>
+      <td>
+        <div class="input-group mb-3">
+    <div class="input-group-prepend">
+      <input type="checkbox"  value="" id="multa44">
+    </div>
+    </div>
+      </td>
+    </tr><tr>
+      <th scope="row">35</th>
+      <td>Art-189 No.1</td>
+      <td>
+        <div class="input-group mb-3">
+    <div class="input-group-prepend">
+      <input type="checkbox"  value="" id="multa44">
+    </div>
+    </div>
+      </td>
+    </tr><tr>
+      <th scope="row">36</th>
+      <td>Art-189 No.2</td>
+      <td>
+        <div class="input-group mb-3">
+    <div class="input-group-prepend">
+      <input type="checkbox"  value="" id="multa44">
+    </div>
+    </div>
+      </td>
+    </tr><tr>
+      <th scope="row">37</th>
+      <td>Art-189 No.4</td>
+      <td>
+        <div class="input-group mb-3">
+    <div class="input-group-prepend">
+      <input type="checkbox"  value="" id="multa44">
+    </div>
+    </div>
+      </td>
+    </tr><tr>
+      <th scope="row">38</th>
+      <td>Art-189 No.6</td>
+      <td>
+        <div class="input-group mb-3">
+    <div class="input-group-prepend">
+      <input type="checkbox"  value="" id="multa44">
+    </div>
+    </div>
+      </td>
+    </tr><tr>
+      <th scope="row">39</th>
+      <td>Art-189 No.7</td>
+      <td>
+        <div class="input-group mb-3">
+    <div class="input-group-prepend">
+      <input type="checkbox"  value="" id="multa44">
+    </div>
+    </div>
+      </td>
+    </tr><tr>
+      <th scope="row">40</th>
+      <td>Art-189 No.8</td>
+      <td>
+        <div class="input-group mb-3">
+    <div class="input-group-prepend">
+      <input type="checkbox"  value="" id="multa44">
+    </div>
+    </div>
+      </td>
+    </tr><tr>
+      <th scope="row">41</th>
+      <td>Art-189 No.9</td>
+      <td>
+        <div class="input-group mb-3">
+    <div class="input-group-prepend">
+      <input type="checkbox"  value="" id="multa44">
+    </div>
+    </div>
+      </td>
+    </tr><tr>
+      <th scope="row">42</th>
+      <td>Art-189 No.11</td>
+      <td>
+        <div class="input-group mb-3">
+    <div class="input-group-prepend">
+      <input type="checkbox"  value="" id="multa44">
+    </div>
+    </div>
+      </td>
+    </tr><tr>
+      <th scope="row">43</th>
+      <td>Art-189 No.13</td>
+      <td>
+        <div class="input-group mb-3">
+    <div class="input-group-prepend">
+      <input type="checkbox"  value="" id="multa44">
+    </div>
+    </div>
+      </td>
+    </tr><tr>
+      <th scope="row">44</th>
+      <td>Art-189 No.14</td>
+      <td>
+        <div class="input-group mb-3">
+    <div class="input-group-prepend">
+      <input type="checkbox"  value="" id="multa44">
+    </div>
+    </div>
+      </td>
+    </tr><tr>
+      <th scope="row">45</th>
+      <td>Art-189 No.15</td>
+      <td>
+        <div class="input-group mb-3">
+    <div class="input-group-prepend">
+      <input type="checkbox"  value="" id="multa44">
+    </div>
+    </div>
+      </td>
+    </tr><tr>
+      <th scope="row">46</th>
+      <td>Art-189 No.17</td>
+      <td>
+        <div class="input-group mb-3">
+    <div class="input-group-prepend">
+      <input type="checkbox"  value="" id="multa44">
+    </div>
+    </div>
+      </td>
+    </tr>
+
+</table>
+<table class="table">
+
+    <tr>
+      <th scope="row">47</th>
+      <td>Art-189 No.18</td>
+      <td>
+        <div class="input-group mb-3">
+    <div class="input-group-prepend">
+      <input type="checkbox"  value="" id="multa44">
+    </div>
+    </div>
+      </td>
+    </tr><tr>
+      <th scope="row">48</th>
+      <td>Art-189 No.19</td>
+      <td>
+        <div class="input-group mb-3">
+    <div class="input-group-prepend">
+      <input type="checkbox"  value="" id="multa44">
+    </div>
+    </div>
+      </td>
+    </tr><tr>
+      <th scope="row">49</th>
+      <td>Art-191</td>
+      <td>
+        <div class="input-group mb-3">
+    <div class="input-group-prepend">
+      <input type="checkbox"  value="" id="multa44">
+    </div>
+    </div>
+      </td>
+    </tr><tr>
+      <th scope="row">50</th>
+      <td>Art-192</td>
+      <td>
+        <div class="input-group mb-3">
+    <div class="input-group-prepend">
+      <input type="checkbox"  value="" id="multa44">
+    </div>
+    </div>
+      </td>
+    </tr><tr>
+      <th scope="row">51</th>
+      <td>Art-193</td>
+      <td>
+        <div class="input-group mb-3">
+    <div class="input-group-prepend">
+      <input type="checkbox"  value="" id="multa44">
+    </div>
+    </div>
+      </td>
+    </tr><tr>
+      <th scope="row">52</th>
+      <td>Art-194</td>
+      <td>
+        <div class="input-group mb-3">
+    <div class="input-group-prepend">
+      <input type="checkbox"  value="" id="multa44">
+    </div>
+    </div>
+      </td>
+    </tr><tr>
+      <th scope="row">53</th>
+      <td>Art-195</td>
+      <td>
+        <div class="input-group mb-3">
+    <div class="input-group-prepend">
+      <input type="checkbox"  value="" id="multa44">
+    </div>
+    </div>
+      </td>
+    </tr><tr>
+      <th scope="row">54</th>
+      <td>Art-210</td>
+      <td>
+        <div class="input-group mb-3">
+    <div class="input-group-prepend">
+      <input type="checkbox"  value="" id="multa44">
+    </div>
+    </div>
+      </td>
+    </tr><tr>
+      <th scope="row">55</th>
+      <td>Art-217</td>
+      <td>
+        <div class="input-group mb-3">
+    <div class="input-group-prepend">
+      <input type="checkbox"  value="" id="multa44">
+    </div>
+    </div>
+      </td>
+    </tr><tr>
+      <th scope="row">56</th>
+      <td>Art-218 y 219</td>
+      <td>
+        <div class="input-group mb-3">
+    <div class="input-group-prepend">
+      <input type="checkbox"  value="" id="multa44">
+    </div>
+    </div>
+      </td>
+    </tr><tr>
+      <th scope="row">57</th>
+      <td>Art-220</td>
+      <td>
+        <div class="input-group mb-3">
+    <div class="input-group-prepend">
+      <input type="checkbox"  value="" id="multa44">
+    </div>
+    </div>
+      </td>
+    </tr><tr>
+      <th scope="row">58</th>
+      <td>Art-221</td>
+      <td>
+        <div class="input-group mb-3">
+    <div class="input-group-prepend">
+      <input type="checkbox"  value="" id="multa44">
+    </div>
+    </div>
+      </td>
+    </tr><tr>
+      <th scope="row">59</th>
+      <td>Art-222</td>
+      <td>
+        <div class="input-group mb-3">
+    <div class="input-group-prepend">
+      <input type="checkbox"  value="" id="multa44">
+    </div>
+    </div>
+      </td>
+    </tr><tr>
+      <th scope="row">60</th>
+      <td>Art-223</td>
+      <td>
+        <div class="input-group mb-3">
+    <div class="input-group-prepend">
+      <input type="checkbox"  value="" id="multa44">
+    </div>
+    </div>
+      </td>
+    </tr><tr>
+      <th scope="row">61</th>
+      <td>Art-224</td>
+      <td>
+        <div class="input-group mb-3">
+    <div class="input-group-prepend">
+      <input type="checkbox"  value="" id="multa44">
+    </div>
+    </div>
+      </td>
+    </tr><tr>
+      <th scope="row">62</th>
+      <td>Art-225</td>
+      <td>
+        <div class="input-group mb-3">
+    <div class="input-group-prepend">
+      <input type="checkbox"  value="" id="multa44">
+    </div>
+    </div>
+      </td>
+    </tr><tr>
+      <th scope="row">63</th>
+      <td>Art-226</td>
+      <td>
+        <div class="input-group mb-3">
+    <div class="input-group-prepend">
+      <input type="checkbox"  value="" id="multa44">
+    </div>
+    </div>
+      </td>
+    </tr><tr>
+      <th scope="row">64</th>
+      <td>Art-227,228 y 229</td>
+      <td>
+        <div class="input-group mb-3">
+    <div class="input-group-prepend">
+      <input type="checkbox"  value="" id="multa44">
+    </div>
+    </div>
+      </td>
+    </tr><tr>
+      <th scope="row">65</th>
+      <td>Art-230</td>
+      <td>
+        <div class="input-group mb-3">
+    <div class="input-group-prepend">
+      <input type="checkbox"  value="" id="multa44">
+    </div>
+    </div>
+      </td>
+    </tr><tr>
+      <th scope="row">66</th>
+      <td>Art-231 No.1</td>
+      <td>
+        <div class="input-group mb-3">
+    <div class="input-group-prepend">
+      <input type="checkbox"  value="" id="multa44">
+    </div>
+    </div>
+      </td>
+    </tr><tr>
+      <th scope="row">67</th>
+      <td>Art-231 No.2</td>
+      <td>
+        <div class="input-group mb-3">
+    <div class="input-group-prepend">
+      <input type="checkbox"  value="" id="multa44">
+    </div>
+    </div>
+      </td>
+    </tr><tr>
+      <th scope="row">68</th>
+      <td>Art-231 No.4</td>
+      <td>
+        <div class="input-group mb-3">
+    <div class="input-group-prepend">
+      <input type="checkbox"  value="" id="multa44">
+    </div>
+    </div>
+      </td>
+    </tr><tr>
+      <th scope="row">69</th>
+      <td>Art-231 No.5</td>
+      <td>
+        <div class="input-group mb-3">
+    <div class="input-group-prepend">
+      <input type="checkbox"  value="" id="multa44">
+    </div>
+    </div>
+      </td>
+    </tr>
+
+</table>
+<table class="table">
+
+
+    <tr>
+      <th scope="row">70</th>
+      <td>Art-233</td>
+      <td>
+        <div class="input-group mb-3">
+    <div class="input-group-prepend">
+      <input type="checkbox"  value="" id="multa44">
+    </div>
+    </div>
+      </td>
+    </tr><tr>
+      <th scope="row">71</th>
+      <td>Art-235</td>
+      <td>
+        <div class="input-group mb-3">
+    <div class="input-group-prepend">
+      <input type="checkbox"  value="" id="multa44">
+    </div>
+    </div>
+      </td>
+    </tr><tr>
+      <th scope="row">72</th>
+      <td>Art-236</td>
+      <td>
+        <div class="input-group mb-3">
+    <div class="input-group-prepend">
+      <input type="checkbox"  value="" id="multa44">
+    </div>
+    </div>
+      </td>
+    </tr>
+    <tr>
+      <th scope="row">73</th>
+      <td>Art-237</td>
+      <td>
+        <div class="input-group mb-3">
+    <div class="input-group-prepend">
+      <input type="checkbox"  value="" id="multa44">
+    </div>
+    </div>
+      </td>
+    </tr><tr>
+      <th scope="row">74</th>
+      <td>Art-238</td>
+      <td>
+        <div class="input-group mb-3">
+    <div class="input-group-prepend">
+      <input type="checkbox"  value="" id="multa44">
+    </div>
+    </div>
+      </td>
+    </tr><tr>
+      <th scope="row">75</th>
+      <td>Art-239</td>
+      <td>
+        <div class="input-group mb-3">
+    <div class="input-group-prepend">
+      <input type="checkbox"  value="" id="multa44">
+    </div>
+    </div>
+      </td>
+    </tr><tr>
+      <th scope="row">76</th>
+      <td>Art-241</td>
+      <td>
+        <div class="input-group mb-3">
+    <div class="input-group-prepend">
+      <input type="checkbox"  value="" id="multa44">
+    </div>
+    </div>
+      </td>
+    </tr><tr>
+      <th scope="row">77</th>
+      <td>Art-246</td>
+      <td>
+        <div class="input-group mb-3">
+    <div class="input-group-prepend">
+      <input type="checkbox"  value="" id="multa44">
+    </div>
+    </div>
+      </td>
+    </tr><tr>
+      <th scope="row">78</th>
+      <td>Art-247</td>
+      <td>
+        <div class="input-group mb-3">
+    <div class="input-group-prepend">
+      <input type="checkbox"  value="" id="multa44">
+    </div>
+    </div>
+      </td>
+    </tr><tr>
+      <th scope="row">79</th>
+      <td>Art-248</td>
+      <td>
+        <div class="input-group mb-3">
+    <div class="input-group-prepend">
+      <input type="checkbox"  value="" id="multa44">
+    </div>
+    </div>
+      </td>
+    </tr><tr>
+      <th scope="row">80</th>
+      <td>Art-249</td>
+      <td>
+        <div class="input-group mb-3">
+    <div class="input-group-prepend">
+      <input type="checkbox"  value="" id="multa44">
+    </div>
+    </div>
+      </td>
+    </tr><tr>
+      <th scope="row">81</th>
+      <td>Art-250</td>
+      <td>
+        <div class="input-group mb-3">
+    <div class="input-group-prepend">
+      <input type="checkbox"  value="" id="multa44">
+    </div>
+    </div>
+      </td>
+    </tr><tr>
+      <th scope="row">82</th>
+      <td>Art-251</td>
+      <td>
+        <div class="input-group mb-3">
+    <div class="input-group-prepend">
+      <input type="checkbox"  value="" id="multa44">
+    </div>
+    </div>
+      </td>
+    </tr><tr>
+      <th scope="row">83</th>
+      <td>Art-252</td>
+      <td>
+        <div class="input-group mb-3">
+    <div class="input-group-prepend">
+      <input type="checkbox"  value="" id="multa44">
+    </div>
+    </div>
+      </td>
+    </tr><tr>
+      <th scope="row">84</th>
+      <td>Art-253</td>
+      <td>
+        <div class="input-group mb-3">
+    <div class="input-group-prepend">
+      <input type="checkbox"  value="" id="multa44">
+    </div>
+    </div>
+      </td>
+    </tr>
+    <tr>
+      <th scope="row">85</th>
+      <td>Art-254</td>
+      <td>
+        <div class="input-group mb-3">
+    <div class="input-group-prepend">
+      <input type="checkbox"  value="" id="multa44">
+    </div>
+    </div>
+      </td>
+    </tr>
+    <tr>
+      <th scope="row">86</th>
+      <td>Art-256</td>
+      <td>
+        <div class="input-group mb-3">
+    <div class="input-group-prepend">
+      <input type="checkbox"  value="" id="multa44">
+    </div>
+    </div>
+      </td>
+    </tr><tr>
+      <th scope="row">87</th>
+      <td>Art-257</td>
+      <td>
+        <div class="input-group mb-3">
+    <div class="input-group-prepend">
+      <input type="checkbox"  value="" id="multa44">
+    </div>
+    </div>
+      </td>
+    </tr>
+    <tr>
+      <th scope="row">88</th>
+      <td>Art-264</td>
+      <td>
+        <div class="input-group mb-3">
+    <div class="input-group-prepend">
+      <input type="checkbox"  value="" id="multa44">
+    </div>
+    </div>
+      </td>
+    </tr>
+    <tr>
+      <th scope="row">89</th>
+      <td>Art-266</td>
+      <td>
+        <div class="input-group mb-3">
+    <div class="input-group-prepend">
+      <input type="checkbox"  value="" id="multa44">
+    </div>
+    </div>
+      </td>
+    </tr><tr>
+      <th scope="row">90</th>
+      <td>Art-267</td>
+      <td>
+        <div class="input-group mb-3">
+    <div class="input-group-prepend">
+      <input type="checkbox"  value="" id="multa44">
+    </div>
+    </div>
+      </td>
+    </tr>
+    <tr>
+      <th scope="row">91</th>
+      <td>Art-268</td>
+      <td>
+        <div class="input-group mb-3">
+    <div class="input-group-prepend">
+      <input type="checkbox"  value="" id="multa44">
+    </div>
+    </div>
+      </td>
+    </tr>
+    <tr>
+      <th scope="row">92</th>
+      <td>Art-269</td>
+      <td>
+        <div class="input-group mb-3">
+    <div class="input-group-prepend">
+      <input type="checkbox"  value="" id="multa44">
+    </div>
+    </div>
+      </td>
+    </tr>
+
+
+
+  </tbody>
+  </table>
+  </div>
+</form>
+</div>
+      <div class="card-footer">
+        <div class="d-flex justify-content-center">
+          <a href="#"> Se levanta la presente acta de infracción que hace constar la violación al(los) artículo(s) de la ley 63-17 marcado(s) en la(s) casilla(s) de más arriba. El ciudadano cuneta con un plazo de treinta (30) días a partir de la fecha de emisión de esta acta que vale como citación legal, para a) pagar voluntariamente la multa en los puntos establecidos para estos fines, cuyo importe será el menor del rango contemplado en la Ley para la(s) sanción(es) correspondiente(s): o b) ejercer su derecho de impugnar en justicia en el Juzgado de Paz Ordinario de la demarcación done ocurrió el hecho o ante la Unidad de Transito del Ministerio Publico. De no pagar voluntariamente o no impugnar la infracción en el plazo establecido el infractor reconoce que no aplicaría el importe menor de rango contemplado en la Ley y que los pagos realizados después de vencido el citado plazo incluirán los recargos contemplados en el Código Tributario y en sus leyes complementarias, entre otras sanciones contempladas en la Ley, sin necesidad de nueva notificación. </a>
+        </div>
+      </div>
+    </div>
+  </div>
+  </div>
+
+ <script src="js/bootstrap.mim.js"></script>
+  <script src="js/CardReader.js"></script>
+  </body>
+</html>
