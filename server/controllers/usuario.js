@@ -19,7 +19,31 @@ var controller = {
 
 	},
 	registrar: function(req, res){
- 		 res.render('links/registrarUsers');
+
+//	var params = req.body;
+	const {primernombre,segundonombre,primerapellido,segundoapellido,cedula,nacionalidad,
+	fechanacimiento,sexo,correo,clave,confirpass,telefonousuario,provincia,municipio,ciudad,
+  sector,calle} = req.body;
+
+	const newUsuario = {
+		primernombre,
+		segundonombre,
+		primerapellido,
+		segundoapellido,
+		cedula,nacionalidad,
+		fechanacimiento,
+		sexo,
+		correo,
+		clave,
+		confirpass,
+		telefonousuario,
+		provincia,municipio,
+		ciudad,
+	  sector,
+		calle
+		};
+		 console.log(newUsuario);
+		 res.render('links/registrarUsers');
 	},
 
 	aplicarMulta: function(req, res){
@@ -27,6 +51,7 @@ var controller = {
 	},
 
 	principalAmet: function(req, res){
+		// const {correousuario,password} = req.body;
 		var params = req.body;
 
 		var user = params.email;

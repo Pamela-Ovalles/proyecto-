@@ -27,7 +27,7 @@
         <img src="/imagenes/digesettLogo.png"></img>
         <h1><strong>Registrarse</strong></h1>
         <br>
-        <form >
+        <form action="/registrarUsers" method="POST">
 
           <fieldset>
             <legend><h4>Información personal</h4></legend>
@@ -38,7 +38,7 @@
                       <div class="input-group-prepend">
                           <span class="input-group-text"><i class="fas fa-user"></i></span>
                       </div>
-                        <input type="text" class="form-control" id="primernombre" placeholder="">
+                        <input type="text" class="form-control" id="primernombre" name="primernombre" placeholder="">
                     </div>
                 </div>
 
@@ -52,7 +52,7 @@
                     <div class="input-group-prepend">
                         <span class="input-group-text"><i class="fas fa-user"></i></span>
                     </div>
-                      <input type="text" class="form-control" id="segundonombre" placeholder="">
+                      <input type="text" class="form-control" name="segundonombre" id="segundonombre" placeholder="">
                   </div>
               </div>
 
@@ -62,7 +62,7 @@
                     <div class="input-group-prepend">
                         <span class="input-group-text"><i class="fas fa-user"></i></span>
                     </div>
-                      <input type="text" class="form-control" id="primerapellido" placeholder="">
+                      <input type="text" class="form-control" name="primerapellido" id="primerapellido" placeholder="">
                   </div>
               </div>
 
@@ -72,7 +72,7 @@
                     <div class="input-group-prepend">
                         <span class="input-group-text"><i class="fas fa-user"></i></span>
                     </div>
-                      <input type="text" class="form-control" id="segundoapellido" placeholder="">
+                      <input type="text" class="form-control" name="segundoapellido" id="segundoapellido" placeholder="">
                   </div>
               </div>
 
@@ -86,7 +86,7 @@
                     <div class="input-group-prepend">
                         <span class="input-group-text"><i class="fas fa-address-card"></i></span>
                     </div>
-                      <input type="text" class="form-control" id="cedula">
+                      <input type="text" name="cedula" class="form-control" id="cedula">
                   </div>
               </div>
 
@@ -96,7 +96,7 @@
                     <div class="input-group-prepend">
                         <span class="input-group-text"><i class="fas fa-globe-americas"></i></span>
                     </div>
-                    <select id="nacionalidad" class="form-control">
+                    <select id="nacionalidad" name="nacionalidad" class="form-control">
                         <option selected>Elegir...</option>
                         <option>Dominicano</option>
                         <option>Extranjero</option>
@@ -110,7 +110,7 @@
                     <div class="input-group-prepend">
                         <span class="input-group-text"><i class="fas fa-calendar-alt"></i></span>
                     </div>
-                    <input type="date" class="form-control" id="fechanacimiento">
+                    <input type="date" name="fechanacimiento" class="form-control" id="fechanacimiento">
                   </div>
               </div>
 
@@ -120,7 +120,7 @@
                     <div class="input-group-prepend">
                         <span class="input-group-text"><i class="fas fa-user-friends"></i></span>
                     </div>
-                    <select id="sexo" class="form-control">
+                    <select id="sexo" name="sexo" class="form-control">
                         <option>Elegir...</option>
                         <option>Femenino</option>
                         <option>Masculino</option>
@@ -143,7 +143,7 @@
                     <div class="input-group-prepend">
                         <span class="input-group-text"><i class="fas fa-envelope"></i></span>
                     </div>
-                      <input type="email" class="form-control" id="emailusuario">
+                      <input type="email" name="correo" class="form-control" id="emailusuario">
                   </div>
               </div>
 
@@ -153,7 +153,7 @@
                     <div class="input-group-prepend">
                         <span class="input-group-text"><i class="fas fa-lock"></i></span>
                     </div>
-                        <input type="password" class="form-control" id="contrasenausuario">
+                        <input type="password" name="clave" class="form-control" id="contrasenausuario">
                   </div>
               </div>
 
@@ -163,7 +163,7 @@
                     <div class="input-group-prepend">
                         <span class="input-group-text"><i class="fas fa-lock"></i></span>
                     </div>
-                        <input type="password" class="form-control" id="confcontrasenausuario">
+                        <input type="password" name="confirpass" class="form-control" id="confcontrasenausuario">
                   </div>
               </div>
 
@@ -182,7 +182,7 @@
                     <div class="input-group-prepend">
                         <span class="input-group-text"><i class="fas fa-mobile-alt"></i></span>
                     </div>
-                    <input type="tel" class="form-control" id="telefonousuario">
+                    <input type="tel" class="form-control" name="telefonousuario" id="telefonousuario">
                   </div>
               </div>
 
@@ -192,7 +192,7 @@
                     <div class="input-group-prepend">
                         <span class="input-group-text"><i class="fas fa-map-marker-alt"></i></span>
                     </div>
-                    <select id="provincia" class="form-control">
+                    <select id="provincia" name="provincia" class="form-control">
                         <option selected>Elegir...</option>
                         <option>Azua </option>
                         <option>Bahoruco </option>
@@ -236,7 +236,7 @@
                     <div class="input-group-prepend">
                         <span class="input-group-text"><i class="fas fa-map-marker-alt"></i></span>
                     </div>
-                    <select id="municipio" class="form-control">
+                    <select id="municipio" name="municipio" class="form-control">
                         <option selected>Elegir...</option>
 
                     </select>
@@ -249,7 +249,7 @@
                     <div class="input-group-prepend">
                         <span class="input-group-text"><i class="fas fa-map-marker-alt"></i></span>
                     </div>
-                    <select id="ciudad" class="form-control">
+                    <select id="ciudad" name="ciudad" class="form-control">
                         <option selected>Elegir...</option>
 
                     </select>
@@ -266,7 +266,7 @@
                   <div class="input-group-prepend">
                       <span class="input-group-text"><i class="fas fa-map-marker-alt"></i></span>
                   </div>
-                      <input type="text" class="form-control" id="sector">
+                      <input type="text" name="sector" class="form-control" id="sector">
                 </div>
             </div>
 
@@ -276,7 +276,7 @@
                     <div class="input-group-prepend">
                         <span class="input-group-text"><i class="fas fa-map-marker-alt"></i></span>
                     </div>
-                        <input type="text" class="form-control" id="calle">
+                        <input type="text" name="calle" class="form-control" id="calle">
                   </div>
               </div>
           </div>

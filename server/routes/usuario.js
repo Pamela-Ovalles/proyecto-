@@ -9,6 +9,7 @@ var router = express.Router();
 
 router.get('', UserController.home);
 router.get('/registrarUsers', UserController.registrar);
+router.post('/registrarUsers', UserController.registrar);
 router.post('/principalAmet', UserController.principalAmet);
 router.get('/colocacionMultas', UserController.aplicarMulta);
 //router.put('')
