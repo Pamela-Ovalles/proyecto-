@@ -59,7 +59,7 @@ db.conductor.belongTo(db.persona, {foreignkey: 'persona_id',foreignkeyConstraint
 db.persona.hasOne(db.policia, {foreignkey:'persona_id', foreignkeyConstraint:true});
 db.policia.belongTo(db.persona, {foreignkey: 'persona_id',foreignkeyConstraint:true});
 
-
+//db.persona.
 
 sequelize.sync();
 module.exports = db;

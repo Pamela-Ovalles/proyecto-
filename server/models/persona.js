@@ -34,10 +34,7 @@ module.exports= (sequelize, DataTypes)=>{
               allowNull: false
 
         },
-        conductor_id:{
-            type: DataTypes.STRING,
-              allowNull: false
-        },
+        
         fecha_nacimiento:{
             type: DataTypes.DATE,
               allowNull: false
