@@ -97,7 +97,7 @@ db.infracciones.belongsTo(db.vehiculo,{foreignkey:'vehiculo_id',foreignkeyConstr
 
 
 
-// sequelize.sync();
-sequelize.sync({force:true});
+sequelize.sync();
+// sequelize.sync({force:true});
 
 module.exports = db;
