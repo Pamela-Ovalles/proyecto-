@@ -17,6 +17,8 @@
     "node-json-xlsx": "^0.2.2",
     "pad-left": "^2.1.0",
     "pg": "^7.12.0",
+    "pg-hstore": "^2.3.3",
+    "sequelize": "^5.11.0",
     "xlsx": "^0.14.3"
   },
   "devDependencies": {
