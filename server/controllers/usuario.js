@@ -1,6 +1,5 @@
 'use strict'
 const models = require('../models/index');
-console.log(models);
 var controller = {
 
 	home: function(req, res){

@@ -3,7 +3,6 @@ module.exports= (sequelize, DataTypes)=>{
     const provincia = sequelize.define('provincia',{
         cod_provincia:{
             type: DataTypes.STRING,
-            autoIncrement: true,
             primaryKey: true,
             allowNull: false
         },

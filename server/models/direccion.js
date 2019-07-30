@@ -3,7 +3,6 @@ module.exports= (sequelize, DataTypes)=>{
     const direccion = sequelize.define('direccion',{
         cod_dirrec:{
             type: DataTypes.STRING,
-            autoIncrement: true,
             primaryKey: true,
             allowNull: false
         },

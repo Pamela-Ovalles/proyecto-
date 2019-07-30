@@ -3,7 +3,6 @@ module.exports= (sequelize, DataTypes)=>{
     const vehiculo = sequelize.define('vehiculo',{
         placa:{
             type: DataTypes.STRING,
-            autoIncrement: true,
             primaryKey: true,
             allowNull: false
         },

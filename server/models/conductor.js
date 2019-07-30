@@ -3,7 +3,6 @@ module.exports= (sequelize, DataTypes)=>{
     const conductor = sequelize.define('conductor',{
         cod_conductor:{
             type: DataTypes.STRING,
-            autoIncrement: true,
             primaryKey: true,
             allowNull: false
         },

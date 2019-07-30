@@ -3,7 +3,6 @@ module.exports= (sequelize, DataTypes)=>{
     const policia = sequelize.define('policia',{
         cod_policia:{
             type: DataTypes.STRING,
-            autoIncrement: true,
             primaryKey: true,
             allowNull: false
         },

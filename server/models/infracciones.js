@@ -3,7 +3,6 @@ module.exports= (sequelize, DataTypes)=>{
     const infracciones = sequelize.define('infracciones',{
         cod_multa:{
             type: DataTypes.INTEGER,
-            autoIncrement: true,
             primaryKey: true,
             allowNull: false
         },

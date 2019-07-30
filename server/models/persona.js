@@ -3,7 +3,6 @@ module.exports= (sequelize, DataTypes)=>{
     const persona = sequelize.define('persona',{
         cod_persona:{
             type: DataTypes.STRING,
-            autoIncrement: true,
             primaryKey: true,
             allowNull: false
         },

@@ -3,7 +3,6 @@ module.exports= (sequelize, DataTypes)=>{
     const modelo = sequelize.define('modelo',{
         cod_modelo:{
             type: DataTypes.STRING,
-            autoIncrement: true,
             primaryKey: true,
             allowNull: false
         },

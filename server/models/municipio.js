@@ -3,7 +3,6 @@ module.exports= (sequelize, DataTypes)=>{
     const municipio = sequelize.define('municipio',{
         cod_municipio:{
             type: DataTypes.STRING,
-            autoIncrement: true,
             primaryKey: true,
             allowNull: false
         },
