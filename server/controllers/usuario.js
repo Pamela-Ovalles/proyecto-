@@ -1,6 +1,16 @@
 'use strict'
 
 //const pool = require('mysql');
+
+// const { Pool, Client } = require('pg')
+// const connectionString = 'postgresql://postgres:Pamela0791@localhost:5432/proyecto'
+//
+// const pool = new Pool({
+//   connectionString: connectionString,
+// })
+//
+// pool.connect()
+
 var controller = {
 
 	home: function(req, res){
@@ -18,7 +28,7 @@ var controller = {
 
 
 	},
-	registrar: function(req, res){
+	registrar: async function (req, res){
 
 //	var params = req.body;
 	const {primernombre,segundonombre,primerapellido,segundoapellido,cedula,nacionalidad,
@@ -42,7 +52,9 @@ var controller = {
 	  sector,
 		calle
 		};
-		 console.log(newUsuario);
+
+		// await pool.query('INSERT INTO persona set ?', [newUsuario]);
+		 //console.log(newUsuario);
 		 res.render('links/registrarUsers');
 	},
 
