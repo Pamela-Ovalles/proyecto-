@@ -1,13 +1,13 @@
 'use strict';
 module.exports= (sequelize, DataTypes)=>{
-    const municipio = sequelize.define('municipio',{
-        cod_municipio:{
+    const ciudad = sequelize.define('ciudad',{
+        cod_ciudad:{
             type: DataTypes.STRING,
             autoIncrement: true,
             primaryKey: true,
             allowNull: false
         },
-        nom_municipio:{
+        nombre_ciudad:{
             type: DataTypes.STRING,
             allowNull: false
         },
@@ -19,5 +19,5 @@ module.exports= (sequelize, DataTypes)=>{
     },{
         freezeTableName: true,
     });
-    return municipio;
+    return ciudad;
 };

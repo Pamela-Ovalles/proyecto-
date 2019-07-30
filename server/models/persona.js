@@ -7,11 +7,11 @@ module.exports= (sequelize, DataTypes)=>{
             primaryKey: true,
             allowNull: false
         },
-        name_1:{
+        nombre_1:{
             type: DataTypes.STRING,
             allowNull: false
         },
-        name_2:{
+        nombre_2:{
             type: DataTypes.STRING,
             allowNull: true
         },
@@ -34,7 +34,7 @@ module.exports= (sequelize, DataTypes)=>{
               allowNull: false
 
         },
-        
+
         fecha_nacimiento:{
             type: DataTypes.DATE,
               allowNull: false

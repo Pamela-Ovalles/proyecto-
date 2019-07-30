@@ -59,7 +59,22 @@ db.conductor.belongTo(db.persona, {foreignkey: 'persona_id',foreignkeyConstraint
 db.persona.hasOne(db.policia, {foreignkey:'persona_id', foreignkeyConstraint:true});
 db.policia.belongTo(db.persona, {foreignkey: 'persona_id',foreignkeyConstraint:true});
 
-//db.persona.
+db.persona.belongTo(db.direccion,{foreignkey:'direccion_id',foreignkeyConstraint:true});
+db.direccion.hasOne(db.persona, {foreignkey:'direccion_id', foreignkeyConstraint:true});
+
+db.direccion.belongTo(db.provincia,{foreignkey:'provincia_id',foreignkeyConstraint:true});
+db.provincia.hasOne(db.direccion,{foreignkey:'provincia_id',foreignkeyConstraint:true});
+
+db.provincia.belongTo(db.municipio,{foreignkey:'municipio_id',foreignkeyConstraint:true});
+db.municipio.hasOne(db.provincia,{foreignkey:'municipio_id',foreignkeyConstraint:true});
+
+db.ciudad.hasOne(db.municipio,{foreignkey:'ciudad_id',foreignkeyConstraint:true});
+db.municipio.belongTo(db.ciudad,{foreignkey:'ciudad_id',foreignkeyConstraint:true});
+
+db.sector.hasOne(db.ciudad,{foreignkey:'sector_id',foreignkeyConstraint:true});
+db.ciudad.belongTo(db.sector,{foreignkey:'sector_id',foreignkeyConstraint:true});
+
+
 
 sequelize.sync();
 module.exports = db;
