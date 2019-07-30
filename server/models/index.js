@@ -53,5 +53,13 @@ db.Sequelize = Sequelize;
 
 // aqui van las relaciones
 
+db.persona.hasOne(db.conductor, {foreignkey: 'persona_id',foreignkeyConstraint:true});
+db.conductor.belongTo(db.persona, {foreignkey: 'persona_id',foreignkeyConstraint:true});
+
+db.persona.hasOne(db.policia, {foreignkey:'persona_id', foreignkeyConstraint:true});
+db.policia.belongTo(db.persona, {foreignkey: 'persona_id',foreignkeyConstraint:true});
+
+
+
 sequelize.sync();
 module.exports = db;

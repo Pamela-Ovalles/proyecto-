@@ -22,7 +22,7 @@ module.exports= (sequelize, DataTypes)=>{
         persona_id:{
             type: DataTypes.STRING,
             allowNull: false
-        }
+        },
 
 
     },{
