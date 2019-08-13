@@ -19,28 +19,37 @@
 <!-- funcion para validar -->
 <script>
 function validar(){
-  var primernombre,segundonombre,primerapellido,segundoapellido,cedula,nacionalidad,fechanacimiento,sexo,correo,contrasenausuario,confcontrasenausuario,telefonousuario,provincia,municipio,ciudad,sector,calle,exp;
+  var primernombre,segundonombre,primerapellido,segundoapellido,cedula,nacionalidad,fechanacimiento,sexo,correo,contrasenausuario,confcontrasenausuario,telefonousuario,provincia,municipio,ciudad,sector,calle,expre1,expre2;
 
   primernombre = document.getElementById('primernombre').value;
   segundonombre = document.getElementById('segundonombre').value;
   primerapellido = document.getElementById('primerapellido').value;
   segundoapellido = document.getElementById('segundoapellido').value;
   cedula = document.getElementById('cedula').value;
-  nacionalidad = document.getElementById('nacionalidad').value;
+  nacionalidad = document.getElementById('nacionalidad').selectedIndex;
   fechanacimiento = document.getElementById('fechanacimiento').value;
-  sexo = document.getElementById('sexo').value;
+  sexo = document.getElementById('sexo').selectedIndex;
   correo = document.getElementById('emailusuario').value;
   contrasenausuario = document.getElementById('contrasenausuario').value;
   confcontrasenausuario = document.getElementById('confcontrasenausuario').value;
   telefonousuario = document.getElementById('telefonousuario').value;
-  provincia = document.getElementById('provincia').value;
-  municipio = document.getElementById('municipio').value;
-  ciudad = document.getElementById('ciudad').value;
+  provincia = document.getElementById('provincia').selectedIndex;
+  municipio = document.getElementById('municipio').selectedIndex;
+  ciudad = document.getElementById('ciudad').selectedIndex;
   sector = document.getElementById('sector').value;
   calle = document.getElementById('calle').value;
+  expre1 = /^[-\w.%+]{1,64}@(?:[A-Z0-9-]{1,63}\.){1,125}[A-Z]{2,63}$/i;
+  expre2 = /^[A-Z]+$/i;
+
 
   if(primernombre === ""){
     alert("El campo primer nombre esta vacío");
+    // document.getElementById("primernombre").focus();
+    // document.getElementById("primernombre").style.borderColor="red";
+    return false;
+  }
+  else if (!expre2.test(primernombre)) {
+    alert("El campo primer nombre solo es letras");
     return false;
   }
   else if (primerapellido ==="") {
@@ -51,7 +60,7 @@ function validar(){
     alert("El campo cédula esta vacío");
     return false;
   }
-  else if (nacionalidad==="") {
+  else if (nacionalidad=== 0) {
     alert("El campo nacionalidad esta vacío");
     return false;
   }
@@ -59,12 +68,16 @@ function validar(){
     alert("El campo fecha de nacimiento esta vacío");
     return false;
   }
-  else if (sexo==="") {
+  else if (sexo=== 0) {
     alert("El campo   esta vacío");
     return false;
   }
   else if (correo==="") {
     alert("El campo   esta vacío");
+    return false;
+  }
+  else if (!expre1.test(correo)) {
+    alert("El correo no es valido");
     return false;
   }
   else if (contrasenausuario==="") {
@@ -79,15 +92,15 @@ function validar(){
     alert("El campo   esta vacío");
     return false;
   }
-  else if (provincia==="") {
+  else if (provincia=== 0) {
     alert("El campo   esta vacío");
     return false;
   }
-  else if (municipio==="") {
+  else if (municipio=== 0) {
     alert("El campo   esta vacío");
     return false;
   }
-  else if (ciudad==="") {
+  else if (ciudad=== 0 ){
     alert("El campo   esta vacío");
     return false;
   }
@@ -99,12 +112,46 @@ function validar(){
     alert("El campo   esta vacío");
     return false;
   }
-  else if (primernombre.lenght>6) {
-    alert("El campo primer nombre solo debe tener 30 caracteres ");
+  else if (primernombre.length >15 || segundonombre.length >15 || primerapellido.length >15 || segundoapellido.length >15) {
+    alert("Los campos solo debe tener 15 caracteres ");
     return false;
   }
-
-
+  else if (correo.length >25) {
+    alert("El correo solo debe tener 25 caracteres ");
+    return false;
+  }
+  else if (sector.length >20 || calle.length >20) {
+    alert("El sector y la calle solo debe tener 20 caracteres ");
+    return false;
+  }
+  else if (contrasenausuario.length >15) {
+    alert("la contraseña no debe tener mas de 25 caracteres ");
+    return false;
+  }
+  else if (confcontrasenausuario.length >25) {
+    alert("la confirmar contraseña no debe tener mas de 25 caracteres ");
+    return false;
+  }
+  else if (contrasenausuario != confcontrasenausuario) {
+    alert("la contraseña no coincide con confirmar contraseña");
+    return false;
+  }
+  else if (isNaN(cedula)) {
+    alert("El campo cedula debe ser solo numeros ");
+    return false;
+  }
+  else if (cedula.length !=11) {
+    alert(" cedula debe tener 11 digitos ");
+    return false;
+  }
+  else if (isNaN(telefonousuario) ) {
+    alert("El campo telefono debe ser solo numeros ");
+    return false;
+  }
+  else if (telefonousuario.length !=10 ) {
+    alert(" telefono debe tener 10 digitos ");
+    return false;
+  }
 
 }
 </script>
@@ -120,7 +167,7 @@ function validar(){
         <img src="/imagenes/digesettLogo.png"></img>
         <h1><strong>Registrarse</strong></h1>
         <br>
-        <form action="/registrarUsers" method="POST" onsubmit="return validar();">
+        <form name="registrarse" action="/registrarUsers" method="POST" onsubmit="return validar();">
 
           <fieldset>
             <legend><h4>Información personal</h4></legend>
