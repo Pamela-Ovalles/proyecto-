@@ -25,7 +25,7 @@ async function registrar_users(req,res){
   		calle
       });
       if(newUser){
-        res.json({
+        return res.json({
           message: 'Usuario creado correctamente',
           data: newUser
         });
@@ -33,7 +33,7 @@ async function registrar_users(req,res){
 
   } catch (e) {
     console.error(newUser);
-    res.status(500).json({
+    return res.status(500).json({
       message: 'hubo un error',
       data: {}
     });

@@ -16,6 +16,90 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
 
+<!-- funcion para validar -->
+<script type="text/javascript">
+function revisar(elemento){
+  if(elemento.value==''){
+    alert('Elemento Vacio');
+  }else{
+    elemento.className='input';
+  }
+}
+
+function validarNumero(elemento){
+  if(elemento.value!==''){
+    var data = elemento.value;
+    if(isNaN(data)){
+      alert('Elemento Vacio');
+    }else{
+      elemento.className='input';
+    }
+  }
+}
+
+function validarLongitud(elemento, min){
+  if(elemento.value!==''){
+    var data = elemento.value;
+    if(data.length<min){
+      alert('Elemento Vacio');
+    }else{
+      elemento.className='input';
+    }
+  }
+}
+
+function validarEmail(elemento){
+  if(elemento.value!==''){
+    var data = elemento.value;
+    var exp = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+    if(!exp.test(data)){
+      alert('Elemento Vacio');
+    }else{
+      elemento.className='input';
+    }
+  }
+}
+
+function validar(){
+  var datosCorrectos=true;
+  var error="";
+  if(document.getElementById("nombre").value==""){
+    datosCorrectos=false;
+    error="\n El Nombre Esta Vacio";
+  }
+
+  if(document.getElementById("telefono").value==""){
+    datosCorrectos=false;
+    error="\n Debes Poner Un Tenelefono";
+  }
+
+  if(isNaN(document.getElementById("telefono").value)){
+    datosCorrectos=false;
+    error="\n El Telefono Solo Debe Tener Numeros";
+  }
+
+  var exp = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+  if(!exp.test(document.getElementById("email").value)){
+    datosCorrectos=false;
+    error="\n Email Invalido";
+  }
+
+  if(document.getElementById("mensaje").value.length<11){
+    datosCorrectos=false;
+    error="\n El mensaje debe ser mayor a 11 caracteres";
+  }
+
+  if(!datosCorrectos){
+    alert('Hay Errores En El formulario'+error);
+  }
+
+  return datosCorrectos;
+
+}
+
+
+</script>
+
 </head>
 
   <body>
@@ -27,7 +111,7 @@
         <img src="/imagenes/digesettLogo.png"></img>
         <h1><strong>Registrarse</strong></h1>
         <br>
-        <form action="/registrarUsers" method="POST">
+        <form action="/registrarUsers" method="POST" onsubmit="return validar()">
 
           <fieldset>
             <legend><h4>Información personal</h4></legend>
@@ -38,7 +122,7 @@
                       <div class="input-group-prepend">
                           <span class="input-group-text"><i class="fas fa-user"></i></span>
                       </div>
-                        <input type="text" class="form-control" id="primernombre" name="primernombre" placeholder="">
+                        <input type="text" class="form-control" id="primernombre" name="primernombre" placeholder="" onblur="revisar(this)">
                     </div>
                 </div>
 
