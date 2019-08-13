@@ -17,10 +17,96 @@
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
 
 <!-- funcion para validar -->
-<script type="text/javascript">
+<script>
+function validar(){
+  var primernombre,segundonombre,primerapellido,segundoapellido,cedula,nacionalidad,fechanacimiento,sexo,correo,contrasenausuario,confcontrasenausuario,telefonousuario,provincia,municipio,ciudad,sector,calle,exp;
+
+  primernombre = document.getElementById('primernombre').value;
+  segundonombre = document.getElementById('segundonombre').value;
+  primerapellido = document.getElementById('primerapellido').value;
+  segundoapellido = document.getElementById('segundoapellido').value;
+  cedula = document.getElementById('cedula').value;
+  nacionalidad = document.getElementById('nacionalidad').value;
+  fechanacimiento = document.getElementById('fechanacimiento').value;
+  sexo = document.getElementById('sexo').value;
+  correo = document.getElementById('emailusuario').value;
+  contrasenausuario = document.getElementById('contrasenausuario').value;
+  confcontrasenausuario = document.getElementById('confcontrasenausuario').value;
+  telefonousuario = document.getElementById('telefonousuario').value;
+  provincia = document.getElementById('provincia').value;
+  municipio = document.getElementById('municipio').value;
+  ciudad = document.getElementById('ciudad').value;
+  sector = document.getElementById('sector').value;
+  calle = document.getElementById('calle').value;
+
+  if(primernombre === ""){
+    alert("El campo primer nombre esta vacío");
+    return false;
+  }
+  else if (primerapellido ==="") {
+    alert("El campo primer apellido esta vacío");
+    return false;
+  }
+  else if (cedula==="") {
+    alert("El campo cédula esta vacío");
+    return false;
+  }
+  else if (nacionalidad==="") {
+    alert("El campo nacionalidad esta vacío");
+    return false;
+  }
+  else if (fechanacimiento==="") {
+    alert("El campo fecha de nacimiento esta vacío");
+    return false;
+  }
+  else if (sexo==="") {
+    alert("El campo   esta vacío");
+    return false;
+  }
+  else if (correo==="") {
+    alert("El campo   esta vacío");
+    return false;
+  }
+  else if (contrasenausuario==="") {
+    alert("El campo   esta vacío");
+    return false;
+  }
+  else if (confcontrasenausuario==="") {
+    alert("El campo   esta vacío");
+    return false;
+  }
+  else if (telefonousuario==="") {
+    alert("El campo   esta vacío");
+    return false;
+  }
+  else if (provincia==="") {
+    alert("El campo   esta vacío");
+    return false;
+  }
+  else if (municipio==="") {
+    alert("El campo   esta vacío");
+    return false;
+  }
+  else if (ciudad==="") {
+    alert("El campo   esta vacío");
+    return false;
+  }
+  else if (sector==="") {
+    alert("El campo   esta vacío");
+    return false;
+  }
+  else if (calle==="") {
+    alert("El campo   esta vacío");
+    return false;
+  }
+  else if (primernombre.lenght>6) {
+    alert("El campo primer nombre solo debe tener 30 caracteres ");
+    return false;
+  }
 
 
 
+}
 </script>
 
 </head>
@@ -34,7 +120,7 @@
         <img src="/imagenes/digesettLogo.png"></img>
         <h1><strong>Registrarse</strong></h1>
         <br>
-        <form action="/registrarUsers" method="POST" onsubmit="return validar()">
+        <form action="/registrarUsers" method="POST" onsubmit="return validar();">
 
           <fieldset>
             <legend><h4>Información personal</h4></legend>
@@ -45,7 +131,7 @@
                       <div class="input-group-prepend">
                           <span class="input-group-text"><i class="fas fa-user"></i></span>
                       </div>
-                        <input type="text" autocomplete="off" class="form-control" id="primernombre" name="primernombre" placeholder="" required >
+                        <input type="text" autocomplete="off" class="form-control" id="primernombre" name="primernombre" placeholder=""  >
                     </div>
                 </div>
 
@@ -69,7 +155,7 @@
                     <div class="input-group-prepend">
                         <span class="input-group-text"><i class="fas fa-user"></i></span>
                     </div>
-                      <input type="text" autocomplete="off" class="form-control" name="primerapellido" id="primerapellido" placeholder="" required>
+                      <input type="text" autocomplete="off" class="form-control" name="primerapellido" id="primerapellido" placeholder="" >
                   </div>
               </div>
 
@@ -93,7 +179,7 @@
                     <div class="input-group-prepend">
                         <span class="input-group-text"><i class="fas fa-address-card"></i></span>
                     </div>
-                      <input type="text" autocomplete="off" name="cedula" class="form-control" id="cedula" onblur="revisar(this); validarNumero(this)" required>
+                      <input type="text" autocomplete="off" name="cedula" class="form-control" id="cedula" >
                   </div>
               </div>
 
@@ -103,7 +189,7 @@
                     <div class="input-group-prepend">
                         <span class="input-group-text"><i class="fas fa-globe-americas"></i></span>
                     </div>
-                    <select id="nacionalidad" name="nacionalidad" class="form-control" required>
+                    <select id="nacionalidad" name="nacionalidad" class="form-control" >
                         <option selected>Elegir...</option>
                         <option>Dominicano</option>
                         <option>Extranjero</option>
@@ -117,7 +203,7 @@
                     <div class="input-group-prepend">
                         <span class="input-group-text"><i class="fas fa-calendar-alt"></i></span>
                     </div>
-                    <input type="date" name="fechanacimiento" class="form-control" id="fechanacimiento" required>
+                    <input type="date" name="fechanacimiento" class="form-control" id="fechanacimiento" >
                   </div>
               </div>
 
@@ -127,7 +213,7 @@
                     <div class="input-group-prepend">
                         <span class="input-group-text"><i class="fas fa-user-friends"></i></span>
                     </div>
-                    <select id="sexo" name="sexo" class="form-control" required>
+                    <select id="sexo" name="sexo" class="form-control" >
                         <option>Elegir...</option>
                         <option>Femenino</option>
                         <option>Masculino</option>
@@ -150,7 +236,7 @@
                     <div class="input-group-prepend">
                         <span class="input-group-text"><i class="fas fa-envelope"></i></span>
                     </div>
-                      <input type="email" autocomplete="off" name="correo" class="form-control" id="emailusuario" required>
+                      <input type="email" autocomplete="off" name="correo" class="form-control" id="emailusuario" >
                   </div>
               </div>
 
@@ -160,7 +246,7 @@
                     <div class="input-group-prepend">
                         <span class="input-group-text"><i class="fas fa-lock"></i></span>
                     </div>
-                        <input type="password" autocomplete="off" name="clave" class="form-control" id="contrasenausuario" required>
+                        <input type="password" autocomplete="off" name="clave" class="form-control" id="contrasenausuario" >
                   </div>
               </div>
 
@@ -170,7 +256,7 @@
                     <div class="input-group-prepend">
                         <span class="input-group-text"><i class="fas fa-lock"></i></span>
                     </div>
-                        <input type="password" autocomplete="off" name="confirpass" class="form-control" id="confcontrasenausuario" required>
+                        <input type="password" autocomplete="off" name="confirpass" class="form-control" id="confcontrasenausuario" >
                   </div>
               </div>
 
@@ -189,7 +275,7 @@
                     <div class="input-group-prepend">
                         <span class="input-group-text"><i class="fas fa-mobile-alt"></i></span>
                     </div>
-                    <input type="tel" autocomplete="off" class="form-control" name="telefonousuario" id="telefonousuario" onblur="validarNumero(this)" required>
+                    <input type="tel" autocomplete="off" class="form-control" name="telefonousuario" id="telefonousuario"  >
                   </div>
               </div>
 
@@ -199,7 +285,7 @@
                     <div class="input-group-prepend">
                         <span class="input-group-text"><i class="fas fa-map-marker-alt"></i></span>
                     </div>
-                    <select id="provincia" name="provincia" class="form-control" required>
+                    <select id="provincia" name="provincia" class="form-control" >
                         <option selected>Elegir...</option>
                         <option>Azua </option>
                         <option>Bahoruco </option>
@@ -243,7 +329,7 @@
                     <div class="input-group-prepend">
                         <span class="input-group-text"><i class="fas fa-map-marker-alt"></i></span>
                     </div>
-                    <select id="municipio" name="municipio" class="form-control" required>
+                    <select id="municipio" name="municipio" class="form-control" >
                         <option selected>Elegir...</option>
 
                     </select>
@@ -256,7 +342,7 @@
                     <div class="input-group-prepend">
                         <span class="input-group-text"><i class="fas fa-map-marker-alt"></i></span>
                     </div>
-                    <select id="ciudad" name="ciudad" class="form-control" required>
+                    <select id="ciudad" name="ciudad" class="form-control" >
                         <option selected>Elegir...</option>
 
                     </select>
@@ -273,7 +359,7 @@
                   <div class="input-group-prepend">
                       <span class="input-group-text"><i class="fas fa-map-marker-alt"></i></span>
                   </div>
-                      <input type="text" autocomplete="off" name="sector" class="form-control" id="sector" requiere>
+                      <input type="text" autocomplete="off" name="sector" class="form-control" id="sector" >
                 </div>
             </div>
 
@@ -283,7 +369,7 @@
                     <div class="input-group-prepend">
                         <span class="input-group-text"><i class="fas fa-map-marker-alt"></i></span>
                     </div>
-                        <input type="text" autocomplete="off" name="calle" class="form-control" id="calle" required>
+                        <input type="text" autocomplete="off" name="calle" class="form-control" id="calle" >
                   </div>
               </div>
           </div>
