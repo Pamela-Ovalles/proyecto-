@@ -30,17 +30,15 @@ module.exports= (sequelize, DataTypes)=>{
         },
         color:{
             type: DataTypes.STRING,
-              allowNull: false
-
+            allowNull: false
         },
         modelo_id:{
-            type: DataTypes.STRING,
-              allowNull: false
+            type: DataTypes.INTEGER,
+            allowNull: false
         },
         conductor_id:{
-            type: DataTypes.STRING
+            type: DataTypes.INTEGER
         }
-
     },{
         freezeTableName: true,
     });

@@ -1,20 +1,20 @@
 'use strict';
 module.exports= (sequelize, DataTypes)=>{
     const municipio = sequelize.define('municipio',{
-        cod_municipio:{
-            type: DataTypes.STRING,
-            primaryKey: true,
-            allowNull: false
+        id:{
+          type: DataTypes.INTEGER,
+          primaryKey: true,
+          allowNull: false,
+          autoIncrement: true
         },
         nom_municipio:{
             type: DataTypes.STRING,
             allowNull: false
         },
-        sector_id:{
-            type: DataTypes.STRING,
+        provincia_id:{
+            type: DataTypes.INTEGER,
             allowNull: true
-        },
-
+        }
     },{
         freezeTableName: true,
     });

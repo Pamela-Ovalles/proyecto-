@@ -1,16 +1,13 @@
 'use strict';
 module.exports= (sequelize, DataTypes)=>{
     const infracciones = sequelize.define('infracciones',{
-        cod_multa:{
-            type: DataTypes.INTEGER,
-            primaryKey: true,
-            allowNull: false
+        id:{
+          type: DataTypes.INTEGER,
+          primaryKey: true,
+          allowNull: false,
+          autoIncrement: true
         },
         descrip_infraccion:{
-            type: DataTypes.STRING,
-            allowNull: false
-        },
-        art_infraccion:{
             type: DataTypes.STRING,
             allowNull: false
         },
@@ -23,26 +20,17 @@ module.exports= (sequelize, DataTypes)=>{
             allowNull: false
         },
         conductor_id:{
-            type: DataTypes.STRING,
-              allowNull: false
-        },
-        nacionalidad:{
-            type: DataTypes.STRING
+            type: DataTypes.INTEGER,
+            allowNull: false
         },
         direccion_id:{
-            type: DataTypes.STRING,
-              allowNull: false
-
-        },
-        vehiculo_id:{
-            type: DataTypes.STRING,
-              allowNull: false
+            type: DataTypes.INTEGER,
+            allowNull: false
         },
         policia_id:{
-            type: DataTypes.STRING,
-              allowNull: false
-        },
-
+            type: DataTypes.INTEGER,
+            allowNull: false
+        }
     },{
         freezeTableName: true,
     });

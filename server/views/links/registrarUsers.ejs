@@ -19,7 +19,7 @@
 <!-- funcion para validar -->
 <script>
 function validar(){
-  var primernombre,segundonombre,primerapellido,segundoapellido,cedula,nacionalidad,fechanacimiento,sexo,correo,contrasenausuario,confcontrasenausuario,telefonousuario,provincia,municipio,ciudad,sector,calle,expre1,expre2;
+  var primernombre,segundonombre,primerapellido,segundoapellido,cedula,nacionalidad,fechanacimiento,sexo,correo,contrasenausuario,confcontrasenausuario,telefonousuario,provincia,municipio,sector,calle,expre1,expre2;
 
   primernombre = document.getElementById('primernombre').value;
   segundonombre = document.getElementById('segundonombre').value;
@@ -33,9 +33,8 @@ function validar(){
   contrasenausuario = document.getElementById('contrasenausuario').value;
   confcontrasenausuario = document.getElementById('confcontrasenausuario').value;
   telefonousuario = document.getElementById('telefonousuario').value;
-  provincia = document.getElementById('provincia').selectedIndex;
-  municipio = document.getElementById('municipio').selectedIndex;
-  ciudad = document.getElementById('ciudad').selectedIndex;
+  provincia = document.getElementById('provincia').value;
+  municipio = document.getElementById('municipio').value;
   sector = document.getElementById('sector').value;
   calle = document.getElementById('calle').value;
   expre1 = /^[-\w.%+]{1,64}@(?:[A-Z0-9-]{1,63}\.){1,125}[A-Z]{2,63}$/i;
@@ -92,15 +91,11 @@ function validar(){
     alert("El campo   esta vacío");
     return false;
   }
-  else if (provincia=== 0) {
+  else if (provincia=== '') {
     alert("El campo   esta vacío");
     return false;
   }
-  else if (municipio=== 0) {
-    alert("El campo   esta vacío");
-    return false;
-  }
-  else if (ciudad=== 0 ){
+  else if (municipio=== '') {
     alert("El campo   esta vacío");
     return false;
   }
@@ -332,40 +327,8 @@ function validar(){
                     <div class="input-group-prepend">
                         <span class="input-group-text"><i class="fas fa-map-marker-alt"></i></span>
                     </div>
-                    <select id="provincia" name="provincia" class="form-control" >
-                        <option selected>Elegir...</option>
-                        <option>Azua </option>
-                        <option>Bahoruco </option>
-                        <option>Barahona </option>
-                        <option>Dajabón </option>
-                        <option>Distrito Nacional </option>
-                        <option>Duarte </option>
-                        <option>Elías Piña </option>
-                        <option>El Seibo </option>
-                        <option>Espaillat </option>
-                        <option>Hato Mayor </option>
-                        <option>Hermanas Mirabal </option>
-                        <option>Independencia </option>
-                        <option>La Altagracia </option>
-                        <option>La Romana </option>
-                        <option>La Vega </option>
-                        <option>María Trinidad Sánchez </option>
-                        <option>Monseñor Nouel </option>
-                        <option>Monte Cristi </option>
-                        <option>Monte Plata </option>
-                        <option>Pedernales </option>
-                        <option>Peravia </option>
-                        <option>Puerto Plata </option>
-                        <option>Samaná </option>
-                        <option>Sánchez Ramírez </option>
-                        <option>San Cristóbal </option>
-                        <option>San José de Ocoa </option>
-                        <option>San Juan </option>
-                        <option>San Pedro de Macorís </option>
-                        <option>Santiago </option>
-                        <option>Santiago Rodríguez </option>
-                        <option>Santo Domingo </option>
-                        <option>Valverde </option>
+                    <select id="provincia" name="provincia" class="form-control" onchange="fillMunicipios()">
+                        <option selected>Seleccione</option>
                     </select>
                   </div>
               </div>
@@ -376,26 +339,11 @@ function validar(){
                     <div class="input-group-prepend">
                         <span class="input-group-text"><i class="fas fa-map-marker-alt"></i></span>
                     </div>
-                    <select id="municipio" name="municipio" class="form-control" >
-                        <option selected>Elegir...</option>
-
+                    <select id="municipio" name="municipio" class="form-control" onchange="fillSector()">
+                        <option selected>Seleccione</option>
                     </select>
                   </div>
               </div>
-
-              <div class="col-md-3">
-                  <label for="ciudad">Ciudad:</label>
-                  <div class="input-group form-group">
-                    <div class="input-group-prepend">
-                        <span class="input-group-text"><i class="fas fa-map-marker-alt"></i></span>
-                    </div>
-                    <select id="ciudad" name="ciudad" class="form-control" >
-                        <option selected>Elegir...</option>
-
-                    </select>
-                  </div>
-              </div>
-
           </div>
 
           <div class="form-row">
@@ -406,7 +354,9 @@ function validar(){
                   <div class="input-group-prepend">
                       <span class="input-group-text"><i class="fas fa-map-marker-alt"></i></span>
                   </div>
-                      <input type="text" autocomplete="off" name="sector" class="form-control" id="sector" >
+                  <select id="sector" class="form-control" name="sector">
+                      <option selected>Seleccione</option>
+                  </select>
                 </div>
             </div>
 
@@ -424,15 +374,6 @@ function validar(){
 
       </div>
       </fieldset>
-
-        <!-- <div class="form-group">
-    <div class="form-check">
-      <input class="form-check-input" type="checkbox" id="gridCheck">
-      <label class="form-check-label" for="gridCheck">
-        Check me out
-      </label>
-    </div>
-  </div> -->
       <form>
       <div class="form-group">
           <input type="submit" value="Registrar" class=" registrar_btn">
@@ -442,11 +383,6 @@ function validar(){
       </form>
 
       </div>
-      <!-- <div class="card-footer">
-        <div class="d-flex justify-content-center">
-          <a href="#">¿Olvidaste tu contraseña?</a>
-        </div>
-      </div> -->
     </div>
   </div>
 </div>

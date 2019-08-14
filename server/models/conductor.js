@@ -1,24 +1,16 @@
 'use strict';
 module.exports= (sequelize, DataTypes)=>{
     const conductor = sequelize.define('conductor',{
-        cod_conductor:{
-            type: DataTypes.STRING,
-            primaryKey: true,
-            allowNull: false
+        id:{
+          type: DataTypes.INTEGER,
+          primaryKey: true,
+          allowNull: false,
+          autoIncrement: true
         },
         persona_id:{
-            type: DataTypes.STRING,
+            type: DataTypes.INTEGER,
             allowNull: false
-        },
-        vehiculo_id:{
-            type: DataTypes.STRING,
-            allowNull: false
-        },
-        infraccion_id:{
-            type: DataTypes.STRING,
-            allowNull: false
-        },
-
+        }
     },{
         freezeTableName: true,
     });

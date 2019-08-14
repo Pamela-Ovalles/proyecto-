@@ -1,10 +1,11 @@
 'use strict';
 module.exports= (sequelize, DataTypes)=>{
     const direccion = sequelize.define('direccion',{
-        cod_dirrec:{
-            type: DataTypes.STRING,
-            primaryKey: true,
-            allowNull: false
+        id:{
+          type: DataTypes.INTEGER,
+          primaryKey: true,
+          allowNull: false,
+          autoIncrement: true
         },
         calle:{
             type: DataTypes.STRING,
@@ -16,11 +17,11 @@ module.exports= (sequelize, DataTypes)=>{
         },
         nom_res:{
             type: DataTypes.STRING,
-            allowNull: false
+            allowNull: true
         },
-        provinvia_id:{
-            type: DataTypes.STRING
-          }
+        provincia_id:{
+            type: DataTypes.INTEGER
+        }
     },{
         freezeTableName: true,
     });

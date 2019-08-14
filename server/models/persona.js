@@ -1,10 +1,15 @@
 'use strict';
 module.exports= (sequelize, DataTypes)=>{
     const persona = sequelize.define('persona',{
-        cod_persona:{
-            type: DataTypes.STRING,
-            primaryKey: true,
-            allowNull: false
+        id:{
+          type: DataTypes.INTEGER,
+          primaryKey: true,
+          allowNull: false,
+          autoIncrement: true
+        },
+        cedula:{
+          type: DataTypes.STRING,
+          allowNull: true
         },
         nombre_1:{
             type: DataTypes.STRING,
@@ -23,36 +28,33 @@ module.exports= (sequelize, DataTypes)=>{
         },
         email:{
             type: DataTypes.STRING,
-              allowNull: false
+            allowNull: false
         },
         telef_casa:{
             type: DataTypes.STRING
         },
         direccion_id:{
-            type: DataTypes.STRING,
-              allowNull: false
-
+            type: DataTypes.INTEGER,
+            allowNull: true
         },
-
         fecha_nacimiento:{
             type: DataTypes.DATE,
-              allowNull: false
+            allowNull: false
         },
         sexo:{
             type: DataTypes.STRING,
-              allowNull: false
+            allowNull: false
         },
         celular:{
             type: DataTypes.STRING
         },
         password:{
             type: DataTypes.STRING,
-              allowNull: false
+            allowNull: false
         },
         pasaporte:{
             type: DataTypes.STRING
-        },
-
+        }
     },{
         freezeTableName: true,
     });

@@ -1,10 +1,11 @@
 'use strict';
 module.exports= (sequelize, DataTypes)=>{
     const articulo = sequelize.define('articulo',{
-        cod_articulo:{
-            type: DataTypes.STRING,
+        id:{
+            type: DataTypes.INTEGER,
             primaryKey: true,
-            allowNull: false
+            allowNull: false,
+            autoIncrement: true
         },
         desc_infraccion:{
             type: DataTypes.STRING,
@@ -13,8 +14,7 @@ module.exports= (sequelize, DataTypes)=>{
         precio:{
             type: DataTypes.STRING,
             allowNull: true
-        },
-
+        }
     },{
         freezeTableName: true,
     });

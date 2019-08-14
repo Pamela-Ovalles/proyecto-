@@ -1,10 +1,11 @@
 'use strict';
 module.exports= (sequelize, DataTypes)=>{
     const modelo = sequelize.define('modelo',{
-        cod_modelo:{
-            type: DataTypes.STRING,
-            primaryKey: true,
-            allowNull: false
+        id:{
+          type: DataTypes.INTEGER,
+          primaryKey: true,
+          allowNull: false,
+          autoIncrement: true
         },
         nombre_modelo:{
             type: DataTypes.STRING,
@@ -14,7 +15,6 @@ module.exports= (sequelize, DataTypes)=>{
             type: DataTypes.STRING,
             allowNull: true
         },
-
         ano_fabricante:{
             type: DataTypes.DATE,
               allowNull: false
@@ -38,8 +38,7 @@ module.exports= (sequelize, DataTypes)=>{
         },
         no_puerta:{
             type: DataTypes.INTEGER
-        },
-
+        }
     },{
         freezeTableName: true,
     });

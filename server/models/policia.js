@@ -1,10 +1,11 @@
 'use strict';
 module.exports= (sequelize, DataTypes)=>{
     const policia = sequelize.define('policia',{
-        cod_policia:{
-            type: DataTypes.STRING,
+        id:{
+            type: DataTypes.INTEGER,
             primaryKey: true,
-            allowNull: false
+            allowNull: false,
+            autoIncrement: true
         },
         rango:{
             type: DataTypes.STRING,
@@ -19,11 +20,9 @@ module.exports= (sequelize, DataTypes)=>{
             allowNull: false
         },
         persona_id:{
-            type: DataTypes.STRING,
+            type: DataTypes.INTEGER,
             allowNull: false
-        },
-
-
+        }
     },{
         freezeTableName: true,
     });

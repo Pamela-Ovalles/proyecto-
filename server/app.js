@@ -2,6 +2,7 @@
 
 var express = require('express');
 var bodyParser = require('body-parser');
+const logger = require('morgan');
 
 var app = express();
 
@@ -11,6 +12,7 @@ var usuario_routes = require('./routes/usuario');
 // middlewares
 app.use(bodyParser.urlencoded({extended:false}));
 app.use(bodyParser.json());
+app.use(logger('dev'));
   app.set('view engine','ejs');
 //static filess
 

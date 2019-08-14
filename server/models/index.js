@@ -48,54 +48,50 @@ fs
     db[model.name] = model;
 });
 
-db.sequelize = sequelize;
-db.Sequelize = Sequelize;
-
 // aqui van las relaciones
 
-db.persona.hasOne(db.conductor, {foreignkey: 'persona_id',foreignkeyConstraint:true});
-db.conductor.belongsTo(db.persona, {foreignkey: 'persona_id',foreignkeyConstraint:true});
+db.persona.hasOne(db.conductor, {foreignKey: 'persona_id',foreignKeyConstraint:true});
+db.conductor.belongsTo(db.persona, {foreignKey: 'persona_id',foreignKeyConstraint:true});
 
-db.persona.hasOne(db.policia, {foreignkey:'persona_id', foreignkeyConstraint:true});
-db.policia.belongsTo(db.persona, {foreignkey: 'persona_id',foreignkeyConstraint:true});
+db.vehiculo.belongsTo(db.conductor,{foreignKey:'conductor_id',foreignKeyConstraint:true});
+db.conductor.hasMany(db.vehiculo,{foreignKey:'conductor_id',foreignKeyConstraint:true});
 
-db.persona.belongsTo(db.direccion,{foreignkey:'direccion_id',foreignkeyConstraint:true});
-db.direccion.hasOne(db.persona, {foreignkey:'direccion_id', foreignkeyConstraint:true});
+db.direccion.belongsTo(db.provincia,{foreignKey:'provincia_id',foreignKeyConstraint:true});
+db.provincia.hasMany(db.direccion,{foreignKey:'provincia_id',foreignKeyConstraint:true});
 
-db.direccion.belongsTo(db.provincia,{foreignkey:'provincia_id',foreignkeyConstraint:true});
-db.provincia.hasOne(db.direccion,{foreignkey:'provincia_id',foreignkeyConstraint:true});
+db.municipio.belongsTo(db.provincia,{foreignKey:'provincia_id',foreignKeyConstraint:true});
+db.provincia.hasMany(db.municipio,{foreignKey:'provincia_id',foreignKeyConstraint:true});
 
-db.provincia.belongsTo(db.municipio,{foreignkey:'municipio_id',foreignkeyConstraint:true});
-db.municipio.hasOne(db.provincia,{foreignkey:'municipio_id',foreignkeyConstraint:true});
+db.infracciones.belongsTo(db.conductor,{foreignKey:'conductor_id',foreignKeyConstraint:true});
+db.conductor.hasMany(db.infracciones,{foreignKey:'conductor_id',foreignKeyConstraint:true});
 
-db.ciudad.hasOne(db.municipio,{foreignkey:'ciudad_id',foreignkeyConstraint:true});
-db.municipio.belongsTo(db.ciudad,{foreignkey:'ciudad_id',foreignkeyConstraint:true});
+db.infracciones.belongsTo(db.direccion,{foreignKey:'direccion_id',foreignKeyConstraint:true});
+db.direccion.hasOne(db.infracciones,{foreignKey:'direccion_id',foreignKeyConstraint:true});
 
-db.sector.hasOne(db.ciudad,{foreignkey:'sector_id',foreignkeyConstraint:true});
-db.ciudad.belongsTo(db.sector,{foreignkey:'sector_id',foreignkeyConstraint:true});
+db.infracciones.belongsTo(db.policia,{foreignKey:'policia_id',foreignKeyConstraint:true});
+db.policia.hasMany(db.infracciones,{foreignKey:'policia_id',foreignKeyConstraint:true});
 
-db.vehiculo.belongsTo(db.conductor,{foreignkey:'conductor_id',foreignkeyConstraint:true});
-db.conductor.hasMany(db.vehiculo,{foreignkey:'conductor_id',foreignkeyConstraint:true});
+db.persona.belongsTo(db.direccion,{foreignKey:'direccion_id',foreignKeyConstraint:true});
+db.direccion.hasOne(db.persona, {foreignKey:'direccion_id', foreignKeyConstraint:true});
 
-db.infracciones.belongsTo(db.conductor,{foreignkey:'conductor_id',foreignkeyConstraint:true});
-db.conductor.hasMany(db.infracciones,{foreignkey:'conductor_id',foreignkeyConstraint:true});
+db.persona.hasOne(db.policia, {foreignKey:'persona_id', foreignKeyConstraint:true});
+db.policia.belongsTo(db.persona, {foreignKey: 'persona_id',foreignKeyConstraint:true});
 
-db.infracciones.belongsTo(db.policia,{foreignkey:'policia_id',foreignkeyConstraint:true});
-db.policia.hasMany(db.infracciones,{foreignkey:'policia_id',foreignkeyConstraint:true});
+db.municipio.hasMany(db.sector,{foreignKey:'municipio_id',foreignKeyConstraint:true});
+db.sector.belongsTo(db.municipio,{foreignKey:'municipio_id',foreignKeyConstraint:true});
 
-db.infracciones.belongsTo(db.conductor,{foreignkey:'conductor_id',foreignkeyConstraint:true});
-db.conductor.hasMany(db.infracciones,{foreignkey:'conductor_id',foreignkeyConstraint:true});
+db.vehiculo.belongsTo(db.modelo,{foreignKey:'modelo_id',foreignKeyConstraint:true});
+db.modelo.hasMany(db.vehiculo,{foreignKey:'modelo_id',foreignKeyConstraint:true});
 
-db.infracciones.belongsTo(db.direccion,{foreignkey:'direccion_id',foreignkeyConstraint:true});
-db.direccion.hasOne(db.infracciones,{foreignkey:'direccion_id',foreignkeyConstraint:true});
+db.vehiculo.belongsTo(db.modelo,{foreignKey:'modelo_id',foreignKeyConstraint:true});
+db.modelo.hasMany(db.vehiculo,{foreignKey:'modelo_id',foreignKeyConstraint:true});
 
-db.vehiculo.hasOne(db.infracciones,{foreignkey:'vehiculo_id',foreignkeyConstraint:true});
-db.infracciones.belongsTo(db.vehiculo,{foreignkey:'vehiculo_id',foreignkeyConstraint:true});
+db.infracciones.hasMany(db.articulo_infraccion,{foreignKey:'infraccion_id',foreignKeyConstraint:true});
+db.articulo_infraccion.belongsTo(db.infracciones,{foreignKey:'infraccion_id',foreignKeyConstraint:true});
+db.articulo_infraccion.belongsTo(db.articulo,{foreignKey:'articulo_id',foreignKeyConstraint:true});
 
-
-
-
-
+db.sequelize = sequelize;
+db.Sequelize = Sequelize;
 
 sequelize.sync();
 // sequelize.sync({force:true});
