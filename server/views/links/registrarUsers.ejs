@@ -42,37 +42,37 @@ function validar(){
 
 
   if(primernombre === ""){
-    alert("El campo primer nombre esta vacío");
+    alert("El primer nombre esta vacío");
     // document.getElementById("primernombre").focus();
     // document.getElementById("primernombre").style.borderColor="red";
     return false;
   }
   else if (!expre2.test(primernombre)) {
-    alert("El campo primer nombre solo es letras");
+    alert("El primer nombre solo debe tener letras");
     return false;
   }
   else if (primerapellido ==="") {
-    alert("El campo primer apellido esta vacío");
+    alert("El primer apellido esta vacío");
     return false;
   }
   else if (cedula==="") {
-    alert("El campo cédula esta vacío");
+    alert("La cédula esta vacío");
     return false;
   }
   else if (nacionalidad=== 0) {
-    alert("El campo nacionalidad esta vacío");
+    alert("La nacionalidad esta vacío");
     return false;
   }
   else if (fechanacimiento==="") {
-    alert("El campo fecha de nacimiento esta vacío");
+    alert("La fecha de nacimiento esta vacío");
     return false;
   }
   else if (sexo=== 0) {
-    alert("El campo   esta vacío");
+    alert("El sexo esta vacío");
     return false;
   }
   else if (correo==="") {
-    alert("El campo   esta vacío");
+    alert("El correo esta vacío");
     return false;
   }
   else if (!expre1.test(correo)) {
@@ -80,51 +80,51 @@ function validar(){
     return false;
   }
   else if (contrasenausuario==="") {
-    alert("El campo   esta vacío");
+    alert("La contraseña esta vacío");
     return false;
   }
   else if (confcontrasenausuario==="") {
-    alert("El campo   esta vacío");
+    alert("Confirmar la contraseña esta vacío");
     return false;
   }
   else if (telefonousuario==="") {
-    alert("El campo   esta vacío");
+    alert("El teléfono esta vacío");
     return false;
   }
   else if (provincia=== '') {
-    alert("El campo   esta vacío");
+    alert("La provincia esta vacío");
     return false;
   }
   else if (municipio=== '') {
-    alert("El campo   esta vacío");
+    alert("El municipio esta vacío");
     return false;
   }
   else if (sector==="") {
-    alert("El campo   esta vacío");
+    alert("El sector esta vacío");
     return false;
   }
   else if (calle==="") {
-    alert("El campo   esta vacío");
+    alert("La calle esta vacío");
     return false;
   }
   else if (primernombre.length >15 || segundonombre.length >15 || primerapellido.length >15 || segundoapellido.length >15) {
-    alert("Los campos solo debe tener 15 caracteres ");
+    alert("Los campos primer nombre, segundo nombre, primer apellido y segundo apellido solo deben tener 15 caracteres ");
     return false;
   }
   else if (correo.length >25) {
     alert("El correo solo debe tener 25 caracteres ");
     return false;
   }
-  else if (sector.length >20 || calle.length >20) {
-    alert("El sector y la calle solo debe tener 20 caracteres ");
+  else if (sector.length >30 || calle.length >30) {
+    alert("El sector y la Referencia solo debe tener 30 caracteres ");
     return false;
   }
   else if (contrasenausuario.length >15) {
-    alert("la contraseña no debe tener mas de 25 caracteres ");
+    alert("La contraseña no debe tener más  de 15 caracteres ");
     return false;
   }
   else if (confcontrasenausuario.length >25) {
-    alert("la confirmar contraseña no debe tener mas de 25 caracteres ");
+    alert("Confirmar contraseña no debe tener más  de 25 caracteres ");
     return false;
   }
   else if (contrasenausuario != confcontrasenausuario) {
@@ -132,19 +132,19 @@ function validar(){
     return false;
   }
   else if (isNaN(cedula)) {
-    alert("El campo cedula debe ser solo numeros ");
+    alert("La cédula debe ser solo números  ");
     return false;
   }
   else if (cedula.length !=11) {
-    alert(" cedula debe tener 11 digitos ");
+    alert("La cédula debe tener 11 dígitos ");
     return false;
   }
   else if (isNaN(telefonousuario) ) {
-    alert("El campo telefono debe ser solo numeros ");
+    alert("El teléfono debe ser solo números ");
     return false;
   }
   else if (telefonousuario.length !=10 ) {
-    alert(" telefono debe tener 10 digitos ");
+    alert("El teléfono debe tener 10 dígitos ");
     return false;
   }
 
@@ -192,7 +192,7 @@ function validar(){
               </div>
 
               <div class="col-md-3">
-                  <label for="primerapellido">Primer apellido:</label>
+                  <label for="primerapellido">Primer apellido*:</label>
                   <div class="input-group form-group">
                     <div class="input-group-prepend">
                         <span class="input-group-text"><i class="fas fa-user"></i></span>
@@ -216,7 +216,7 @@ function validar(){
           <div class="form-row">
 
               <div class="col-md-3">
-                  <label for="cedula">Cédula:</label>
+                  <label for="cedula">Cédula*:</label>
                   <div class="input-group form-group">
                     <div class="input-group-prepend">
                         <span class="input-group-text"><i class="fas fa-address-card"></i></span>
@@ -226,7 +226,7 @@ function validar(){
               </div>
 
               <div class="col-md-3">
-                  <label for="nacionalidad">Nacionalidad:</label>
+                  <label for="nacionalidad">Nacionalidad*:</label>
                   <div class="input-group form-group">
                     <div class="input-group-prepend">
                         <span class="input-group-text"><i class="fas fa-globe-americas"></i></span>
@@ -240,7 +240,7 @@ function validar(){
               </div>
 
               <div class="col-md-3">
-                  <label for="fechanacimiento">Fecha de nacimiento:</label>
+                  <label for="fechanacimiento">Fecha de nacimiento*:</label>
                   <div class="input-group form-group">
                     <div class="input-group-prepend">
                         <span class="input-group-text"><i class="fas fa-calendar-alt"></i></span>
@@ -250,7 +250,7 @@ function validar(){
               </div>
 
               <div class="col-md-3">
-                  <label for="sexo">Sexo:</label>
+                  <label for="sexo">Sexo*:</label>
                   <div class="input-group form-group">
                     <div class="input-group-prepend">
                         <span class="input-group-text"><i class="fas fa-user-friends"></i></span>
@@ -273,7 +273,7 @@ function validar(){
           <div class="form-row">
 
               <div class="col-md-6">
-                  <label for="emailusuario">Correo:</label>
+                  <label for="emailusuario">Correo*:</label>
                   <div class="input-group form-group">
                     <div class="input-group-prepend">
                         <span class="input-group-text"><i class="fas fa-envelope"></i></span>
@@ -283,7 +283,7 @@ function validar(){
               </div>
 
               <div class="col-md-3">
-                  <label for="contrasenausuario">Contraseña:</label>
+                  <label for="contrasenausuario">Contraseña*:</label>
                   <div class="input-group form-group">
                     <div class="input-group-prepend">
                         <span class="input-group-text"><i class="fas fa-lock"></i></span>
@@ -293,7 +293,7 @@ function validar(){
               </div>
 
               <div class="col-md-3">
-                  <label for="confcontrasenausuario">Confimar Contraseña:</label>
+                  <label for="confcontrasenausuario">Confimar Contraseña*:</label>
                   <div class="input-group form-group">
                     <div class="input-group-prepend">
                         <span class="input-group-text"><i class="fas fa-lock"></i></span>
@@ -312,7 +312,7 @@ function validar(){
           <div class="form-row">
 
               <div class="col-md-3">
-                  <label for="telefonousuario">Teléfono:</label>
+                  <label for="telefonousuario">Teléfono*:</label>
                   <div class="input-group form-group">
                     <div class="input-group-prepend">
                         <span class="input-group-text"><i class="fas fa-mobile-alt"></i></span>
@@ -322,7 +322,7 @@ function validar(){
               </div>
 
               <div class="col-md-3">
-                  <label for="provincia">Provincia:</label>
+                  <label for="provincia">Provincia*:</label>
                   <div class="input-group form-group">
                     <div class="input-group-prepend">
                         <span class="input-group-text"><i class="fas fa-map-marker-alt"></i></span>
@@ -334,7 +334,7 @@ function validar(){
               </div>
 
               <div class="col-md-3">
-                  <label for="municipio">Municipio:</label>
+                  <label for="municipio">Municipio*:</label>
                   <div class="input-group form-group">
                     <div class="input-group-prepend">
                         <span class="input-group-text"><i class="fas fa-map-marker-alt"></i></span>
@@ -344,24 +344,25 @@ function validar(){
                     </select>
                   </div>
               </div>
+
+              <div class="col-md-3">
+                  <label for="sector">Sector*:</label>
+                  <div class="input-group form-group">
+                    <div class="input-group-prepend">
+                        <span class="input-group-text"><i class="fas fa-map-marker-alt"></i></span>
+                    </div>
+                    <select id="sector" class="form-control" name="sector">
+                        <option selected>Seleccione</option>
+                    </select>
+                  </div>
+              </div>
+
           </div>
 
           <div class="form-row">
 
-            <div class="col-md-3">
-                <label for="sector">Sector:</label>
-                <div class="input-group form-group">
-                  <div class="input-group-prepend">
-                      <span class="input-group-text"><i class="fas fa-map-marker-alt"></i></span>
-                  </div>
-                  <select id="sector" class="form-control" name="sector">
-                      <option selected>Seleccione</option>
-                  </select>
-                </div>
-            </div>
-
-              <div class="col-md-3">
-                  <label for="calle">Calle:</label>
+              <div class="col-md-12">
+                  <label for="calle">Referencia*:</label>
                   <div class="input-group form-group">
                     <div class="input-group-prepend">
                         <span class="input-group-text"><i class="fas fa-map-marker-alt"></i></span>
@@ -369,7 +370,9 @@ function validar(){
                         <input type="text" autocomplete="off" name="calle" class="form-control" id="calle" >
                   </div>
               </div>
+
           </div>
+            <h6>Todos los campos con * son obligatorios</h6>
 
 
       </div>
