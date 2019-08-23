@@ -3,12 +3,12 @@ module.exports= (sequelize, DataTypes)=>{
     const persona = sequelize.define('persona',{
         id:{
           type: DataTypes.INTEGER,
-          primaryKey: true,
           allowNull: false,
           autoIncrement: true
         },
         cedula:{
           type: DataTypes.STRING,
+          primaryKey: true,
           allowNull: true
         },
         nombre_1:{
@@ -30,9 +30,6 @@ module.exports= (sequelize, DataTypes)=>{
             type: DataTypes.STRING,
             allowNull: false
         },
-        telef_casa:{
-            type: DataTypes.STRING
-        },
         direccion_id:{
             type: DataTypes.INTEGER,
             allowNull: true
@@ -46,14 +43,19 @@ module.exports= (sequelize, DataTypes)=>{
             allowNull: false
         },
         celular:{
-            type: DataTypes.STRING
+            type: DataTypes.STRING,
+            allowNull: false
         },
         password:{
             type: DataTypes.STRING,
             allowNull: false
         },
-        pasaporte:{
+        nacionalidad:{
             type: DataTypes.STRING
+        },
+        privilegio:{
+          type: DataTypes.INTEGER,
+          allowNull:false
         }
     },{
         freezeTableName: true,

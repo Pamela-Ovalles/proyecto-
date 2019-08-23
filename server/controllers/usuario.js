@@ -10,6 +10,10 @@ var controller = {
 		const {primernombre,segundonombre,primerapellido,segundoapellido,cedula,fechanacimiento,
 		sexo,correo,clave,telefonousuario,provincia,calle,municipio,sector} = req.body;
 
+		// <?php>
+		// 	$clave = password_hash($clave,PASSWORD_DEFAULT);
+		// ?>
+		//
 		let usuario = await models.persona.create({
 		nombre_1: primernombre,
 		nombre_2: segundonombre,
