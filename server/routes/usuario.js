@@ -12,7 +12,7 @@ var router = express.Router();
 router.get('', UserController.home);
 router.get('/registrarUsers', UserController.enviarPagina);
 router.post('/registrarUsers', UserController.registrar);
-router.post('/principalAmet', UserController.principalAmet);
+router.post('/amet', UserController.principalAmet);
 router.get('/colocacionMultas', UserController.aplicarMulta);
 router.post('/getDireccion', Direcciones.getProvincia);
 //router.put('')

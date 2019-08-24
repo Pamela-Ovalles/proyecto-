@@ -50,11 +50,12 @@ fs
 
 // aqui van las relaciones
 
-db.persona.hasOne(db.conductor, {foreignKey: 'persona_id',foreignKeyConstraint:true});
-db.conductor.belongsTo(db.persona, {foreignKey: 'persona_id',foreignKeyConstraint:true});
+// db.persona.hasOne(db.conductor, {foreignKey: 'persona_id',foreignKeyConstraint:true});
+// db.conductor.belongsTo(db.persona, {foreignKey: 'persona_id',foreignKeyConstraint:true});
 
-db.vehiculo.belongsTo(db.conductor,{foreignKey:'conductor_id',foreignKeyConstraint:true});
-db.conductor.hasMany(db.vehiculo,{foreignKey:'conductor_id',foreignKeyConstraint:true});
+db.vehiculo.belongsTo(db.persona,{foreignKey:'persona_id',foreignKeyConstraint:true});
+// db.conductor.hasMany(db.vehiculo,{foreignKey:'conductor_id',foreignKeyConstraint:true});
+db.persona.hasMany(db.vehiculo,{foreignKey:'persona_id',foreignKeyConstraint:true});
 
 db.direccion.belongsTo(db.provincia,{foreignKey:'provincia_id',foreignKeyConstraint:true});
 db.provincia.hasMany(db.direccion,{foreignKey:'provincia_id',foreignKeyConstraint:true});
@@ -62,8 +63,9 @@ db.provincia.hasMany(db.direccion,{foreignKey:'provincia_id',foreignKeyConstrain
 db.municipio.belongsTo(db.provincia,{foreignKey:'provincia_id',foreignKeyConstraint:true});
 db.provincia.hasMany(db.municipio,{foreignKey:'provincia_id',foreignKeyConstraint:true});
 
-db.infracciones.belongsTo(db.conductor,{foreignKey:'conductor_id',foreignKeyConstraint:true});
-db.conductor.hasMany(db.infracciones,{foreignKey:'conductor_id',foreignKeyConstraint:true});
+db.infracciones.belongsTo(db.persona,{foreignKey:'persona_id',foreignKeyConstraint:true});
+// db.conductor.hasMany(db.infracciones,{foreignKey:'conductor_id',foreignKeyConstraint:true});
+db.persona.hasMany(db.infracciones,{foreignKey:'persona_id',foreignKeyConstraint:true});
 
 db.infracciones.belongsTo(db.direccion,{foreignKey:'direccion_id',foreignKeyConstraint:true});
 db.direccion.hasOne(db.infracciones,{foreignKey:'direccion_id',foreignKeyConstraint:true});

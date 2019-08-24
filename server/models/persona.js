@@ -9,7 +9,7 @@ module.exports= (sequelize, DataTypes)=>{
         cedula:{
           type: DataTypes.STRING,
           primaryKey: true,
-          allowNull: true
+          allowNull: false
         },
         nombre_1:{
             type: DataTypes.STRING,

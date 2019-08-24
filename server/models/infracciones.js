@@ -19,8 +19,8 @@ module.exports= (sequelize, DataTypes)=>{
             type: DataTypes.DATE,
             allowNull: false
         },
-        conductor_id:{
-            type: DataTypes.INTEGER,
+        persona_id:{
+            type: DataTypes.STRING,
             allowNull: false
         },
         direccion_id:{

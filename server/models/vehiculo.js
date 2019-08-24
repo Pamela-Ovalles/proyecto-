@@ -36,8 +36,8 @@ module.exports= (sequelize, DataTypes)=>{
             type: DataTypes.INTEGER,
             allowNull: false
         },
-        conductor_id:{
-            type: DataTypes.INTEGER
+        persona_id:{
+            type: DataTypes.STRING
         }
     },{
         freezeTableName: true,

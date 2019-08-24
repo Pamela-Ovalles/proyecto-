@@ -8,7 +8,9 @@ var controller = {
 	registrar: async function (req, res){
 
 		const {primernombre,segundonombre,primerapellido,segundoapellido,cedula,fechanacimiento,
-		sexo,correo,clave,telefonousuario,provincia,calle,municipio,sector} = req.body;
+		sexo,correo,clave,telefonousuario,provincia,calle,municipio,sector,nacionalidad} = req.body;
+
+		const privilegio =1;
 
 		// <?php>
 		// 	$clave = password_hash($clave,PASSWORD_DEFAULT);
@@ -20,6 +22,7 @@ var controller = {
 		apellido_1: primerapellido,
 		apellido_2: segundoapellido,
 		cedula: cedula,
+		nacionalidad:nacionalidad,
 		fecha_nacimiento: fechanacimiento,
 		sexo: sexo,
 		email: correo,
@@ -28,10 +31,12 @@ var controller = {
 		provincia_id: provincia,
 		municipio_id: municipio,
 		sector_id: sector,
-		// direccion_id: Calle
+		privilegio:privilegio,
+		calle: calle
 	});
 
-		return res.json('correcto');
+		// return res.json('correcto');
+		return res.render('links/loginprueba');
 	},
 	enviarPagina: async function (req, res){
 		 res.render('links/registrarUsers');
@@ -49,7 +54,7 @@ var controller = {
 
 		console.log(user);
 		console.log(password);
-		res.render('links/principalAmet');
+		res.render('links/amet');
 	}
 };
 
