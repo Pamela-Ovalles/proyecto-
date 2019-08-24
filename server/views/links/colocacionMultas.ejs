@@ -17,6 +17,78 @@
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="http://code.jquery.com/jquery.js"></script>
+
+<script>
+function validar(){
+  var nombre_1,segundonombre,primerapellido,segundoapellido,cedula,nacionalidad,fechanacimiento,sexo,correo,contrasenausuario,confcontrasenausuario,telefonousuario,provincia,municipio,sector,calle,expre1,expre2;
+
+  persona = document.getElementById('persona').value;
+  segundonombre = document.getElementById('segundonombre').value;
+  primerapellido = document.getElementById('primerapellido').value;
+  segundoapellido = document.getElementById('segundoapellido').value;
+  cedula = document.getElementById('cedula').value;
+  nacionalidad = document.getElementById('nacionalidad').selectedIndex;
+  //provincia = document.getElementById('provincia').value;
+  //telefonoconductor = document.getElementById('provincia').value;
+  expre1 = /^[-\w.%+]{1,64}@(?:[A-Z0-9-]{1,63}\.){1,125}[A-Z]{2,63}$/i;
+  expre2 = /^[A-Z]+$/i;
+
+
+  if(nombre_1 === ""){
+    alert("El campo primer nombre esta vacío");
+    // document.getElementById("primernombre").focus();
+    // document.getElementById("primernombre").style.borderColor="red";
+    return false;
+  }
+  else if (!expre2.test(nombre_1)) {
+    alert("El campo primer nombre solo es letras");
+    return false;
+  }
+  else if (primerapellido ==="") {
+    alert("El campo primer apellido esta vacío");
+    return false;
+  }
+  else if (cedula==="") {
+    alert("El campo cédula esta vacío");
+    return false;
+  }
+  else if (nacionalidad=== 0) {
+    alert("El campo nacionalidad esta vacío");
+    return false;
+  }
+
+  else if (telefonoconductor==="") {
+    alert("El campo teléfono esta vacío");
+    return false;
+  }
+
+  else if (nombre_1.length >15 || segundonombre.length >15 || primerapellido.length >15 || segundoapellido.length >15) {
+    alert("Los campos solo debe tener 15 caracteres ");
+    return false;
+  }
+
+  else if (isNaN(telefonoconductor) ) {
+    alert("El campo teléfono debe ser solo números ");
+    return false;
+  }
+  else if (telefonoconductor.length !=10 ) {
+    alert(" Teléfono debe tener 10 dígitos ");
+    return false;
+  }
+
+}
+</script>
+
+<!--<script>
+  $(document).ready(function(){
+    $('#primernombre').click(function(){
+      $("#cedula").load("../custom-js/leyendoarchivo.txt");
+});
+});
+
+</script>-->
+
 
 </head>
 
@@ -59,29 +131,31 @@
       </div>
 
       <div class="card-body">
-        <form>
+        <form name="aplicarMulta" action="/colocacionMultas" method="POST" onsubmit="return validar();">
 
           <div class="form-row">
               <div class="col-md-3">
                 <label for="primernombre">Primer nombre:</label>
-                <div class="input-group form-group">
-<!--
-                  <div class="input-group-prepend">
-                      <span class="input-group-text"><i class="fas fa-clock"></i></span>
-                  </div>
-                -->
-                  <input type="text" class="form-control" id="primernombre" placeholder="">
-                </div>
+                <select id="primernombre" name="primernombre" class="form-control">
+                    <option selected>Seleccione</option>
+                </select>
+
+                <!--<input type="text" class="form-control" name="primernombre" id="primernombre" placeholder="">-->
+
 
               </div>
 
               <div class="form-group col-md-3">
                 <label for="segundonombre">Segundo nombre:</label>
-                <input type="text" class="form-control" id="segundonombre" placeholder="">
+              <!--  <input type="text" class="form-control" id="segundonombre" placeholder="">-->
+              <select id="segundonombre" name="segundonombre" class="form-control">
+                  <option selected>Seleccione</option>
+              </select>
               </div>
+
               <div class="form-group col-md-3">
                   <label for="primerapellido">Primer apellido:</label>
-                  <input type="text" class="form-control" id="primerapellido" placeholder="">
+                 <input type="text" class="form-control" id="primerapellido" placeholder="">
               </div>
               <div class="form-group col-md-3">
                 <label for="segundoapellido">Segundo apellido:</label>
@@ -93,32 +167,20 @@
               <div class="form-row">
                 <div class="form-group col-md-3">
                   <label for="cedula">Cédula:</label>
-                  <form action="leyendocedula.py">
-                    <object type="text/plain" data="prueba.txt" class="form-control" disabled= "disabled" id="cedula"></object>
-                    <meta http-equiv="refresh" content="5">
+                  <!--<form action="leyendocedula.py">-->
+                    <!--<object type="text/plain" class="form-control" id="cedula">se escribe aqui
+                  </object>-->
+                  <select id="cedula" name="cedula" class="form-control" onchange="fillNombre()">
+                      <option selected>Seleccione</option>
+                  </select>
+
                 </div>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
               <div class="form-group col-md-3">
                 <label for="telefonoconductor">Teléfono:</label>
-                <input type="text" class="form-control" id="telefonoconductor">
+                <input type="text" class="form-control" id="telefonoconductor" placeholder="">
               </div>
+
               <div class="form-group col-md-3">
                 <label for="nacionalidad">Nacionalidad:</label>
                 <select id="nacionalidad" class="form-control">
@@ -160,19 +222,8 @@
 
   </div>
 
-<!--
-  <div class="form-row">
-    <div class="form-group col-md-6">
-      <label for="emailusuario">Correo:</label>
-      <input type="email" class="form-control" id="emailusuario"><br>
-    </div>
-
-</div>
--->
 <caption ><font color='white' align='center' size='5'>Listado de Infracción</font>
       <a href="#"> (Ver detalle de los Artículos) </a>
-
-
 
 </caption>
 <div class="table-responsive">
@@ -235,9 +286,6 @@
     </div>
       </td>
     </tr>
-
-
-
     <tr>
       <th scope="row">02</th>
       <td>Art-44</td>
@@ -275,10 +323,7 @@
     </div>
     </div>
       </td>
-
-</tr>
-
-<tr>
+</tr><tr>
         <th scope="row">03</th>
         <td>Art-62</td>
         <td>
@@ -1131,6 +1176,7 @@
 <form>
   <div class="form-group">
     <input type="submit" value="Registrar" class=" registrar_btn">
+        <input type="submit" value="Cargar" class=" registrar_btn">
   </div>
 </form>
 
@@ -1150,5 +1196,7 @@
 
  <script src="js/bootstrap.mim.js"></script>
   <script src="js/CardReader.js"></script>
+  <script src="custom-js/buscar-user.js"></script>
+      <!--<script src="custom-js/sample.js"></script>-->
   </body>
 </html>

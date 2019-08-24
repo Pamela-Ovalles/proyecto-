@@ -38,7 +38,10 @@ var sequelize = new Sequelize(DBNAME, USER, PASSWORD, {
         freezeTableName: true
     }
 });
-
+//const consulta = new Consulta(sequelize);
+//consulta.connect();
+//consulta.query('select nombre_1 from public.persona where cedula like '40226079818'');
+//alert('Hola');
 fs
     .readdirSync(__dirname)
     .filter(file => {
@@ -94,6 +97,6 @@ db.sequelize = sequelize;
 db.Sequelize = Sequelize;
 
 sequelize.sync();
-// sequelize.sync({force:true});
+//sequelize.sync({force:true});
 
 module.exports = db;

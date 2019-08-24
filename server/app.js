@@ -14,10 +14,10 @@ app.use(bodyParser.urlencoded({extended:false}));
 app.use(bodyParser.json());
 app.use(logger('dev'));
   app.set('view engine','ejs');
+
 //static filess
-
-
 app.use(express.static(__dirname + '/public'));
+
 // Configurar cabeceras y cors
 app.use((req, res, next) => {
     res.header('Access-Control-Allow-Origin', '*');

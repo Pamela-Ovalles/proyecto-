@@ -19,21 +19,21 @@ function http(type, route, params){
     xhr.send();
   });
 }
-
 async function cargarProvinciasYDemas(){
-  direcciones = await http('POST', '/getDireccion', null);
+  direcciones = await http('POST', '/getPro', null);
   fillSelect('provincia',direcciones.provincias, 'nom_provincia', 'id');
 }
 
 function fillSelect(idSelect, list, descriptionName, idName){
   $(`#${idSelect}`).html("");
-  $(`#${idSelect}`).html($(`#${idSelect}`).html()+`<option value="">Seleccione</option>`);
+$(`#${idSelect}`).html($(`#${idSelect}`).html()+`<option value="">Seleccione</option>`);
   for(let i of list){
     $(`#${idSelect}`).html($(`#${idSelect}`).html()+`<option value="${i[idName]}">${i[descriptionName]}</option>`);
   }
 }
 
 function fillMunicipios(){
+
   if (compare($("#provincia").val())){
     let municipiosValidos = direcciones.municipios.filter(a => {
       return a.provincia_id == $("#provincia").val();

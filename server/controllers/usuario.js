@@ -26,7 +26,6 @@ var controller = {
 		sector_id: sector,
 		// direccion_id: Calle
 	});
-
 		return res.json('correcto');
 	},
 	enviarPagina: async function (req, res){
@@ -37,9 +36,12 @@ var controller = {
  		 res.render('links/colocacionMultas');
 	},
 
+	leer: function(req, res){
+ 		 res.render('links/prueba');
+	},
+
 	principalAmet: function(req, res){
 		var params = req.body;
-
 		var user = params.email;
 		var password = params.password;
 
@@ -48,27 +50,5 @@ var controller = {
 		res.render('links/principalAmet');
 	}
 };
-
-// const {primernombre,segundonombre,primerapellido,segundoapellido,cedula,nacionalidad,
-// fechanacimiento,sexo,correo,clave,confirpass,telefonousuario,provincia,municipio,ciudad,
-// sector,calle} = req.body;
-//
-// const newUsuario = {
-// 	primernombre,
-// 	segundonombre,
-// 	primerapellido,
-// 	segundoapellido,
-// 	cedula,nacionalidad,
-// 	fechanacimiento,
-// 	sexo,
-// 	correo,
-// 	clave,
-// 	confirpass,
-// 	telefonousuario,
-// 	provincia,municipio,
-// 	ciudad,
-// 	sector,
-// 	calle
-// 	};
 
 module.exports = controller;

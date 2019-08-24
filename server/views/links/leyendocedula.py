@@ -1,23 +1,23 @@
-from pynput.keyboard import key, Listener
+from pynput.keyboard import Key, Listener
 
 html_file = open('probing.html','w')
-
 
 listado=[]
 validar=[]
 cedula=''
 cel=''
 
-def index(key):
+def index(Key):
 
-    var=str(format(key))
+    var=str(format(Key))
     if var=="u'E'":
         del listado[ : ]
         del validar[ : ]
-    if var=="u'0'":
+
+    if var=="0":
         listado.insert(10, '0')
         validar.insert(16, '0')
-    if var=="u'1'":
+    if var=="1":
         listado.insert(10, '1')
         validar.insert(17, '1')
     if var=="u'2'":
@@ -50,16 +50,14 @@ def index(key):
         print(cedula)
         file=open("prueba.txt","w")
         file.write(cedula)
-
         file.close()
-        cedula=' '
-    #    del listado[ : ]
-        return
-    #if len(validar)==6:
-        #sep=''
-        #vali= sep.join(validar[11:17])
-        #print(vali)
 
+        fil=open("../custom-js/leyendoarchivo.txt","w")
+        fil.write(cedula)
+        fil.close()
+
+        cedula=' '
+        return
 
 cel=index(listado)
 print('aqui esta el listado')

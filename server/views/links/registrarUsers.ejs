@@ -68,51 +68,51 @@ function validar(){
     return false;
   }
   else if (sexo=== 0) {
-    alert("El campo   esta vacío");
+    alert("El campo esta vacío");
     return false;
   }
   else if (correo==="") {
-    alert("El campo   esta vacío");
+    alert("El campo esta vacío");
     return false;
   }
   else if (!expre1.test(correo)) {
-    alert("El correo no es valido");
+    alert("El correo no es válido");
     return false;
   }
   else if (contrasenausuario==="") {
-    alert("El campo   esta vacío");
+    alert("El campo esta vacío");
     return false;
   }
   else if (confcontrasenausuario==="") {
-    alert("El campo   esta vacío");
+    alert("El campo esta vacío");
     return false;
   }
   else if (telefonousuario==="") {
-    alert("El campo   esta vacío");
+    alert("El campo teléfono esta vacío");
     return false;
   }
   else if (provincia=== '') {
-    alert("El campo   esta vacío");
+    alert("El campo provincia esta vacío");
     return false;
   }
   else if (municipio=== '') {
-    alert("El campo   esta vacío");
+    alert("El campo municipio esta vacío");
     return false;
   }
   else if (sector==="") {
-    alert("El campo   esta vacío");
+    alert("El campo Sector esta vacío");
     return false;
   }
   else if (calle==="") {
-    alert("El campo   esta vacío");
+    alert("El campo calle esta vacío");
     return false;
   }
   else if (primernombre.length >15 || segundonombre.length >15 || primerapellido.length >15 || segundoapellido.length >15) {
     alert("Los campos solo debe tener 15 caracteres ");
     return false;
   }
-  else if (correo.length >25) {
-    alert("El correo solo debe tener 25 caracteres ");
+  else if (correo.length >30) {
+    alert("El correo solo debe tener 30 caracteres ");
     return false;
   }
   else if (sector.length >20 || calle.length >20) {
@@ -120,31 +120,31 @@ function validar(){
     return false;
   }
   else if (contrasenausuario.length >15) {
-    alert("la contraseña no debe tener mas de 25 caracteres ");
+    alert("La contraseña no debe tener más de 25 caracteres ");
     return false;
   }
   else if (confcontrasenausuario.length >25) {
-    alert("la confirmar contraseña no debe tener mas de 25 caracteres ");
+    alert("La confirmar contraseña no debe tener más de 25 caracteres ");
     return false;
   }
   else if (contrasenausuario != confcontrasenausuario) {
-    alert("la contraseña no coincide con confirmar contraseña");
+    alert("La contraseña no coincide con confirmar contraseña");
     return false;
   }
   else if (isNaN(cedula)) {
-    alert("El campo cedula debe ser solo numeros ");
+    alert("El campo cédula debe ser solo números ");
     return false;
   }
   else if (cedula.length !=11) {
-    alert(" cedula debe tener 11 digitos ");
+    alert("La cédula debe tener 11 dígitos ");
     return false;
   }
   else if (isNaN(telefonousuario) ) {
-    alert("El campo telefono debe ser solo numeros ");
+    alert("El campo teléfono debe ser solo números ");
     return false;
   }
   else if (telefonousuario.length !=10 ) {
-    alert(" telefono debe tener 10 digitos ");
+    alert(" Teléfono debe tener 10 dígitos ");
     return false;
   }
 
@@ -293,7 +293,7 @@ function validar(){
               </div>
 
               <div class="col-md-3">
-                  <label for="confcontrasenausuario">Confimar Contraseña:</label>
+                  <label for="confcontrasenausuario">Confirmar Contraseña:</label>
                   <div class="input-group form-group">
                     <div class="input-group-prepend">
                         <span class="input-group-text"><i class="fas fa-lock"></i></span>
@@ -330,6 +330,8 @@ function validar(){
                     <select id="provincia" name="provincia" class="form-control" onchange="fillMunicipios()">
                         <option selected>Seleccione</option>
                     </select>
+
+
                   </div>
               </div>
 
@@ -377,6 +379,7 @@ function validar(){
       <form>
       <div class="form-group">
           <input type="submit" value="Registrar" class=" registrar_btn">
+
       </div>
     </form>
 
