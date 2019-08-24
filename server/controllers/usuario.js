@@ -1,5 +1,6 @@
 'use strict'
 const models = require('../models/index');
+
 var controller = {
 
 	home: function(req, res){
@@ -39,6 +40,11 @@ var controller = {
 	leer: function(req, res){
  		 res.render('links/prueba');
 	},
+
+
+}
+
+
 
 	principalAmet: function(req, res){
 		var params = req.body;

@@ -20,7 +20,7 @@ module.exports= (sequelize, DataTypes)=>{
             allowNull: false
         },
         persona_id:{
-            type: DataTypes.INTEGER,
+            type: DataTypes.STRING,
             allowNull: false
         }
     },{
