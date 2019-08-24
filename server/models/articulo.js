@@ -7,6 +7,10 @@ module.exports= (sequelize, DataTypes)=>{
             allowNull: false,
             autoIncrement: true
         },
+        No_Articulo:{
+            type: DataTypes.STRING,
+            allowNull: false
+        },
         desc_infraccion:{
             type: DataTypes.STRING,
             allowNull: false
