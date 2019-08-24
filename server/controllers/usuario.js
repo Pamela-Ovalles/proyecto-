@@ -11,6 +11,8 @@ var controller = {
 		const {primernombre,segundonombre,primerapellido,segundoapellido,cedula,fechanacimiento,
 		sexo,correo,clave,telefonousuario,provincia,calle,municipio,sector} = req.body;
 
+		const privilegio = 1;
+
 		let usuario = await models.persona.create({
 		nombre_1: primernombre,
 		nombre_2: segundonombre,
@@ -25,9 +27,11 @@ var controller = {
 		provincia_id: provincia,
 		municipio_id: municipio,
 		sector_id: sector,
+		privilegio:privilegio
 		// direccion_id: Calle
 	});
 		return res.json('correcto');
+		// return res.render('links/loginprueba');
 	},
 	enviarPagina: async function (req, res){
 		 res.render('links/registrarUsers');
