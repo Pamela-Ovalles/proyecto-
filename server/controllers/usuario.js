@@ -36,7 +36,7 @@ var controller = {
 	});
 
 		// return res.json('correcto');
-		alert(JSON('Creado correctamente'));
+		
 		return res.render('links/loginprueba');
 	},
 	enviarPagina: async function (req, res){
