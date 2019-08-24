@@ -48,8 +48,15 @@ var controller = {
 
 		console.log(user);
 		console.log(password);
-		res.render('links/principalAmet');
+		res.render('links/amet');
 	}
+
+
+
+
+
+
+
 };
 
 module.exports = controller;

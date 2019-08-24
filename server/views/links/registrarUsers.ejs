@@ -71,19 +71,17 @@ function validar(){
     return false;
   }
   else if (sexo=== 0) {
-<<<<<<< HEAD
     alert("El campo esta vacío");
     return false;
   }
   else if (correo==="") {
     alert("El campo esta vacío");
-=======
+
     alert("El sexo esta vacío");
     return false;
   }
   else if (correo==="") {
     alert("El correo esta vacío");
->>>>>>> 8c3f4db10ab4811f7ef895a41b784f0d0a082920
     return false;
   }
   else if (!expre1.test(correo)) {
@@ -91,7 +89,6 @@ function validar(){
     return false;
   }
   else if (contrasenausuario==="") {
-<<<<<<< HEAD
     alert("El campo esta vacío");
     return false;
   }
@@ -117,8 +114,6 @@ function validar(){
   }
   else if (calle==="") {
     alert("El campo calle esta vacío");
-=======
-    alert("La contraseña esta vacío");
     return false;
   }
   else if (confcontrasenausuario==="") {
@@ -143,7 +138,6 @@ function validar(){
   }
   else if (calle==="") {
     alert("La calle esta vacío");
->>>>>>> 8c3f4db10ab4811f7ef895a41b784f0d0a082920
     return false;
   }
   else if (primernombre.length >15 || segundonombre.length >15 || primerapellido.length >15 || segundoapellido.length >15) {
@@ -159,19 +153,15 @@ function validar(){
     return false;
   }
   else if (contrasenausuario.length >15) {
-<<<<<<< HEAD
     alert("La contraseña no debe tener más de 25 caracteres ");
     return false;
   }
   else if (confcontrasenausuario.length >25) {
-    alert("La confirmar contraseña no debe tener más de 25 caracteres ");
-=======
-    alert("La contraseña no debe tener más  de 15 caracteres ");
+    alert("Confirmar la contraseña no debe tener más de 25 caracteres ");
     return false;
   }
   else if (confcontrasenausuario.length >25) {
     alert("Confirmar contraseña no debe tener más  de 25 caracteres ");
->>>>>>> 8c3f4db10ab4811f7ef895a41b784f0d0a082920
     return false;
   }
   else if (contrasenausuario != confcontrasenausuario) {
@@ -179,11 +169,7 @@ function validar(){
     return false;
   }
   else if (isNaN(cedula)) {
-<<<<<<< HEAD
-    alert("El campo cédula debe ser solo números ");
-=======
     alert("La cédula debe ser solo números  ");
->>>>>>> 8c3f4db10ab4811f7ef895a41b784f0d0a082920
     return false;
   }
   else if (cedula.length !=11) {
@@ -191,19 +177,15 @@ function validar(){
     return false;
   }
   else if (isNaN(telefonousuario) ) {
-<<<<<<< HEAD
     alert("El campo teléfono debe ser solo números ");
     return false;
   }
   else if (telefonousuario.length !=10 ) {
     alert(" Teléfono debe tener 10 dígitos ");
-=======
-    alert("El teléfono debe ser solo números ");
     return false;
   }
   else if (telefonousuario.length !=10 ) {
     alert("El teléfono debe tener 10 dígitos ");
->>>>>>> 8c3f4db10ab4811f7ef895a41b784f0d0a082920
     return false;
   }
 
@@ -352,11 +334,7 @@ function validar(){
               </div>
 
               <div class="col-md-3">
-<<<<<<< HEAD
-                  <label for="confcontrasenausuario">Confirmar Contraseña:</label>
-=======
                   <label for="confcontrasenausuario">Confimar Contraseña*:</label>
->>>>>>> 8c3f4db10ab4811f7ef895a41b784f0d0a082920
                   <div class="input-group form-group">
                     <div class="input-group-prepend">
                         <span class="input-group-text"><i class="fas fa-lock"></i></span>
@@ -364,7 +342,6 @@ function validar(){
                         <input type="password" autocomplete="off" name="confirpass" class="form-control" id="confcontrasenausuario" >
                   </div>
               </div>
-
 
           </div>
         </fieldset>
