@@ -41,11 +41,6 @@ var controller = {
  		 res.render('links/prueba');
 	},
 
-
-}
-
-
-
 	principalAmet: function(req, res){
 		var params = req.body;
 		var user = params.email;
@@ -53,8 +48,15 @@ var controller = {
 
 		console.log(user);
 		console.log(password);
-		res.render('links/principalAmet');
+		res.render('links/amet');
 	}
+
+
+
+
+
+
+
 };
 
 module.exports = controller;
