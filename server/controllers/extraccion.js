@@ -7,12 +7,14 @@ res.json({
   });
 }
 async function getPersonaByCedula(req,res){
-  res.json({
-    usuarios: await models.persona.findAll({
+  res.json(
+      {
+    usuario: await models.persona.findOne({
+      where:{cedula: req.params.cedula},
       limit:1,
-      where:{cedula: req.params.cedula}
     }),
-  });
+  }
+  );
 }
 module.exports = {
   getPersonas,
