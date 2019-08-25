@@ -49,7 +49,7 @@ var controller = {
  		 res.render('links/prueba');
 	},
 
-	principalAmet: async function( req, res ) {
+	principal: async function( req, res ) {
 		var params = req.body;
 		var user = params.correousuario;
 		var password = params.password;
@@ -57,6 +57,7 @@ var controller = {
 		console.log(user);
 		console.log(password);
 		var userObj = null;
+		var windowOpen;
 
 		//userObj = await	models.persona.findOne({ where:{email: user}});
 		models.persona.findOne({ where: {email: user }}).then( userDataBase => {

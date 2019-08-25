@@ -11,7 +11,7 @@ var router = express.Router();
 router.get('', UserController.home);
 router.get('/registrarUsers', UserController.enviarPagina);
 router.post('/registrarUsers', UserController.registrar);
-router.post('/amet', UserController.principalAmet);
+router.post('/amet', UserController.principal);
 router.get('/colocacionMultas', UserController.aplicarMulta);
 router.post('/colocacionMultas', UserController.registrar);
 router.post('/getPro', Direcciones.getProvincia);
