@@ -44,10 +44,11 @@
     DIGESETT
   </a>
 
-      <form class="form-inline" action="/registrarUsers" method="GET">
+      <!-- BOTON PARA Registrarse -->
+      <!-- <form class="form-inline" action="/registrarUsers" method="GET">
         <input type="submit" value="Registrarse" id= "registrar_btn">
 
-      </form>
+      </form> -->
 
 
   </nav>
@@ -70,7 +71,7 @@
 				</div> -->
 			</div>
 			<div class="card-body">
-				<form action="/amet" method="POST">
+				<form action="/loginpruebat" method="POST">
 					<div class="input-group form-group">
 						<div class="input-group-prepend">
 							<span class="input-group-text"><i class="fas fa-user"></i></span>
@@ -84,8 +85,13 @@
 						</div>
 						<input type="password" id="pass" name="password" class="form-control" placeholder="Entre su contraseña">
 					</div>
-					<div class="row align-items-center remember">
-						<input type="checkbox">Recuerdame	</div>
+					<!-- <div class="row align-items-center remember">
+						<input type="checkbox">Recuerdame
+          </div> -->
+          <div class="row align-items-center remember">
+						<p>¿Aún no tienes una cuenta?<a  href="/registrarUsers"  role="botton">  Regístrate Ya</a><br>
+          </div>
+
 					<div class="form-group">
 						<input type="submit" id="iniciarSesion" value="Iniciar sesión" class=" login_btn">
 					</div>
