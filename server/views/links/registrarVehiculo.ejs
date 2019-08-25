@@ -32,13 +32,43 @@
             <fieldset>
               <legend><h4>1. Datos del propietario</h4></legend>
               <div class="form-row">
-                    <div class="col-md-9">
-                        <label for="primernombre">Nombre completo:</label>
+                <div class="col-md-3">
+                    <label for="cedula">Cédula:</label>
+                    <div class="input-group form-group">
+                      <div class="input-group-prepend">
+                          <span class="input-group-text"><i class="fas fa-address-card"></i></span>
+                      </div>
+                        <input type="text" autocomplete="off" class="form-control" id="cedula">
+                    </div>
+                </div>
+
+                    <div class="col-md-3">
+                        <label for="primernombre">Nombre:</label>
                         <div class="input-group form-group">
                           <div class="input-group-prepend">
                               <span class="input-group-text"><i class="fas fa-user"></i></span>
                           </div>
-                            <input type="text" class="form-control" id="primernombre" placeholder="">
+                            <input type="text" autocomplete="off" class="form-control" id="primernombre" placeholder="">
+                        </div>
+                    </div>
+
+                    <div class="col-md-3">
+                        <label for="primernombre">Primer apellido:</label>
+                        <div class="input-group form-group">
+                          <div class="input-group-prepend">
+                              <span class="input-group-text"><i class="fas fa-user"></i></span>
+                          </div>
+                            <input type="text" autocomplete="off" class="form-control" id="primerapellido" placeholder="">
+                        </div>
+                    </div>
+
+                    <div class="col-md-3">
+                        <label for="primernombre">Segundo apellido:</label>
+                        <div class="input-group form-group">
+                          <div class="input-group-prepend">
+                              <span class="input-group-text"><i class="fas fa-user"></i></span>
+                          </div>
+                            <input type="text" autocomplete="off" class="form-control" id="segundoapellido" placeholder="">
                         </div>
                     </div>
 
@@ -46,19 +76,11 @@
                       <label for="primernombre">Primer nombre:</label>
                       <input type="text" class="form-control" id="primernombre" placeholder="">
                   </div> -->
-                  <div class="col-md-3">
-                      <label for="cedula">Cédula:</label>
-                      <div class="input-group form-group">
-                        <div class="input-group-prepend">
-                            <span class="input-group-text"><i class="fas fa-address-card"></i></span>
-                        </div>
-                          <input type="text" class="form-control" id="cedula">
-                      </div>
-                  </div>
+
 
               </div>
 
-              <div class="form-row">
+              <!-- <div class="form-row">
                     <div class="col-md-12">
                         <label for="primernombre">Dirección:</label>
                         <div class="input-group form-group">
@@ -68,7 +90,7 @@
                             <input type="text" class="form-control" id="primernombre" placeholder="">
                         </div>
                     </div>
-              </div>
+              </div> -->
 
             </fieldset>
             <br>
@@ -77,43 +99,43 @@
               <legend><h4>2. Datos del Vehículo</h4></legend>
               <div class="form-row">
                     <div class="col-md-3">
-                        <label for="primernombre">Placa:</label>
+                        <label for="Placa">Placa:</label>
                         <div class="input-group form-group">
                           <div class="input-group-prepend">
                               <span class="input-group-text"></span>
                           </div>
-                            <input type="text" class="form-control" id="primernombre" placeholder="">
+                            <input type="text" autocomplete="off" class="form-control" id="Placa" placeholder="">
                         </div>
                     </div>
 
                   <div class="col-md-3">
-                      <label for="segundonombre">Chasis:</label>
+                      <label for="Chasis">Chasis:</label>
                       <div class="input-group form-group">
                         <div class="input-group-prepend">
                             <span class="input-group-text"></span>
                         </div>
-                          <input type="text" class="form-control" id="segundonombre" placeholder="">
+                          <input type="text" autocomplete="off" class="form-control" id="Chasis" placeholder="">
                       </div>
                   </div>
 
                   <div class="col-md-3">
-                      <label for="primerapellido">Status del Vehículo:</label>
+                      <label for="Status">Status del Vehículo:</label>
                       <div class="input-group form-group">
                         <div class="input-group-prepend">
                             <span class="input-group-text"></span>
                         </div>
-                          <input type="text" class="form-control" id="primerapellido" placeholder="">
+                          <input type="text" autocomplete="off" class="form-control" id="Status" placeholder="">
                       </div>
                   </div>
 
                   <div class="col-md-3">
-                      <label for="nacionalidad">Tipo de emisión:</label>
+                      <label for="emision">Tipo de emisión:</label>
                       <div class="input-group form-group">
                         <div class="input-group-prepend">
                             <span class="input-group-text"></span>
                         </div>
-                        <select id="nacionalidad" class="form-control">
-                            <option selected>Elegir...</option>
+                        <select id="emision" class="form-control">
+                            <option selected>Seleccione</option>
                             <option>Endosos</option>
                             <option>Traspaso de vehículo</option>
                             <option>Corriente</option>
@@ -125,42 +147,46 @@
 
               <div class="form-row">
                     <div class="col-md-3">
-                        <label for="primernombre">Tipo de vehículo:</label>
+                        <label for="Tipo">Tipo de vehículo:</label>
                         <div class="input-group form-group">
                           <div class="input-group-prepend">
                               <span class="input-group-text"></span>
                           </div>
-                            <input type="text" class="form-control" id="primernombre" placeholder="">
+                            <input type="text" autocomplete="off" class="form-control" id="Tipo" placeholder="">
                         </div>
                     </div>
 
                   <div class="col-md-3">
-                      <label for="segundonombre">Marca:</label>
+                      <label for="Marca">Marca:</label>
                       <div class="input-group form-group">
                         <div class="input-group-prepend">
                             <span class="input-group-text"></span>
                         </div>
-                          <input type="text" class="form-control" id="segundonombre" placeholder="">
+                        <select id="Marca" class="form-control">
+                            <option selected>Seleccione</option>
+                        </select>
                       </div>
                   </div>
 
                   <div class="col-md-3">
-                      <label for="primerapellido">Modelo:</label>
+                      <label for="Modelo">Modelo:</label>
                       <div class="input-group form-group">
                         <div class="input-group-prepend">
                             <span class="input-group-text"></span>
                         </div>
-                          <input type="text" class="form-control" id="primerapellido" placeholder="">
+                        <select id="Modelo" class="form-control">
+                            <option selected>Seleccione</option>
+                        </select>
                       </div>
                   </div>
 
                   <div class="col-md-3">
-                      <label for="primerapellido">Año de fabricación:</label>
+                      <label for="fabricación">Año de fabricación:</label>
                       <div class="input-group form-group">
                         <div class="input-group-prepend">
                             <span class="input-group-text"></span>
                         </div>
-                          <input type="text" class="form-control" id="primerapellido" placeholder="">
+                          <input type="text" class="form-control" id="fabricación" placeholder="">
                       </div>
                   </div>
 
@@ -168,76 +194,77 @@
 
               <div class="form-row">
                     <div class="col-md-3">
-                        <label for="primernombre">Color:</label>
+                        <label for="Color">Color:</label>
                         <div class="input-group form-group">
                           <div class="input-group-prepend">
                               <span class="input-group-text"></span>
                           </div>
-                            <input type="text" class="form-control" id="primernombre" placeholder="">
+                            <input type="text" autocomplete="off" class="form-control" id="Color" placeholder="">
                         </div>
                     </div>
 
                   <div class="col-md-3">
-                      <label for="segundonombre">No.de serie:</label>
+                      <label for="serie">No.de serie:</label>
                       <div class="input-group form-group">
                         <div class="input-group-prepend">
                             <span class="input-group-text"></span>
                         </div>
-                          <input type="text" class="form-control" id="segundonombre" placeholder="">
+                          <input type="text" autocomplete="off" class="form-control" id="serie" placeholder="">
                       </div>
                   </div>
 
-                  <div class="col-md-2">
-                      <label for="primerapellido">Fuerza motriz:</label>
+                  <div class="col-md-3">
+                      <label for="Fuerza">Fuerza motriz(HP/cc):</label>
                       <div class="input-group form-group">
                         <div class="input-group-prepend">
                             <span class="input-group-text"></span>
                         </div>
-                          <input type="text" class="form-control" id="primerapellido" placeholder="">
+                          <input type="text" autocomplete="off" class="form-control" id="Fuerza" placeholder="">
                       </div>
                   </div>
 
-                  <div class="col-md-1">
-                      <label for="primerapellido">No.Puertas:</label>
+                  <div class="col-md-3">
+                      <label for="Puertas">No.Puertas:</label>
                       <div class="input-group form-group">
                         <div class="input-group-prepend">
                             <span class="input-group-text"></span>
                         </div>
-                          <input type="text" class="form-control" id="primerapellido" placeholder="">
+                          <input type="number" autocomplete="off" max="4" min="0"class="form-control" id="Puertas" placeholder="">
                       </div>
                   </div>
+                </div>
 
-                  <div class="col-md-1">
-                      <label for="primerapellido">Pasajeros:</label>
-                      <div class="input-group form-group">
-                        <div class="input-group-prepend">
-                            <span class="input-group-text"></span>
+                  <div class="form-row">
+                    <div class="col-md-3">
+                        <label for="Pasajeros">Pasajeros:</label>
+                        <div class="input-group form-group">
+                          <div class="input-group-prepend">
+                              <span class="input-group-text"></span>
+                          </div>
+                            <input type="text" class="form-control" id="Pasajeros" placeholder="">
                         </div>
-                          <input type="text" class="form-control" id="primerapellido" placeholder="">
-                      </div>
-                  </div>
+                    </div>
 
-                  <div class="col-md-1">
-                      <label for="primerapellido">Cap.Carga:</label>
-                      <div class="input-group form-group">
-                        <div class="input-group-prepend">
-                            <span class="input-group-text"></span>
+                    <div class="col-md-3">
+                        <label for="Carga">Cap.Carga(Ton):</label>
+                        <div class="input-group form-group">
+                          <div class="input-group-prepend">
+                              <span class="input-group-text"></span>
+                          </div>
+                            <input type="text" class="form-control" id="Carga" placeholder="">
                         </div>
-                          <input type="text" class="form-control" id="primerapellido" placeholder="">
-                      </div>
-                  </div>
+                    </div>
 
-                  <div class="col-md-1">
-                      <label for="primerapellido">Cilindros:</label>
-                      <div class="input-group form-group">
-                        <div class="input-group-prepend">
-                            <span class="input-group-text"></span>
+                    <div class="col-md-3">
+                        <label for="Cilindros">Cilindros:</label>
+                        <div class="input-group form-group">
+                          <div class="input-group-prepend">
+                              <span class="input-group-text"></span>
+                          </div>
+                            <input type="text" class="form-control" id="Cilindros" placeholder="">
                         </div>
-                          <input type="text" class="form-control" id="primerapellido" placeholder="">
-                      </div>
+                    </div>
                   </div>
-
-              </div>
 
             </fieldset>
             <br>

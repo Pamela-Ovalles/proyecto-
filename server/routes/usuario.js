@@ -18,8 +18,7 @@ router.post('/getPro', Direcciones.getProvincia);
 router.post('/getDirecciones', Direcciones.getProvincia);
 router.get('/getPersonaByCedula/:cedula', Extracciones.getPersonaByCedula);
 router.get('/getPersonas', Extracciones.getPersonas);
-
-
+router.get('/registrarVehiculo', UserController.registrarVehiculo);
 //router.post('/prueba',UserController.leer);
 //router.put('')
 

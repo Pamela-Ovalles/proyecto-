@@ -41,6 +41,10 @@ var controller = {
  		 res.render('links/colocacionMultas');
 	},
 
+	registrarVehiculo: function(req, res){
+ 		 res.render('links/registrarVehiculo');
+	},
+
 	leer: function(req, res){
  		 res.render('links/prueba');
 	},
@@ -61,7 +65,7 @@ var controller = {
 		// console.log(userObj.email, userObj.password);
 		//validar si existe
 			console.log(userObj);
- 		 
+
 		if( userObj !== null && userObj !== undefined ) {
 			console.log('Usuario existe');
 			//validar si elusario y password son igulaes
