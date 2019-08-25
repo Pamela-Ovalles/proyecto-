@@ -24,7 +24,7 @@
 function validar(){
   var nombre_1,segundonombre,primerapellido,segundoapellido,cedula,nacionalidad,fechanacimiento,sexo,correo,contrasenausuario,confcontrasenausuario,telefonousuario,provincia,municipio,sector,calle,expre1,expre2;
 
-  persona = document.getElementById('persona').value;
+//  persona = document.getElementById('persona').value;
   segundonombre = document.getElementById('segundonombre').value;
   primerapellido = document.getElementById('primerapellido').value;
   segundoapellido = document.getElementById('segundoapellido').value;
@@ -137,21 +137,14 @@ function validar(){
           <div class="form-row">
               <div class="col-md-3">
                 <label for="primernombre">Primer nombre:</label>
-                <select id="primernombre" name="primernombre" class="form-control">
-                    <option selected>Seleccione</option>
-                </select>
-
-                <!--<input type="text" class="form-control" name="primernombre" id="primernombre" placeholder="">-->
+                <input type="text" class="form-control" name="primernombre" id="primernombre" placeholder="">
 
 
               </div>
 
               <div class="form-group col-md-3">
                 <label for="segundonombre">Segundo nombre:</label>
-              <!--  <input type="text" class="form-control" id="segundonombre" placeholder="">-->
-              <select id="segundonombre" name="segundonombre" class="form-control">
-                  <option selected>Seleccione</option>
-              </select>
+              <input type="text" class="form-control" id="segundonombre" placeholder="">
               </div>
 
               <div class="form-group col-md-3">
@@ -164,24 +157,16 @@ function validar(){
               </div>
 
               </div>
-
               <div class="form-row">
                 <div class="form-group col-md-3">
                   <label for="cedula">Cédula:</label>
-                  <!--<form action="leyendocedula.py">-->
-                    <!--<object type="text/plain" class="form-control" id="cedula">se escribe aqui
-                  </object>-->
-                  <select id="cedula" name="cedula" class="form-control" onchange="fillNombre()">
-                      <option selected>Seleccione</option>
-                  </select>
-
+                  <input type="text" maxlength="11" class="form-control" id="cedula" onchange="onCedulaChange()" name="cedula">
                 </div>
 
               <div class="form-group col-md-3">
                 <label for="telefonoconductor">Teléfono:</label>
                 <input type="text" class="form-control" id="telefonoconductor" placeholder="">
               </div>
-
               <div class="form-group col-md-3">
                 <label for="nacionalidad">Nacionalidad:</label>
                 <select id="nacionalidad" class="form-control">
@@ -1177,7 +1162,6 @@ function validar(){
 <form>
   <div class="form-group">
     <input type="submit" value="Registrar" class=" registrar_btn">
-        <input type="submit" value="Cargar" class=" registrar_btn">
   </div>
 </form>
 
@@ -1198,6 +1182,27 @@ function validar(){
  <script src="js/bootstrap.mim.js"></script>
   <script src="js/CardReader.js"></script>
   <script src="custom-js/buscar-user.js"></script>
-      <!--<script src="custom-js/sample.js"></script>-->
+
+<script>
+async function onCedulaChange (){
+  const cedula=document.getElementById("cedula").value;
+  extraccion = await http('GET','/getPersonaByCedula/'+cedula,null);
+  console.log(extraccion);
+  console.log(extraccion.usuario.nombre_1);
+  if (extraccion.usuario!=null) {
+    $("#primernombre").val(extraccion.usuario.nombre_1);
+    $("#primerapellido").val(extraccion.usuario.apellido_1);
+  }
+if (extraccion.usuario.nombre_2!=null) {
+$("#segundonombre").val(extraccion.usuario.nombre_2);
+}
+if (extraccion.usuario.apellido_2!=null) {
+    $("#segundoapellido").val(extraccion.usuario.apellido_2);
+  }
+}
+
+
+</script>
+
   </body>
 </html>
