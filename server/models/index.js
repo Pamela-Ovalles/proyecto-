@@ -91,11 +91,11 @@ db.policia.belongsTo(db.persona, {foreignKey: 'persona_id',foreignKeyConstraint:
 db.municipio.hasMany(db.sector,{foreignKey:'municipio_id',foreignKeyConstraint:true});
 db.sector.belongsTo(db.municipio,{foreignKey:'municipio_id',foreignKeyConstraint:true});
 
-db.vehiculo.belongsTo(db.modelo,{foreignKey:'modelo_id',foreignKeyConstraint:true});
-db.modelo.hasMany(db.vehiculo,{foreignKey:'modelo_id',foreignKeyConstraint:true});
+// db.vehiculo.belongsTo(db.modelo,{foreignKey:'modelo_id',foreignKeyConstraint:true});
+// db.modelo.hasMany(db.vehiculo,{foreignKey:'modelo_id',foreignKeyConstraint:true});
 
-db.vehiculo.belongsTo(db.modelo,{foreignKey:'modelo_id',foreignKeyConstraint:true});
-db.modelo.hasMany(db.vehiculo,{foreignKey:'modelo_id',foreignKeyConstraint:true});
+// db.vehiculo.belongsTo(db.modelo,{foreignKey:'modelo_id',foreignKeyConstraint:true});
+// db.modelo.hasMany(db.vehiculo,{foreignKey:'modelo_id',foreignKeyConstraint:true});
 
 db.infracciones.hasMany(db.articulo_infraccion,{foreignKey:'infraccion_id',foreignKeyConstraint:true});
 db.articulo_infraccion.belongsTo(db.infracciones,{foreignKey:'infraccion_id',foreignKeyConstraint:true});

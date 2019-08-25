@@ -12,9 +12,9 @@ module.exports= (sequelize, DataTypes)=>{
             allowNull: false
         },
         marca_id:{
-            type: DataTypes.STRING,
+            type: DataTypes.INTEGER,
             allowNull: true
-        
+
         }
     },{
         freezeTableName: true,
