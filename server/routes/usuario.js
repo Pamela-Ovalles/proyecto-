@@ -13,7 +13,7 @@ router.post('/registrarUsers', UserController.registrar);
 router.post('/amet', UserController.principalAmet);
 router.get('/colocacionMultas', UserController.aplicarMulta);
 router.post('/colocacionMultas', UserController.registrar);
-router.get('/getPro', Direcciones.getProvincia);
+router.post('/getDirecciones', Direcciones.getProvincia);
 router.get('/getPersonaByCedula/:cedula', Extracciones.getPersonaByCedula);
 router.get('/getPersonas', Extracciones.getPersonas);
 

@@ -51,12 +51,6 @@ var controller = {
 		res.render('links/amet');
 	}
 
-
-
-
-
-
-
 };
 
 module.exports = controller;
