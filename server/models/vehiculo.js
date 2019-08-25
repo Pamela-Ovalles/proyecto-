@@ -14,10 +14,6 @@ module.exports= (sequelize, DataTypes)=>{
             type: DataTypes.STRING,
             allowNull:false
         },
-        fecha_expedicion:{
-            type: DataTypes.DATE,
-            allowNull: false
-        },
         status:{
             type: DataTypes.STRING
         },
@@ -32,12 +28,40 @@ module.exports= (sequelize, DataTypes)=>{
             type: DataTypes.STRING,
             allowNull: false
         },
-        modelo_id:{
+        marca_id:{
             type: DataTypes.INTEGER,
             allowNull: false
         },
         persona_id:{
-            type: DataTypes.STRING
+            type: DataTypes.STRING,
+            allowNull: false
+          },
+          ano_fabricante:{
+              type: DataTypes.DATE,
+                allowNull: false
+          },
+          no_motor:{
+              type: DataTypes.INTEGER,
+                allowNull: false
+          },
+          cant_pasajero:{
+              type: DataTypes.INTEGER
+          },
+          fuerza_motriz:{
+              type: DataTypes.INTEGER,
+                allowNull: false
+          },
+          cap_carga:{
+              type: DataTypes.INTEGER,
+              allowNull: false
+          },
+          cilindros:{
+              type: DataTypes.INTEGER,
+              allowNull: false
+          },
+          no_puerta:{
+              type: DataTypes.INTEGER,
+              allowNull: false
         }
     },{
         freezeTableName: true,

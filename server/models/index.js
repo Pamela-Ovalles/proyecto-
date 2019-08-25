@@ -66,6 +66,12 @@ db.provincia.hasMany(db.direccion,{foreignKey:'provincia_id',foreignKeyConstrain
 db.municipio.belongsTo(db.provincia,{foreignKey:'provincia_id',foreignKeyConstraint:true});
 db.provincia.hasMany(db.municipio,{foreignKey:'provincia_id',foreignKeyConstraint:true});
 
+db.vehiculo.belongsTo(db.marca,{foreignKey:'marca_id',foreignKeyConstraint:true});
+db.marca.hasMany(db.vehiculo,{foreignKey:'marca_id',foreignKeyConstraint:true});
+
+db.modelo.belongsTo(db.marca,{foreignKey:'marca_id',foreignKeyConstraint:true});
+db.marca.hasMany(db.modelo,{foreignKey:'marca_id',foreignKeyConstraint:true});
+
 db.infracciones.belongsTo(db.persona,{foreignKey:'persona_id',foreignKeyConstraint:true});
 // db.conductor.hasMany(db.infracciones,{foreignKey:'conductor_id',foreignKeyConstraint:true});
 db.persona.hasMany(db.infracciones,{foreignKey:'persona_id',foreignKeyConstraint:true});

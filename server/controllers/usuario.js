@@ -57,7 +57,8 @@ var controller = {
 		console.log(user);
 		console.log(password);
 		var userObj = null;
-		var windowOpen;
+		var sesion;
+
 
 		//userObj = await	models.persona.findOne({ where:{email: user}});
 		models.persona.findOne({ where: {email: user }}).then( userDataBase => {
@@ -79,6 +80,7 @@ var controller = {
 
 							message = 'Usuario autenticado como administrador ?';
 							res.render('links/administrador', { message } );
+							console.log(sesion);
 
 						} else if ( userObj.privilegio === 2 ) {
 
