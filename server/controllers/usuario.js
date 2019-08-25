@@ -30,8 +30,8 @@ var controller = {
 		privilegio:privilegio
 		// direccion_id: Calle
 	});
-		return res.json('correcto');
-		// return res.render('links/loginprueba');
+		// return res.json('correcto');
+		return res.render('links/loginprueba');
 	},
 	enviarPagina: async function (req, res){
 		 res.render('links/registrarUsers');
@@ -45,14 +45,71 @@ var controller = {
  		 res.render('links/prueba');
 	},
 
-	principalAmet: function(req, res){
+	principalAmet: async function( req, res ) {
 		var params = req.body;
-		var user = params.email;
+		var user = params.correousuario;
 		var password = params.password;
-
+		var message = '' ;
 		console.log(user);
 		console.log(password);
-		res.render('links/amet');
+		var userObj = null;
+
+		//userObj = await	models.persona.findOne({ where:{email: user}});
+		models.persona.findOne({ where: {email: user }}).then( userDataBase => {
+
+			userObj = userDataBase;
+		// console.log(userObj.email, userObj.password);
+		//validar si existe
+			console.log(userObj);
+ 		 
+		if( userObj !== null && userObj !== undefined ) {
+			console.log('Usuario existe');
+			//validar si elusario y password son igulaes
+			//nota en este if se debe usar bryct para comparar cuando se encripte
+				if(  userObj.password.toLowerCase() === password.toLowerCase() && userObj.password.toUpperCase() === password.toUpperCase()  && userObj.email === user ) {
+
+					console.log('Usuario autenticado');
+
+						if( userObj.privilegio === 3 ) {
+
+							message = 'Usuario autenticado como administrador ?';
+							res.render('links/administrador', { message } );
+
+						} else if ( userObj.privilegio === 2 ) {
+
+							message = 'Usuario autenticado como amet ?';
+							res.render('links/amet', { message } );//tienes que implementat algo para mostrar toast notification , para que se vea un mensaje cuando se inicie sesion
+
+						} else if ( userObj.privilegio === 1 ) {
+
+							message = 'Usuario autenticado como conductor ?';
+							res.render('links/conductor', { message } );//tienes que implementat algo para mostrar toast notification , para que se vea un mensaje cuando se inicie sesion
+
+						}
+
+
+				} else {
+
+					console.log('Password incorrecto');
+
+					message = 'Password incorrecto';
+					res.render('links/loginprueba', { message } );
+
+				}
+
+		} else {
+
+			console.log('Usuario no existe');
+			message = 'Error al autenticar usurario';
+			res.render('links/loginprueba', { message } );
+		}
+
+
+	});
+
+
+
+	//	res.render('links/amet');
 	}
 
 
