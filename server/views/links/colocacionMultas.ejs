@@ -136,50 +136,47 @@ function validar(){
 
           <div class="form-row">
               <div class="col-md-3">
-                <label for="primernombre">Primer nombre:</label>
-                <input type="text" class="form-control" name="primernombre" id="primernombre" placeholder="">
+                <label for="busqueda">Buscar Conductor:</label>
+                <input type="text" class="form-control" maxlength="17" name="busqueda" id="busqueda" placeholder="" onchange="onCedulaChange()" onkeypress='return event.charCode>=48 && event.charCode<=57'>
 
 
               </div>
 
               <div class="form-group col-md-3">
-                <label for="segundonombre">Segundo nombre:</label>
-              <input type="text" class="form-control" id="segundonombre" placeholder="">
+                <label for="primernombre">Nombres:</label>
+              <input type="text" class="form-control" id="segundonombre" disabled="disabled" autocomplete="off" placeholder="">
               </div>
 
               <div class="form-group col-md-3">
                   <label for="primerapellido">Primer apellido:</label>
-                 <input type="text" class="form-control" id="primerapellido" placeholder="">
+                 <input type="text" class="form-control" id="primerapellido" autocomplete="off" disabled="disebled" placeholder="">
               </div>
               <div class="form-group col-md-3">
                 <label for="segundoapellido">Segundo apellido:</label>
-                <input type="text" class="form-control" id="segundoapellido" placeholder="">
+                <input type="text" class="form-control" id="segundoapellido" autocomplete="off" disabled="disebled" placeholder="">
               </div>
 
               </div>
               <div class="form-row">
                 <div class="form-group col-md-3">
                   <label for="cedula">Cédula:</label>
-                  <input type="text" maxlength="11" class="form-control" id="cedula" onchange="onCedulaChange()" name="cedula">
+                  <input type="text" maxlength="11" autocomplete="off" class="form-control" id="cedula"  disabled="disabled" name="cedula">
                 </div>
 
               <div class="form-group col-md-3">
                 <label for="telefonoconductor">Teléfono:</label>
-                <input type="text" class="form-control" id="telefonoconductor" placeholder="">
+                <input type="text" class="form-control" maxlength="10" id="telefonoconductor" autocomplete="off" disabled="disebled" placeholder="" onkeypress='return event.charCode>=48 && event.charCode<=57'>
               </div>
               <div class="form-group col-md-3">
                 <label for="nacionalidad">Nacionalidad:</label>
-                <select id="nacionalidad" class="form-control">
-                  <option selected>Elegir...</option>
-                  <option>Dominicano</option>
-                  <option>Extranjero</option>
-                </select>
+                <input type="text" class="form-control" id="nacionalidad" disabled="disebled" autocomplete="off" placeholder="">
               </div>
             <div class="form-group col-md-3">
               <label for="pais">País:</label>
               <input type="text" class="form-control" id="pais" placeholder="">
             </div>
           </div>
+
 
     <div class="form-row">
     <div class="form-group col-md-3">
@@ -1184,20 +1181,44 @@ function validar(){
   <script src="custom-js/buscar-user.js"></script>
 
 <script>
+
+
 async function onCedulaChange (){
-  const cedula=document.getElementById("cedula").value;
-  extraccion = await http('GET','/getPersonaByCedula/'+cedula,null);
+
+  const busqueda=document.getElementById("busqueda").value;
+  const buscar = busqueda.substr(7);
+  console.log(buscar);
+
+  extraccion = await http('GET','/getPersonaByCedula/'+buscar,null);
   console.log(extraccion);
   console.log(extraccion.usuario.nombre_1);
+
+
+  /*if (extraccion.usuario==null) {
+  $("#primernombre").val('No encontrado');
+  $("#segundonombre").val('No encontrado');
+  $("#primerapellido").val('No encontrado');
+  $("#segundoapellido").val('No encontrado');
+  $("#telefonoconductor").val('No encontrado');
+  $("#nacionalidad").val('No encontrado');
+}*/
   if (extraccion.usuario!=null) {
+    $("#cedula").val(extraccion.usuario.cedula);
     $("#primernombre").val(extraccion.usuario.nombre_1);
     $("#primerapellido").val(extraccion.usuario.apellido_1);
+    //$("#").val(' no encontrado');
   }
 if (extraccion.usuario.nombre_2!=null) {
 $("#segundonombre").val(extraccion.usuario.nombre_2);
 }
 if (extraccion.usuario.apellido_2!=null) {
     $("#segundoapellido").val(extraccion.usuario.apellido_2);
+  }
+  if (extraccion.usuario.nacionalidad!=null) {
+  $("#nacionalidad").val(extraccion.usuario.nacionalidad);
+  }
+  if (extraccion.usuario.celular!=null) {
+  $("#telefonoconductor").val(extraccion.usuario.celular);
   }
 }
 

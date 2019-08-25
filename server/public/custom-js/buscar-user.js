@@ -19,23 +19,14 @@ function http(type, route, params){
   });
 }
 
-async function cargarDatos(cedula){
-  extraccion = await http('GET','/getPersonaByCedula/'+cedula,null);
+
+function onCedulaChange (){
+  const busqueda = document.getElementById("busqueda").value);
+  const buscar = busqueda.substr(7);
+  console.log(buscar);
+  extraccion = await http('GET','/getPersonaByCedula/'+buscar,null);
   console.log(extraccion);
-  //fillSelect('cedula',extraccion.usuario,'nombre_1');
 }
 
-// function onCedulaChange (){
-//   const cedula=document.getElementById("cedula").value;
-//   extraccion = await http('GET','/getPersonaByCedula/'+cedula,null);
-//   console.log(extraccion);
-// }
-
-function fillSelect(idSelect, list, probe){
-
-$(`#${idSelect}`).html("");
-$(`#${idSelect}`).html($(`#${idSelect}`).html()+`<option value="">Seleccione</option>`);
-$(`#${idSelect}`).html($(`#${idSelect}`).html()+`<option value="">${[probe]}</option>`);
-}
 
 cargarDatos();

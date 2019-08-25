@@ -10,7 +10,7 @@ async function getPersonaByCedula(req,res){
   res.json(
       {
     usuario: await models.persona.findOne({
-      where:{cedula: req.params.cedula},
+      where:{licencia: req.params.licencia},
       limit:1,
     }),
   }

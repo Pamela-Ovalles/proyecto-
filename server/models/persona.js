@@ -56,6 +56,10 @@ module.exports= (sequelize, DataTypes)=>{
         privilegio:{
           type: DataTypes.INTEGER,
           allowNull:false
+        },
+        licencia:{
+          type: DataTypes.STRING,
+          allowNull:false
         }
     },{
         freezeTableName: true,
