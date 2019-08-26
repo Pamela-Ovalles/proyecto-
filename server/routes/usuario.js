@@ -32,6 +32,7 @@ router.get('/getAmet/:cedula', Agente.getAgentesDigesset);
 router.get('/getAmet', Agente.getAgentes);
 router.get('/getPersonas', Extracciones.getPersonas);
 router.get('/registrarAuto', UserController.registrarAutomovil);
+router.get('/registrarpoli', UserController.registrarPoli);
 router.post('/registrarVehiculo', UserController.registrarVehiculo);
 //router.post('/prueba',UserController.leer);
 //router.put('')

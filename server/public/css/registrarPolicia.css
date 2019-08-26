@@ -1,0 +1,127 @@
+html,body{
+background-image: url('../imagenes/background.jpg');
+background-size: cover;
+background-repeat: no-repeat;
+height: auto;
+font-family: "Times New Roman", Times, serif;
+}
+
+.container{
+height: 100%;
+align-content: center;
+font-family: "Times New Roman", Times, serif;
+}
+
+.card{
+height:auto;
+margin-top: auto;
+margin-bottom: auto;
+width: 100%;
+background-color: rgba(0,0,0,0.5) !important;
+}
+
+h6{
+  color: #e80000;
+}
+
+fieldset{
+  color: white;
+}
+
+.card-body img{
+  display: block;
+  margin: auto;
+
+}
+#fechanacimiento,#municipio,#provincia,#ciudad,#sexo,{
+  height: 40px;
+}
+
+#primernombre,#primerapellido,#segundonombre,#segundoapellido,#cedula,#nacionalidad,#emailusuario,
+#contrasenausuario,#confcontrasenausuario,#telefonousuario,#calle{
+  height: 40px;
+}
+
+.card-body h1{
+color: white;
+}
+/* .card-body h5{
+color: white;
+} */
+
+label{
+  color: white;
+  font-size: 18px;
+  height: 5px;
+}
+
+.input-group-prepend span{
+width: 40px;
+background-color: #08aa36;
+color: black;
+border:0 !important;
+
+}
+
+input.form-control,select.form-control{
+
+  display: block;
+width: 100%;
+height: calc(1.5em + .75rem + 2px);
+padding: .375rem .75rem;
+font-size: 1rem;
+font-weight: 400;
+line-height: 1.5;
+color: #495057;
+background-color: #fff;
+background-clip: padding-box;
+border: 1px solid #ced4da;
+border-radius: .25rem;
+    border-top-left-radius: 0.25rem;
+    border-bottom-left-radius: 0.25rem;
+transition: border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+}
+
+
+
+
+/* .input-group-text span{
+width: 10px;
+
+} */
+
+
+
+.registrar_btn{
+float: right;
+right: 20px;
+color: black;
+background-color: #08aa36;
+width: 100px;
+height: 40px;
+border: 0;
+font-size: 18px;
+font-weight: 500;
+line-height: 40px;
+border-radius:  4px;
+
+}
+
+
+.registrar_btn{
+  position:relative;
+}
+
+.registrar_btn:hover{
+color: black;
+background-color: white;
+}
+
+
+.links{
+color: white;
+}
+
+.links a{
+margin-left: 4px;
+}
