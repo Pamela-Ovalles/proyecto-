@@ -33,29 +33,26 @@ var controller = {
 		// return res.json('correcto');
 		return res.render('links/loginprueba');
 	},
-	/*registrar: async function (req, res){
+	registrarMulta: async function (req, res){
 
-		const {primernombre,segundonombre,primerapellido,segundoapellido,cedula,fechanacimiento,
-		sexo,correo,clave,telefonousuario,provincia,calle,municipio,sector} = req.body;
+		const {} = req.body;
 
 
 		let infra = await models.infracciones.create({
 
 			descrip_infraccion: des-inf,
 			precio_infraccion: pre-inf,
-			persona_id: persona,
-			//direccion_id:
+			persona_id: busqueda,
 			policia_id: policia
 	});
-		// return res.json('correcto');
-		return res.render('links/loginprueba');
-	},*/
+		return res.render('links/colocacionMultas');
+
+	},
+	enviar: async function (req, res){
+		 res.render('links/colocacionMultas');
+	},
 	enviarPagina: async function (req, res){
 		 res.render('links/registrarUsers');
-	},
-
-	aplicarMulta: function(req, res){
- 		 res.render('links/colocacionMultas');
 	},
 
 	registrarAutomovil: function(req, res){
@@ -131,7 +128,6 @@ var controller = {
 							res.render('links/conductor', { message } );//tienes que implementat algo para mostrar toast notification , para que se vea un mensaje cuando se inicie sesion
 
 						}
-
 
 				} else {
 

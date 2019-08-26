@@ -24,36 +24,16 @@
 
 <script>
 function validar(){
-  var nombre_1,segundonombre,primerapellido,segundoapellido,cedula,nacionalidad,fechanacimiento,sexo,correo,contrasenausuario,confcontrasenausuario,telefonousuario,provincia,municipio,sector,calle,expre1,expre2;
+  var busqueda,nombre_1,segundonombre,primerapellido,segundoapellido,cedula,nacionalidad,expre1,expre2;
 
-//  persona = document.getElementById('persona').value;
-  segundonombre = document.getElementById('segundonombre').value;
-  primerapellido = document.getElementById('primerapellido').value;
-  segundoapellido = document.getElementById('segundoapellido').value;
-  cedula = document.getElementById('cedula').value;
-  nacionalidad = document.getElementById('nacionalidad').selectedIndex;
-  //provincia = document.getElementById('provincia').value;
-  //telefonoconductor = document.getElementById('provincia').value;
-  expre1 = /^[-\w.%+]{1,64}@(?:[A-Z0-9-]{1,63}\.){1,125}[A-Z]{2,63}$/i;
-  expre2 = /^[A-Z]+$/i;
-
+busqueda = document.getElementById('busqueda').value;
+cedula = document.getElementById('cedula').value;
+nacionalidad = document.getElementById('nacionalidad').selectedIndex;
+expre1 = /^[-\w.%+]{1,64}@(?:[A-Z0-9-]{1,63}\.){1,125}[A-Z]{2,63}$/i;
+expre2 = /^[A-Z]+$/i;
 
   if(nombre_1 === ""){
     alert("El campo primer nombre esta vacío");
-    // document.getElementById("primernombre").focus();
-    // document.getElementById("primernombre").style.borderColor="red";
-    return false;
-  }
-  else if (!expre2.test(nombre_1)) {
-    alert("El campo primer nombre solo es letras");
-    return false;
-  }
-  else if (primerapellido ==="") {
-    alert("El campo primer apellido esta vacío");
-    return false;
-  }
-  else if (cedula==="") {
-    alert("El campo cédula esta vacío");
     return false;
   }
   else if (nacionalidad=== 0) {
@@ -66,33 +46,12 @@ function validar(){
     return false;
   }
 
-  else if (nombre_1.length >15 || segundonombre.length >15 || primerapellido.length >15 || segundoapellido.length >15) {
-    alert("Los campos solo debe tener 15 caracteres ");
-    return false;
-  }
-
   else if (isNaN(telefonoconductor) ) {
     alert("El campo teléfono debe ser solo números ");
     return false;
   }
-  else if (telefonoconductor.length !=10 ) {
-    alert(" Teléfono debe tener 10 dígitos ");
-    return false;
-  }
-
 }
 </script>
-
-<!--<script>
-  $(document).ready(function(){
-    $('#primernombre').click(function(){
-      $("#cedula").load("../custom-js/leyendoarchivo.txt");
-});
-});
-
-</script>-->
-
-
 </head>
 
   <body>
@@ -103,32 +62,14 @@ function validar(){
         <img src="imagenes/digesettLogo.png"></img>
         <h3>Acta de Infracción</h3>
 
-        <div class="custom-control custom-label custom-control-inline">
-          <label class="" for="fecha">   Fecha:</label>
-        <script>
 
-        var mydate=new Date();
-        var year=mydate.getYear();
-        if (year < 1000)
-        year+=1900;
-        var day=mydate.getDay();
-        var month=mydate.getMonth()+1;
-        if (month<10)
-        month="0"+month;
-        var daym=mydate.getDate();
-        if (daym<10)
-        daym="0"+daym;
-        document.write("<small><font color='white' face='Times New Roman' size='4'>"+daym+"/"+month+"/"+year+"</font></small>")
-        </script>
-      </div>
-      <div class="custom-control custom-label custom-control-inline">
-        <label class="" for="hora">Hora: </label>
-        <script>
-        var hora = new Date()
-        var hrs = hora.getHours();
-        var min = hora.getMinutes();
-        document.write("<small><font color='white' face='Times New Roman' size='4' >"+hrs+":"+min+ "</font></small>")
-        </script>
+
+
+    <div class="form-group col-md-3">
+
+      <label for="buscaramet">Agente DIGESETT:</label>
+      <input type="text" class="form-control" id="buscaramet" autocomplete="off"  placeholder="" onchange="onBuscarAmet()">
+
     </div>
 
       </div>
@@ -139,8 +80,8 @@ function validar(){
           <div class="form-row">
 
               <div class="form-group col-md-3">
-                <a href="javascript:location.reload()">Buscar Conductor:</a>
-                <input type="text" class="form-control" maxlength="17" name="busqueda" id="busqueda" placeholder="" onchange="onCedulaChange()" onkeypress='return event.charCode>=48 && event.charCode<=57'>
+                <label>Buscar Conductor:</label>
+                <input type="text" class="form-control" maxlength="17" disabled="disabled" onclick="onCedulaChange()" value="" name="busqueda" id="busqueda" placeholder=""  onkeypress='return event.charCode>=48 && event.charCode<=57'>
 
 
               </div>
@@ -236,13 +177,16 @@ function validar(){
 
     <tr>
       <th scope="row">01</th>
-      <td>Art-42</td>
       <td>
-        <div class="input-group mb-3">
+    <div class="input-group mb-3">
     <div class="input-group-prepend">
-      <input type="checkbox" name="multa42" id="multa42" onclick="onCheckBox()">
+    <label2><input type="checkbox" text="" id="multa42"  onclick="onCheckBox()"> Art-42</label2>
     </div>
     </div>
+  </td>
+
+      <td>
+
       </td>
       <th scope="row">24</th>
       <td>Art-143</td>
@@ -278,7 +222,7 @@ function validar(){
       <td>
         <div class="input-group mb-3">
       <div class="input-group-prepend">
-      <input type="checkbox" id="multa44" >
+      <input type="checkbox" id="multa44" onclick="onCheckBox()">
       </div>
       </div>
       </td>
@@ -315,7 +259,7 @@ function validar(){
         <td>
           <div class="input-group mb-3">
       <div class="input-group-prepend">
-        <input type="checkbox"  value="" id="multa62" onclick="cargar_articulo()">
+        <input type="checkbox"  value="" id="multa62" name="multa62" onclick="onCheckBox()">
       </div>
       </div>
         </td>
@@ -357,7 +301,7 @@ function validar(){
         <td>
           <div class="input-group mb-3">
         <div class="input-group-prepend">
-        <input type="checkbox"  value="" id="multa63">
+        <input type="checkbox"  value="" id="multa63" name="multa63" onclick="onCheckBox()">
         </div>
         </div>
       </td>
@@ -395,7 +339,7 @@ function validar(){
         <td>
           <div class="input-group mb-3">
         <div class="input-group-prepend">
-        <input type="checkbox"  value="" id="multa64-1">
+        <input type="checkbox"  value="" id="multa64-1" name="multa64-1" onclick="onCheckBox()">
         </div>
         </div>
         </td>
@@ -404,7 +348,7 @@ function validar(){
         <td>
           <div class="input-group mb-3">
       <div class="input-group-prepend">
-        <input type="checkbox"  value="" id="multa44">
+        <input type="checkbox"  value="" id="multa147">
       </div>
       </div>
         </td>
@@ -422,7 +366,7 @@ function validar(){
         <td>
           <div class="input-group mb-3">
       <div class="input-group-prepend">
-        <input type="checkbox"  value="" id="multa44">
+        <input type="checkbox"  value="" id="multa238" name="multa238" onclick="onCheckBox()">
       </div>
       </div>
         </td>
@@ -435,7 +379,7 @@ function validar(){
         <td>
           <div class="input-group mb-3">
       <div class="input-group-prepend">
-        <input type="checkbox"  value="" id="multa64-2">
+        <input type="checkbox"  value="" id="multa64-2" name="multa64-2" onclick="onCheckBox()">
       </div>
       </div>
         </td>
@@ -475,7 +419,7 @@ function validar(){
         <td>
           <div class="input-group mb-3">
       <div class="input-group-prepend">
-        <input type="checkbox"  value="" id="multa64-3">
+        <input type="checkbox"  value="" id="multa64-3" name="multa64-3" onclick="onCheckBox()">
       </div>
       </div>
         </td>
@@ -1181,6 +1125,7 @@ function validar(){
 
 <script src="custom-js/buscar-user.js"></script>
 <script src="custom-js/buscar-articulo.js"></script>
+<script src="custom-js/Buscar-Agente.js"></script>
 
 <script>
 

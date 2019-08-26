@@ -22,11 +22,14 @@ function http(type, route, params){
 async function onCedulaChange(){
   const busqueda = document.getElementById("busqueda").value;
   const buscar = busqueda.substr(7);
-  //console.log(buscar);
+  const valido = busqueda.substr(0,11);
+  console.log(valido);
   extraccion = await http('GET','/getPersonaByCedula/'+buscar,null);
   //location.reload();
 
   if (extraccion.usuario!=null) {
+    const bus = extraccion.usuario.id;
+    const busqueda = document.getElementById("busqueda").value= bus;
       $("#cedula").val(extraccion.usuario.cedula);
       $("#primernombre").val(extraccion.usuario.nombre_1);
       $("#primerapellido").val(extraccion.usuario.apellido_1);
