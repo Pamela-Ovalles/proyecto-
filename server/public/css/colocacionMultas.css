@@ -95,7 +95,10 @@ color: white;
 }
 
 .links a{
-margin-left: 4px;
+
+color: white;
+font-size: 18px;
+
 }
 .table {
 

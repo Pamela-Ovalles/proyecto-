@@ -33,6 +33,23 @@ var controller = {
 		// return res.json('correcto');
 		return res.render('links/loginprueba');
 	},
+	/*registrar: async function (req, res){
+
+		const {primernombre,segundonombre,primerapellido,segundoapellido,cedula,fechanacimiento,
+		sexo,correo,clave,telefonousuario,provincia,calle,municipio,sector} = req.body;
+
+
+		let infra = await models.infracciones.create({
+
+			descrip_infraccion: des-inf,
+			precio_infraccion: pre-inf,
+			persona_id: persona,
+			//direccion_id:
+			policia_id: policia
+	});
+		// return res.json('correcto');
+		return res.render('links/loginprueba');
+	},*/
 	enviarPagina: async function (req, res){
 		 res.render('links/registrarUsers');
 	},

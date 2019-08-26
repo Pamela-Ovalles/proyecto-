@@ -19,14 +19,32 @@ function http(type, route, params){
   });
 }
 
-
-function onCedulaChange (){
-  const busqueda = document.getElementById("busqueda").value);
+async function onCedulaChange(){
+  const busqueda = document.getElementById("busqueda").value;
   const buscar = busqueda.substr(7);
-  console.log(buscar);
+  //console.log(buscar);
   extraccion = await http('GET','/getPersonaByCedula/'+buscar,null);
-  console.log(extraccion);
+  //location.reload();
+
+  if (extraccion.usuario!=null) {
+      $("#cedula").val(extraccion.usuario.cedula);
+      $("#primernombre").val(extraccion.usuario.nombre_1);
+      $("#primerapellido").val(extraccion.usuario.apellido_1);
+      //$("#").val(' no encontrado');
+    }
+  /*if (extraccion.usuario.nombre_2!=null) {
+  $("#segundonombre").val(extraccion.usuario.nombre_2);
+}*/
+  if (extraccion.usuario.apellido_2!=null) {
+      $("#segundoapellido").val(extraccion.usuario.apellido_2);
+    }
+    if (extraccion.usuario.nacionalidad!=null) {
+    $("#nacionalidad").val(extraccion.usuario.nacionalidad);
+    }
+    if (extraccion.usuario.celular!=null) {
+    $("#telefonoconductor").val(extraccion.usuario.celular);
+  }
+
 }
 
-
-cargarDatos();
+onCedulaChange();

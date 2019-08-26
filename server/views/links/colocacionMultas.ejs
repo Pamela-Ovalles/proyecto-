@@ -19,6 +19,8 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
 <script type="text/javascript" src="http://code.jquery.com/jquery.js"></script>
+<script src="js/bootstrap.mim.js"></script>
+ <script src="js/CardReader.js"></script>
 
 <script>
 function validar(){
@@ -135,8 +137,9 @@ function validar(){
         <form name="aplicarMulta" action="/colocacionMultas" method="POST" onsubmit="return validar();">
 
           <div class="form-row">
-              <div class="col-md-3">
-                <label for="busqueda">Buscar Conductor:</label>
+
+              <div class="form-group col-md-3">
+                <a href="javascript:location.reload()">Buscar Conductor:</a>
                 <input type="text" class="form-control" maxlength="17" name="busqueda" id="busqueda" placeholder="" onchange="onCedulaChange()" onkeypress='return event.charCode>=48 && event.charCode<=57'>
 
 
@@ -144,7 +147,7 @@ function validar(){
 
               <div class="form-group col-md-3">
                 <label for="primernombre">Nombres:</label>
-              <input type="text" class="form-control" id="segundonombre" disabled="disabled" autocomplete="off" placeholder="">
+              <input type="text" class="form-control" id="primernombre" disabled="disabled" autocomplete="off" placeholder="">
               </div>
 
               <div class="form-group col-md-3">
@@ -237,7 +240,7 @@ function validar(){
       <td>
         <div class="input-group mb-3">
     <div class="input-group-prepend">
-      <input type="checkbox"  value=""  id="multa42">
+      <input type="checkbox" name="multa42" id="multa42" onclick="onCheckBox()">
     </div>
     </div>
       </td>
@@ -275,7 +278,7 @@ function validar(){
       <td>
         <div class="input-group mb-3">
       <div class="input-group-prepend">
-      <input type="checkbox"  value="" id="multa44">
+      <input type="checkbox" id="multa44" >
       </div>
       </div>
       </td>
@@ -312,7 +315,7 @@ function validar(){
         <td>
           <div class="input-group mb-3">
       <div class="input-group-prepend">
-        <input type="checkbox"  value="" id="multa62">
+        <input type="checkbox"  value="" id="multa62" onclick="cargar_articulo()">
       </div>
       </div>
         </td>
@@ -1115,7 +1118,7 @@ function validar(){
       <td>
         <div class="input-group mb-3">
       <div class="input-group-prepend">
-      <input type="checkbox"  value="" id="multa44">
+      <input type="checkbox"  value="" id="multa142">
       </div>
       </div>
       </td>
@@ -1124,7 +1127,7 @@ function validar(){
       <td>
         <div class="input-group mb-3">
     <div class="input-group-prepend">
-      <input type="checkbox"  value="" id="multa44">
+      <input type="checkbox"  value="" id="multa189-17">
     </div>
     </div>
       </td>
@@ -1133,7 +1136,7 @@ function validar(){
       <td>
         <div class="input-group mb-3">
     <div class="input-group-prepend">
-      <input type="checkbox"  value="" id="multa44">
+      <input type="checkbox"  value="" id="multa231-5">
     </div>
     </div>
       </td>
@@ -1142,7 +1145,7 @@ function validar(){
       <td>
         <div class="input-group mb-3">
     <div class="input-group-prepend">
-      <input type="checkbox"  value="" id="multa44">
+      <input type="checkbox"  value="" id="multa269">
     </div>
     </div>
       </td>
@@ -1176,33 +1179,21 @@ function validar(){
 </div>
   </div>
 
- <script src="js/bootstrap.mim.js"></script>
-  <script src="js/CardReader.js"></script>
-  <script src="custom-js/buscar-user.js"></script>
+<script src="custom-js/buscar-user.js"></script>
+<script src="custom-js/buscar-articulo.js"></script>
 
 <script>
 
-
-async function onCedulaChange (){
-
-  const busqueda=document.getElementById("busqueda").value;
+/*
+async function onCedulaChange(){
+  const busqueda = document.getElementById("busqueda").value;
   const buscar = busqueda.substr(7);
-  console.log(buscar);
-
+  //console.log(buscar);
   extraccion = await http('GET','/getPersonaByCedula/'+buscar,null);
   console.log(extraccion);
   console.log(extraccion.usuario.nombre_1);
 
-
-  /*if (extraccion.usuario==null) {
-  $("#primernombre").val('No encontrado');
-  $("#segundonombre").val('No encontrado');
-  $("#primerapellido").val('No encontrado');
-  $("#segundoapellido").val('No encontrado');
-  $("#telefonoconductor").val('No encontrado');
-  $("#nacionalidad").val('No encontrado');
-}*/
-  if (extraccion.usuario!=null) {
+if (extraccion.usuario!=null) {
     $("#cedula").val(extraccion.usuario.cedula);
     $("#primernombre").val(extraccion.usuario.nombre_1);
     $("#primerapellido").val(extraccion.usuario.apellido_1);
@@ -1219,9 +1210,9 @@ if (extraccion.usuario.apellido_2!=null) {
   }
   if (extraccion.usuario.celular!=null) {
   $("#telefonoconductor").val(extraccion.usuario.celular);
-  }
 }
-
+}
+*/
 
 </script>
 
