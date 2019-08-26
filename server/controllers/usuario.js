@@ -6,7 +6,7 @@ var controller = {
 	home: function(req, res){
 		return res.render('links/loginprueba');
 	},
-	registrar: async function (req, res){
+	registrarUser: async function (req, res){
 
 		const {primernombre,segundonombre,primerapellido,segundoapellido,cedula,fechanacimiento,
 		sexo,correo,clave,telefonousuario,provincia,calle,municipio,sector} = req.body;
@@ -58,15 +58,36 @@ var controller = {
  		 res.render('links/colocacionMultas');
 	},
 
-	registrarVehiculo: function(req, res){
+	registrarAutomovil: function(req, res){
  		 res.render('links/registrarVehiculo');
+	},
+
+	registrarVehiculo: async function(req, res){
+		const {placa,matricula,tipoveh,color,marca,modelo,cedula,fabricación} = req.body;
+
+		var mensaje = '';
+
+	 let vehiculo = await models.vehiculo.create({
+		 placa:placa,
+		 matricula:matricula,
+		 tipo_vehiculo:tipoveh,
+		 color:color,
+		 marca_id:marca,
+		 modelo_id:modelo,
+		 persona_id:cedula,
+		 ano_fabricante:fabricación
+
+ });
+ 		mensaje = 'CORRECTO';
+	 // return res.json('correcto');
+	 res.render('links/conductor', {mensaje} );
 	},
 
 	leer: function(req, res){
  		 res.render('links/prueba');
 	},
 
-	principalAmet: async function( req, res ) {
+	principal: async function( req, res ) {
 		var params = req.body;
 		var user = params.correousuario;
 		var password = params.password;
@@ -74,6 +95,8 @@ var controller = {
 		console.log(user);
 		console.log(password);
 		var userObj = null;
+		var sesion;
+
 
 		//userObj = await	models.persona.findOne({ where:{email: user}});
 		models.persona.findOne({ where: {email: user }}).then( userDataBase => {
@@ -95,6 +118,7 @@ var controller = {
 
 							message = 'Usuario autenticado como administrador ?';
 							res.render('links/administrador', { message } );
+							console.log(sesion);
 
 						} else if ( userObj.privilegio === 2 ) {
 

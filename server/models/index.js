@@ -66,6 +66,12 @@ db.provincia.hasMany(db.direccion,{foreignKey:'provincia_id',foreignKeyConstrain
 db.municipio.belongsTo(db.provincia,{foreignKey:'provincia_id',foreignKeyConstraint:true});
 db.provincia.hasMany(db.municipio,{foreignKey:'provincia_id',foreignKeyConstraint:true});
 
+db.vehiculo.belongsTo(db.marca,{foreignKey:'marca_id',foreignKeyConstraint:true});
+db.marca.hasMany(db.vehiculo,{foreignKey:'marca_id',foreignKeyConstraint:true});
+
+db.modelo.belongsTo(db.marca,{foreignKey:'marca_id',foreignKeyConstraint:true});
+db.marca.hasMany(db.modelo,{foreignKey:'marca_id',foreignKeyConstraint:true});
+
 db.infracciones.belongsTo(db.persona,{foreignKey:'persona_id',foreignKeyConstraint:true});
 // db.conductor.hasMany(db.infracciones,{foreignKey:'conductor_id',foreignKeyConstraint:true});
 db.persona.hasMany(db.infracciones,{foreignKey:'persona_id',foreignKeyConstraint:true});
@@ -85,11 +91,11 @@ db.policia.belongsTo(db.persona, {foreignKey: 'persona_id',foreignKeyConstraint:
 db.municipio.hasMany(db.sector,{foreignKey:'municipio_id',foreignKeyConstraint:true});
 db.sector.belongsTo(db.municipio,{foreignKey:'municipio_id',foreignKeyConstraint:true});
 
-db.vehiculo.belongsTo(db.modelo,{foreignKey:'modelo_id',foreignKeyConstraint:true});
-db.modelo.hasMany(db.vehiculo,{foreignKey:'modelo_id',foreignKeyConstraint:true});
+// db.vehiculo.belongsTo(db.modelo,{foreignKey:'modelo_id',foreignKeyConstraint:true});
+// db.modelo.hasMany(db.vehiculo,{foreignKey:'modelo_id',foreignKeyConstraint:true});
 
-db.vehiculo.belongsTo(db.modelo,{foreignKey:'modelo_id',foreignKeyConstraint:true});
-db.modelo.hasMany(db.vehiculo,{foreignKey:'modelo_id',foreignKeyConstraint:true});
+// db.vehiculo.belongsTo(db.modelo,{foreignKey:'modelo_id',foreignKeyConstraint:true});
+// db.modelo.hasMany(db.vehiculo,{foreignKey:'modelo_id',foreignKeyConstraint:true});
 
 db.infracciones.hasMany(db.articulo_infraccion,{foreignKey:'infraccion_id',foreignKeyConstraint:true});
 db.articulo_infraccion.belongsTo(db.infracciones,{foreignKey:'infraccion_id',foreignKeyConstraint:true});
@@ -99,6 +105,7 @@ db.sequelize = sequelize;
 db.Sequelize = Sequelize;
 
 sequelize.sync();
-//sequelize.sync({force:true});
+// sequelize.sync({force:true});
+
 
 module.exports = db;

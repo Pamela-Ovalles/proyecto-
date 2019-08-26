@@ -1,23 +1,18 @@
 'use strict';
 module.exports= (sequelize, DataTypes)=>{
-    const modelo = sequelize.define('modelo',{
+    const marca = sequelize.define('marca',{
         id:{
           type: DataTypes.INTEGER,
           primaryKey: true,
           allowNull: false,
           autoIncrement: true
         },
-        nombre_modelo:{
+        nom_marca:{
             type: DataTypes.STRING,
             allowNull: false
-        },
-        marca_id:{
-            type: DataTypes.INTEGER,
-            allowNull: true
-
         }
     },{
         freezeTableName: true,
     });
-    return modelo;
+    return marca;
 };
