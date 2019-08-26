@@ -6,21 +6,21 @@ module.exports= (sequelize, DataTypes)=>{
             primaryKey: true,
             allowNull: false
         },
-        chasis:{
-            type: DataTypes.STRING,
-            allowNull: false
-        },
+        // chasis:{
+        //     type: DataTypes.STRING,
+        //     allowNull: false
+        // },
         matricula:{
             type: DataTypes.STRING,
             allowNull:true
         },
-        status:{
-            type: DataTypes.STRING
-        },
-        tipo_emision:{
-            type: DataTypes.STRING,
-              allowNull: false
-        },
+        // status:{
+        //     type: DataTypes.STRING
+        // },
+        // tipo_emision:{
+        //     type: DataTypes.STRING,
+        //       allowNull: false
+        // },
         tipo_vehiculo:{
             type: DataTypes.STRING
         },
@@ -39,29 +39,29 @@ module.exports= (sequelize, DataTypes)=>{
           ano_fabricante:{
               type: DataTypes.DATE,
                 allowNull: false
-          },
-          no_motor:{
-              type: DataTypes.INTEGER,
-                allowNull: false
-          },
-          cant_pasajero:{
-              type: DataTypes.INTEGER
-          },
-          fuerza_motriz:{
-              type: DataTypes.INTEGER,
-                allowNull: false
-          },
-          cap_carga:{
-              type: DataTypes.INTEGER,
-              allowNull: false
-          },
-          cilindros:{
-              type: DataTypes.INTEGER,
-              allowNull: false
-          },
-          no_puerta:{
-              type: DataTypes.INTEGER,
-              allowNull: false
+          // },
+          // no_motor:{
+          //     type: DataTypes.INTEGER,
+          //       allowNull: false
+          // },
+          // cant_pasajero:{
+          //     type: DataTypes.INTEGER
+          // },
+          // fuerza_motriz:{
+          //     type: DataTypes.INTEGER,
+          //       allowNull: false
+          // },
+          // cap_carga:{
+          //     type: DataTypes.INTEGER,
+          //     allowNull: false
+          // },
+          // cilindros:{
+          //     type: DataTypes.INTEGER,
+          //     allowNull: false
+          // },
+          // no_puerta:{
+          //     type: DataTypes.INTEGER,
+          //     allowNull: false
         }
     },{
         freezeTableName: true,

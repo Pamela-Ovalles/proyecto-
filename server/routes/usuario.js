@@ -17,7 +17,7 @@ router.get('/colocacionMultas', UserController.aplicarMulta);
 router.post('/colocacionMultas', UserController.registrarUser);
 router.post('/getPro', Direcciones.getProvincia);
 router.post('/getDirecciones', Direcciones.getProvincia);
-router.post('/getMarcas', Marcas.getMarcas);
+router.post('/getMarca', Marcas.getMarcas);
 router.get('/getPersonaByCedula/:licencia', Extracciones.getPersonaByCedula);
 router.get('/getPersonas', Extracciones.getPersonas);
 router.get('/registrarAuto', UserController.registrarAutomovil);

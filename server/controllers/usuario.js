@@ -46,30 +46,24 @@ var controller = {
 	},
 
 	registrarVehiculo: async function(req, res){
-		const {placa,chasis,matricula,status,emision,tipoveh,color,marca,modelo,cedula,fabricación,
-		serie,pasajeros,fuerza,carga,cilindros,puertas} = req.body;
+		const {placa,matricula,tipoveh,color,marca,modelo,cedula,fabricación} = req.body;
+
+		var mensaje = '';
 
 	 let vehiculo = await models.vehiculo.create({
 		 placa:placa,
-		 chasis:chasis,
-		 // matricula:matricula,
-		 status:status,
-		 tipo_emision:emision,
+		 matricula:matricula,
 		 tipo_vehiculo:tipoveh,
 		 color:color,
 		 marca_id:marca,
 		 modelo_id:modelo,
 		 persona_id:cedula,
-		 ano_fabricante:fabricación,
- 		no_motor:serie,
-		cant_pasajero:pasajeros,
-		fuerza_motriz:fuerza,
-		cap_carga:carga,
-		cilindros:cilindros,
-		no_puerta:puertas
+		 ano_fabricante:fabricación
+
  });
+ 		mensaje = 'CORRECTO';
 	 // return res.json('correcto');
-	 res.render('links/conductor');
+	 res.render('links/conductor', {mensaje} );
 	},
 
 	leer: function(req, res){
