@@ -60,6 +60,11 @@ var controller = {
 
 	registrarAutomovil: function(req, res){
  		 res.render('links/registrarVehiculo');
+
+	 },
+
+ 	registrarPoli: function(req, res){
+  		 res.render('links/registrarPolicia');
 	},
 
 	registrarVehiculo: async function(req, res){

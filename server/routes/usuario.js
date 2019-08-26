@@ -24,6 +24,7 @@ router.get('/getArticulo/:id', Extra_Multas.getArticuloForPersona);
 router.get('/getArticulos', Extra_Multas.getArticulo);
 router.get('/getPersonas', Extracciones.getPersonas);
 router.get('/registrarAuto', UserController.registrarAutomovil);
+router.get('/registrarpoli', UserController.registrarPoli);
 router.post('/registrarVehiculo', UserController.registrarVehiculo);
 //router.post('/prueba',UserController.leer);
 //router.put('')
