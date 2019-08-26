@@ -12,7 +12,7 @@ module.exports= (sequelize, DataTypes)=>{
         },
         matricula:{
             type: DataTypes.STRING,
-            allowNull:false
+            allowNull:true
         },
         status:{
             type: DataTypes.STRING

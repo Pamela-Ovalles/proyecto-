@@ -19,6 +19,7 @@ function http(type, route, params){
     xhr.send();
   });
 }
+
 async function cargarProvinciasYDemas(){
   direcciones = await http('POST', '/getDirecciones', null);
   fillSelect('provincia',direcciones.provincias, 'nom_provincia', 'id');
