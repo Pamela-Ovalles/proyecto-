@@ -27,8 +27,8 @@ function validar(){
   var busqueda,nombre_1,segundonombre,primerapellido,segundoapellido,cedula,nacionalidad,expre1,expre2;
 
 busqueda = document.getElementById('busqueda').value;
-cedula = document.getElementById('cedula').value;
-nacionalidad = document.getElementById('nacionalidad').selectedIndex;
+//buscaramet = document.getElementById('busqueda').value;
+
 expre1 = /^[-\w.%+]{1,64}@(?:[A-Z0-9-]{1,63}\.){1,125}[A-Z]{2,63}$/i;
 expre2 = /^[A-Z]+$/i;
 
@@ -62,27 +62,23 @@ expre2 = /^[A-Z]+$/i;
         <img src="imagenes/digesettLogo.png"></img>
         <h3>Acta de Infracción</h3>
 
-
-
-
     <div class="form-group col-md-3">
 
       <label for="buscaramet">Agente DIGESETT:</label>
-      <input type="text" class="form-control" id="buscaramet" autocomplete="off"  placeholder="" onchange="onBuscarAmet()">
+      <input type="text" class="form-control" id="buscaramet" name="policia_id" autocomplete="off"  placeholder="" onchange="onBuscarAmet()">
 
     </div>
 
       </div>
 
       <div class="card-body">
-        <form name="aplicarMulta" action="/colocacionMultas" method="POST" onsubmit="return validar();">
+        <form name="aplicarMulta" action="/colocacionMultas" method="POST" >
 
           <div class="form-row">
 
               <div class="form-group col-md-3">
                 <label>Buscar Conductor:</label>
-                <input type="text" class="form-control" maxlength="17" disabled="disabled" onclick="onCedulaChange()" value="" name="busqueda" id="busqueda" placeholder=""  onkeypress='return event.charCode>=48 && event.charCode<=57'>
-
+                <input type="text" class="form-control" maxlength="17" onchange="onCedulaChange()" name="busqueda" id="busqueda" placeholder=""  onkeypress='return event.charCode>=48 && event.charCode<=57'>
 
               </div>
 
@@ -93,19 +89,22 @@ expre2 = /^[A-Z]+$/i;
 
               <div class="form-group col-md-3">
                   <label for="primerapellido">Primer apellido:</label>
-                 <input type="text" class="form-control" id="primerapellido" autocomplete="off" disabled="disebled" placeholder="">
+                 <input type="text" class="form-control" id="primerapellido" autocomplete="off" disabled="disabled" placeholder="">
               </div>
               <div class="form-group col-md-3">
                 <label for="segundoapellido">Segundo apellido:</label>
-                <input type="text" class="form-control" id="segundoapellido" autocomplete="off" disabled="disebled" placeholder="">
+                <input type="text" class="form-control" id="segundoapellido" autocomplete="off" disabled="disabled" placeholder="">
               </div>
 
               </div>
               <div class="form-row">
                 <div class="form-group col-md-3">
                   <label for="cedula">Cédula:</label>
-                  <input type="text" maxlength="11" autocomplete="off" class="form-control" id="cedula"  disabled="disabled" name="cedula">
+                  <input type="text" maxlength="11" autocomplete="off" class="form-control" id="cedula"  name="cedula" disabled="disabled">
                 </div>
+
+                <input type="hidden" maxlength="11" autocomplete="off" class="form-control" id="cedulaoculta"  name="cedulaoculta" >
+
 
               <div class="form-group col-md-3">
                 <label for="telefonoconductor">Teléfono:</label>
@@ -125,19 +124,19 @@ expre2 = /^[A-Z]+$/i;
     <div class="form-row">
     <div class="form-group col-md-3">
       <label for="marca">Marca:</label>
-      <input type="text" class="form-control" id="marca" placeholder="">
+      <input type="text" class="form-control" id="marca" name="marca" placeholder="">
     </div>
     <div class="form-group col-md-3">
       <label for="modelo">Modelo:</label>
-      <input type="text" class="form-control" id="modelo" placeholder="">
+      <input type="text" class="form-control" id="modelo" name="modelo" placeholder="">
     </div>
     <div class="form-group col-md-3">
       <label for="placa">No. Placa:</label>
-      <input type="text" class="form-control" id="placa" placeholder="">
+      <input type="text" class="form-control" id="placa" name="placa" placeholder="">
     </div>
     <div class="form-group col-md-3">
       <label for="tipovehiculo">Tipo de Vehículo:</label>
-      <select id="tipovehiculo" class="form-control">
+      <select id="tipovehiculo" name="tipovehiculo" class="form-control">
         <option selected>Elegir...</option>
         <option>Motocicleta</option>
         <option>Automóvil</option>
@@ -150,7 +149,6 @@ expre2 = /^[A-Z]+$/i;
   </div>
 
 <caption ><font color='white' align='center' size='5'>Listado de Infracción</font>
-      <a href="#"> (Ver detalle de los Artículos) </a>
 
 </caption>
 <div class="table-responsive">
@@ -159,955 +157,658 @@ expre2 = /^[A-Z]+$/i;
 
   <thead>
     <tr>
-      <th scope="col">Código</th>
-      <th scope="col">Artículo</th>
+      <!--<th scope="col">Código</th>-->
       <th scope="col">Seleccione</th>
-      <th scope="col">Código</th>
-      <th scope="col">Artículo</th>
+      <th scope="col">Descripción</th>
       <th scope="col">Seleccione</th>
-      <th scope="col">Código</th>
-      <th scope="col">Artículo</th>
+      <th scope="col">Descripción</th>
       <th scope="col">Seleccione</th>
-      <th scope="col">Código</th>
-      <th scope="col">Artículo</th>
+      <th scope="col">Descripción</th>
       <th scope="col">Seleccione</th>
+      <th scope="col">Descripción</th>
     </tr>
   </thead>
   <tbody>
 
-    <tr>
-      <th scope="row">01</th>
-      <td>
-    <div class="input-group mb-3">
-    <div class="input-group-prepend">
-    <label2><input type="checkbox" text="" id="multa42"  onclick="onCheckBox()"> Art-42</label2>
-    </div>
-    </div>
-  </td>
-
-      <td>
-
-      </td>
-      <th scope="row">24</th>
-      <td>Art-143</td>
-      <td>
-        <div class="input-group mb-3">
-    <div class="input-group-prepend">
-      <input type="checkbox"  value="" id="multa143">
-    </div>
-    </div>
-      </td>
-      <th scope="row">47</th>
-      <td>Art-189 No.18</td>
-      <td>
-        <div class="input-group mb-3">
-    <div class="input-group-prepend">
-      <input type="checkbox"  value="" id="multa189-18">
-    </div>
-    </div>
-      </td>
-      <th scope="row">70</th>
-      <td>Art-233</td>
-      <td>
-        <div class="input-group mb-3">
-    <div class="input-group-prepend">
-      <input type="checkbox"  value="" id="multa233">
-    </div>
-    </div>
-      </td>
-    </tr>
-    <tr>
-      <th scope="row">02</th>
-      <td>Art-44</td>
-      <td>
-        <div class="input-group mb-3">
-      <div class="input-group-prepend">
-      <input type="checkbox" id="multa44" onclick="onCheckBox()">
-      </div>
-      </div>
-      </td>
-      <th scope="row">25</th>
-      <td>Art-144</td>
-      <td>
-        <div class="input-group mb-3">
-    <div class="input-group-prepend">
-      <input type="checkbox"  value="" id="multa144">
-    </div>
-    </div>
-      </td>
-      <th scope="row">48</th>
-      <td>Art-189 No.19</td>
-      <td>
-        <div class="input-group mb-3">
-    <div class="input-group-prepend">
-      <input type="checkbox"  value="" id="multa189-19">
-    </div>
-    </div>
-      </td>
-      <th scope="row">71</th>
-      <td>Art-235</td>
-      <td>
-        <div class="input-group mb-3">
-    <div class="input-group-prepend">
-      <input type="checkbox"  value="" id="multa235">
-    </div>
-    </div>
-      </td>
-</tr><tr>
-        <th scope="row">03</th>
-        <td>Art-62</td>
-        <td>
-          <div class="input-group mb-3">
-      <div class="input-group-prepend">
-        <input type="checkbox"  value="" id="multa62" name="multa62" onclick="onCheckBox()">
-      </div>
-      </div>
-        </td>
-        <th scope="row">26</th>
-        <td>Art-145</td>
-        <td>
-          <div class="input-group mb-3">
-      <div class="input-group-prepend">
-        <input type="checkbox"  value="" id="multa145">
-      </div>
-      </div>
-        </td>
-        <th scope="row">49</th>
-        <td>Art-191</td>
-        <td>
-          <div class="input-group mb-3">
-      <div class="input-group-prepend">
-        <input type="checkbox"  value="" id="multa191">
-      </div>
-      </div>
-        </td>
-        <th scope="row">72</th>
-        <td>Art-236</td>
-        <td>
-          <div class="input-group mb-3">
-      <div class="input-group-prepend">
-        <input type="checkbox"  value="" id="multa236">
-      </div>
-      </div>
-        </td>
-
-
-
-</tr>
-
 <tr>
-        <th scope="row">04</th>
-        <td>Art-63</td>
-        <td>
-          <div class="input-group mb-3">
-        <div class="input-group-prepend">
-        <input type="checkbox"  value="" id="multa63" name="multa63" onclick="onCheckBox()">
-        </div>
-        </div>
-      </td>
-      <th scope="row">27</th>
-      <td>Art-146</td>
-      <td>
-        <div class="input-group mb-3">
+
+    <td><div class="input-group mb-3">
     <div class="input-group-prepend">
-      <input type="checkbox"  value="" id="multa146">
+    <label2><input type="checkbox" text="" value="42"  name="checklist[]"> Art-42</label2>
     </div></div></td>
-    <th scope="row">50</th>
-    <td>Art-192</td>
-    <td>
-      <div class="input-group mb-3">
-  <div class="input-group-prepend">
-    <input type="checkbox"  value="" id="multa192">
-  </div>
-  </div>
-    </td>
-    <th scope="row">73</th>
-    <td>Art-237</td>
-    <td>
-      <div class="input-group mb-3">
-  <div class="input-group-prepend">
-    <input type="checkbox"  value="" id="multa237">
-  </div>
-  </div>
-    </td>
+    <td>Tablilla de identificación personal.</td>
+
+    <td><div class="input-group mb-3">
+    <div class="input-group-prepend">
+    <label2><input type="checkbox" text="" value="143"  name="checklist[]"> Art-143</label2>
+    </div></div></td>
+    <td>Conservación de señales de tránsito.</td>
+
+    <td><div class="input-group mb-3">
+    <div class="input-group-prepend">
+    <label2><input type="checkbox" text="" id="multa189-18"  onclick="onCheckBox()"> Art-189 No.18</label2>
+    </div></div></td>
+    <td>Modificar color consignado en la matrícula.</td>
+
+    <td><div class="input-group mb-3">
+    <div class="input-group-prepend">
+    <label2><input type="checkbox" text="" id="multa233"  onclick="onCheckBox()"> Art-233</label2>
+    </div></div></td>
+    <td>Precaución al encontrarse con un autobús escolar.</td>
 
 </tr>
 
 <tr>
-        <th scope="row">05</th>
-        <td>Art-64 No.1</td>
-        <td>
-          <div class="input-group mb-3">
-        <div class="input-group-prepend">
-        <input type="checkbox"  value="" id="multa64-1" name="multa64-1" onclick="onCheckBox()">
-        </div>
-        </div>
-        </td>
-        <th scope="row">28</th>
-        <td>Art-147</td>
-        <td>
-          <div class="input-group mb-3">
-      <div class="input-group-prepend">
-        <input type="checkbox"  value="" id="multa147">
-      </div>
-      </div>
-        </td>
-        <th scope="row">51</th>
-        <td>Art-193</td>
-        <td>
-          <div class="input-group mb-3">
-      <div class="input-group-prepend">
-        <input type="checkbox"  value="" id="multa193">
-      </div>
-      </div>
-        </td>
-        <th scope="row">74</th>
-        <td>Art-238</td>
-        <td>
-          <div class="input-group mb-3">
-      <div class="input-group-prepend">
-        <input type="checkbox"  value="" id="multa238" name="multa238" onclick="onCheckBox()">
-      </div>
-      </div>
-        </td>
-      </tr>
 
+      <td><div class="input-group mb-3">
+      <div class="input-group-prepend">
+      <label2><input type="checkbox" text="" id="multa44" value="44"  name="checklist[]"> Art-44</label2>
+      </div></div></td>
+      <td>Operación sin licencia o rótulo de identidad autorizado.</td>
 
-      <tr>
-        <th scope="row">06</th>
-        <td>Art-64 No.2</td>
-        <td>
-          <div class="input-group mb-3">
+      <td><div class="input-group mb-3">
       <div class="input-group-prepend">
-        <input type="checkbox"  value="" id="multa64-2" name="multa64-2" onclick="onCheckBox()">
-      </div>
-      </div>
-        </td>
-        <th scope="row">29</th>
-        <td>Art-155</td>
-        <td>
-          <div class="input-group mb-3">
-      <div class="input-group-prepend">
-        <input type="checkbox"  value="" id="multa155">
-      </div>
-      </div>
-        </td>
-        <th scope="row">52</th>
-        <td>Art-194</td>
-        <td>
-          <div class="input-group mb-3">
-      <div class="input-group-prepend">
-        <input type="checkbox"  value="" id="multa194">
-      </div>
-      </div>
-        </td>
-        <th scope="row">75</th>
-        <td>Art-239</td>
-        <td>
-          <div class="input-group mb-3">
-      <div class="input-group-prepend">
-        <input type="checkbox"  value="" id="multa239">
-      </div>
-      </div>
-        </td>
-      </tr>
+      <label2><input type="checkbox" text="" id="multa144" value="144"  name="checklist[]"> Art-144</label2>
+      </div></div></td>
+      <td>Conservación de las vías públicas y paseos.</td>
 
+      <td><div class="input-group mb-3">
+      <div class="input-group-prepend">
+      <label2><input type="checkbox" text="" id="multa189-19"  onclick="onCheckBox()"> Art-189 No.19</label2>
+      </div></div></td>
+      <td>Tirar o empujar un vehículo por otro vehiculo de motor no diseñado para tales fines.</td>
 
-      <tr>
-        <th scope="row">07</th>
-        <td>Art-64 No.3</td>
-        <td>
-          <div class="input-group mb-3">
+      <td><div class="input-group mb-3">
       <div class="input-group-prepend">
-        <input type="checkbox"  value="" id="multa64-3" name="multa64-3" onclick="onCheckBox()">
-      </div>
-      </div>
-        </td>
-        <th scope="row">30</th>
-        <td>Art-156</td>
-        <td>
-          <div class="input-group mb-3">
-      <div class="input-group-prepend">
-        <input type="checkbox"  value="" id="multa156">
-      </div>
-      </div>
-        </td>
-        <th scope="row">53</th>
-        <td>Art-195</td>
-        <td>
-          <div class="input-group mb-3">
-      <div class="input-group-prepend">
-        <input type="checkbox"  value="" id="multa195">
-      </div>
-      </div>
-        </td>
-        <th scope="row">76</th>
-        <td>Art-241</td>
-        <td>
-          <div class="input-group mb-3">
-      <div class="input-group-prepend">
-        <input type="checkbox"  value="" id="multa241">
-      </div>
-      </div>
-        </td>
-      </tr>
+      <label2><input type="checkbox" text="" id="multa235"  onclick="onCheckBox()"> Art-235</label2>
+      </div></div></td>
+      <td>Giro prohibido.</td>
+</tr>
 
+<tr>
+      <td><div class="input-group mb-3">
+      <div class="input-group-prepend">
+      <label2><input type="checkbox" text="" id="multa62"  value="62"  name="checklist[]"> Art-62</label2>
+      </div></div></td>
+      <td>Transporte de carga o mercancías en vehículos destinados al transporte público de pasajero.</td>
 
-      <tr>
-        <th scope="row">08</th>
-        <td>Art-67</td>
-        <td>
-          <div class="input-group mb-3">
+      <td><div class="input-group mb-3">
       <div class="input-group-prepend">
-        <input type="checkbox"  value="" id="multa67">
-      </div>
-      </div>
-        </td>
-        <th scope="row">31</th>
-        <td>Art-158</td>
-        <td>
-          <div class="input-group mb-3">
-      <div class="input-group-prepend">
-        <input type="checkbox"  value="" id="multa158">
-      </div>
-      </div>
-        </td>
-        <th scope="row">54</th>
-        <td>Art-210</td>
-        <td>
-          <div class="input-group mb-3">
-      <div class="input-group-prepend">
-        <input type="checkbox"  value="" id="multa210">
-      </div>
-      </div>
-        </td>
-        <th scope="row">77</th>
-        <td>Art-246</td>
-        <td>
-          <div class="input-group mb-3">
-      <div class="input-group-prepend">
-        <input type="checkbox"  value="" id="multa246">
-      </div>
-      </div>
-        </td>
-      </tr>
+      <label2><input type="checkbox" text="" id="multa145"  onclick="onCheckBox()"> Art-145</label2>
+      </div></div></td>
+      <td>Uso de las vías públicas y paseos.</td>
 
+      <td><div class="input-group mb-3">
+      <div class="input-group-prepend">
+      <label2><input type="checkbox" text="" id="multa191"  onclick="onCheckBox()"> Art-191</label2>
+      </div></div></td>
+      <td>Emisiones contaminantes y conversión de vehículos de motor.</td>
 
-      <tr>
-        <th scope="row">09</th>
-        <td>Art-68</td>
-        <td>
-          <div class="input-group mb-3">
+      <td><div class="input-group mb-3">
       <div class="input-group-prepend">
-        <input type="checkbox"  value="" id="multa68">
-      </div>
-      </div>
-        </td>
-        <th scope="row">32</th>
-        <td>Art-167</td>
-        <td>
-          <div class="input-group mb-3">
-      <div class="input-group-prepend">
-        <input type="checkbox"  value="" id="multa167">
-      </div>
-      </div>
-        </td>
-        <th scope="row">55</th>
-        <td>Art-217</td>
-        <td>
-          <div class="input-group mb-3">
-      <div class="input-group-prepend">
-        <input type="checkbox"  value="" id="multa217">
-      </div>
-      </div>
-        </td>
-        <th scope="row">78</th>
-        <td>Art-247</td>
-        <td>
-          <div class="input-group mb-3">
-      <div class="input-group-prepend">
-        <input type="checkbox"  value="" id="multa247">
-      </div>
-      </div>
-        </td>
-      </tr>
+      <label2><input type="checkbox" text="" id="multa236"  onclick="onCheckBox()"> Art-236</label2>
+      </div></div></td>
+      <td>Señales de los conductores.</td>
+</tr>
 
+<tr>
+      <td><div class="input-group mb-3">
+      <div class="input-group-prepend">
+      <label2><input type="checkbox" text="" id="multa63"  onclick="onCheckBox()"> Art-63</label2>
+      </div></div></td>
+      <td>Uso de animales como medio de tracción en las vías públicas.</td>
 
-      <tr>
-        <th scope="row">10</th>
-        <td>Art-69</td>
-        <td>
-          <div class="input-group mb-3">
+      <td><div class="input-group mb-3">
       <div class="input-group-prepend">
-        <input type="checkbox"  value="" id="multa69">
-      </div>
-      </div>
-        </td>
-        <th scope="row">33</th>
-        <td>Art-170</td>
-        <td>
-          <div class="input-group mb-3">
-      <div class="input-group-prepend">
-        <input type="checkbox"  value="" id="multa170">
-      </div>
-      </div>
-        </td>
-        <th scope="row">56</th>
-        <td>Art-218 y 219</td>
-        <td>
-          <div class="input-group mb-3">
-      <div class="input-group-prepend">
-        <input type="checkbox"  value="" id="multa218-219">
-      </div>
-      </div>
-        </td>
-        <th scope="row">79</th>
-        <td>Art-248</td>
-        <td>
-          <div class="input-group mb-3">
-      <div class="input-group-prepend">
-        <input type="checkbox"  value="" id="multa248">
-      </div>
-      </div>
-        </td>
-      </tr>
+      <label2><input type="checkbox" text="" id="multa146"  onclick="onCheckBox()"> Art-146</label2>
+      </div></div></td>
+      <td>Obstáculos al libre tránsito.</td>
 
-
-
-      <tr>
-        <th scope="row">11</th>
-        <td>Art-78</td>
-        <td>
-          <div class="input-group mb-3">
+      <td><div class="input-group mb-3">
       <div class="input-group-prepend">
-        <input type="checkbox"  value="" id="multa78">
-      </div>
-      </div>
-        </td>
-        <th scope="row">34</th>
-        <td>Art-174</td>
-        <td>
-          <div class="input-group mb-3">
-        <div class="input-group-prepend">
-        <input type="checkbox"  value="" id="multa174">
-        </div>
-        </div>
-        </td>
-        <th scope="row">57</th>
-        <td>Art-220</td>
-        <td>
-          <div class="input-group mb-3">
-      <div class="input-group-prepend">
-        <input type="checkbox"  value="" id="multa220">
-      </div>
-      </div>
-        </td>
-        <th scope="row">80</th>
-        <td>Art-249</td>
-        <td>
-          <div class="input-group mb-3">
-      <div class="input-group-prepend">
-        <input type="checkbox"  value="" id="multa249">
-      </div>
-      </div>
-        </td>
-      </tr>
+      <label2><input type="checkbox" text="" id="multa192"  onclick="onCheckBox()"> Art-192</label2>
+      </div></div></td>
+      <td>Requisitos de equipamiento.</td>
 
-
-
-      <tr>
-        <th scope="row">12</th>
-        <td>Art-96</td>
-        <td>
-          <div class="input-group mb-3">
+      <td><div class="input-group mb-3">
       <div class="input-group-prepend">
-        <input type="checkbox"  value="" id="multa96">
-      </div>
-      </div>
-        </td>
-        <th scope="row">35</th>
-        <td>Art-189 No.1</td>
-        <td>
-          <div class="input-group mb-3">
+      <label2><input type="checkbox" text="" id="multa237"  onclick="onCheckBox()"> Art-237</label2>
+      </div></div></td>
+      <td>Estacionamiento en lugar prohibido.</td>
+
+</tr>
+
+<tr>
+      <td><div class="input-group mb-3">
       <div class="input-group-prepend">
-        <input type="checkbox"  value="" id="multa189-1">
-      </div>
-      </div>
-    </td>
-    <th scope="row">58</th>
-    <td>Art-221</td>
-    <td>
-      <div class="input-group mb-3">
+      <label2><input type="checkbox" text="" id="multa64-1"  onclick="onCheckBox()"> Art-64 No.1</label2>
+      </div></div></td>
+      <td>Luces de motocicletas.</td>
+
+      <td><div class="input-group mb-3">
+      <div class="input-group-prepend">
+      <label2><input type="checkbox" text="" id="multa147"  onclick="onCheckBox()"> Art-147</label2>
+      </div></div></td>
+      <td>Puestos de ventas en las vías públicas.</td>
+
+      <td><div class="input-group mb-3">
+      <div class="input-group-prepend">
+      <label2><input type="checkbox" text="" id="multa193"  onclick="onCheckBox()"> Art-193</label2>
+      </div></div></td>
+      <td>Obstrucciones a la visibilidad del conductor.</td>
+
+      <td><div class="input-group mb-3">
+      <div class="input-group-prepend">
+      <label2><input type="checkbox" text="" id="multa238"  onclick="onCheckBox()"> Art-238</label2>
+      </div></div></td>
+      <td>Parada en las intersecciones.</td>
+
+</tr>
+
+<tr>
+
+      <td><div class="input-group mb-3">
+      <div class="input-group-prepend">
+      <label2><input type="checkbox" text="" id="multa64-2"  onclick="onCheckBox()"> Art-64 No.2</label2>
+      </div></div></td>
+      <td>Franjas de material reflectivo.</td>
+
+      <td><div class="input-group mb-3">
+      <div class="input-group-prepend">
+      <label2><input type="checkbox" text="" id="multa155"  onclick="onCheckBox()"> Art-155</label2>
+      </div></div></td>
+      <td>Cruce sobre mangueras de bomberos.</td>
+
+      <td><div class="input-group mb-3">
+      <div class="input-group-prepend">
+      <label2><input type="checkbox" text="" id="multa194"  onclick="onCheckBox()"> Art-194</label2>
+      </div></div></td>
+      <td>Aparatos receptores de imágenes.</td>
+
+      <td><div class="input-group mb-3">
+      <div class="input-group-prepend">
+      <label2><input type="checkbox" text="" id="multa239"  onclick="onCheckBox()"> Art-239</label2>
+      </div></div></td>
+      <td>Uso del freno de emergencia.</td>
+
+</tr>
+
+<tr>
+      <td><div class="input-group mb-3">
+      <div class="input-group-prepend">
+      <label2><input type="checkbox" text="" id="multa64-3"  onclick="onCheckBox()"> Art-64 No.3</label2>
+      </div></div></td>
+      <td>Luces que indiquen largo total del vehículo.</td>
+
+      <td><div class="input-group mb-3">
+      <div class="input-group-prepend">
+      <label2><input type="checkbox" text="" id="multa156"  onclick="onCheckBox()"> Art-156</label2>
+      </div></div></td>
+      <td>Las ciclovías.</td>
+
+      <td><div class="input-group mb-3">
+      <div class="input-group-prepend">
+      <label2><input type="checkbox" text="" id="multa195"  onclick="onCheckBox()"> Art-195</label2>
+      </div></div></td>
+      <td>Parachoques.</td>
+
+      <td><div class="input-group mb-3">
+      <div class="input-group-prepend">
+      <label2><input type="checkbox" text="" id="multa241"  onclick="onCheckBox()"> Art-241</label2>
+      </div></div></td>
+      <td>Inicio de la marcha.</td>
+
+</tr>
+
+<tr>
+      <td><div class="input-group mb-3">
+      <div class="input-group-prepend">
+      <label2><input type="checkbox" text="" id="multa67"  onclick="onCheckBox()"> Art-67</label2>
+      </div></div></td>
+      <td>Número de pasajeros.</td>
+
+      <td><div class="input-group mb-3">
+      <div class="input-group-prepend">
+      <label2><input type="checkbox" text="" id="multa158"  onclick="onCheckBox()"> Art-158</label2>
+      </div></div></td>
+      <td>Colocación de propagandas en vías públicas.</td>
+
+      <td><div class="input-group mb-3">
+      <div class="input-group-prepend">
+      <label2><input type="checkbox" text="" id="multa210"  onclick="onCheckBox()"> Art-210</label2>
+      </div></div></td>
+      <td>No porte de licencia de conducir o licencia vencida.</td>
+
+      <td><div class="input-group mb-3">
+      <div class="input-group-prepend">
+      <label2><input type="checkbox" text="" id="multa246"  onclick="onCheckBox()"> Art-246</label2>
+      </div></div></td>
+      <td>Transitar por la derecha.</td>
+
+</tr>
+
+<tr>
+      <td><div class="input-group mb-3">
+      <div class="input-group-prepend">
+      <label2><input type="checkbox" text="" id="multa68"  onclick="onCheckBox()"> Art-68</label2>
+      </div></div></td>
+      <td>Capacidad de asientos.</td>
+
+      <td><div class="input-group mb-3">
+      <div class="input-group-prepend">
+      <label2><input type="checkbox" text="" id="multa167"  onclick="onCheckBox()"> Art-167</label2>
+      </div></div></td>
+      <td>Marbete de Inspección Técnica Vehicular.</td>
+
+      <td><div class="input-group mb-3">
+      <div class="input-group-prepend">
+      <label2><input type="checkbox" text="" id="multa217"  onclick="onCheckBox()"> Art-217</label2>
+      </div></div></td>
+      <td>No porte de seguro o seguro vencido.</td>
+
+      <td><div class="input-group mb-3">
+      <div class="input-group-prepend">
+      <label2><input type="checkbox" text="" id="multa247"  onclick="onCheckBox()"> Art-247</label2>
+    </div></div></td>
+      <td>Excepciones para el tránsito por la derecha.</td>
+
+</tr>
+
+<tr>
+      <td><div class="input-group mb-3">
+      <div class="input-group-prepend">
+      <label2><input type="checkbox" text="" id="multa69"  onclick="onCheckBox()"> Art-69</label2>
+      </div></div></td>
+      <td>Transporte de niños menores de 12 años en asiento trasero; de 6-12 con cinturón de seguridad y menos de 6 años en asiento especial para infantes.</td>
+
+      <td><div class="input-group mb-3">
+      <div class="input-group-prepend">
+      <label2><input type="checkbox" text="" id="multa170"  onclick="onCheckBox()"> Art-170</label2>
+      </div></div></td>
+      <td>Perdida de condiciones de seguridad.</td>
+
+      <td><div class="input-group mb-3">
+      <div class="input-group-prepend">
+      <label2><input type="checkbox" text="" id="multa218-219"  onclick="onCheckBox()"> Art-218 y 219</label2>
+      </div></div></td>
+      <td>Circulación a los peatones.</td>
+
+      <td><div class="input-group mb-3">
+      <div class="input-group-prepend">
+      <label2><input type="checkbox" text="" id="multa248"  onclick="onCheckBox()"> Art-248</label2>
+      </div></div></td>
+      <td>Alcanzar y pasar por la izquierda.</td>
+
+</tr>
+
+<tr>
+      <td><div class="input-group mb-3">
+      <div class="input-group-prepend">
+      <label2><input type="checkbox" text="" id="multa78"  onclick="onCheckBox()"> Art-78</label2>
+      </div></div></td>
+      <td>Prohibición de niños menores de 8 años en motocicletas y de más de dos pasajeros.</td>
+
+      <td><div class="input-group mb-3">
+      <div class="input-group-prepend">
+      <label2><input type="checkbox" text="" id="multa174"  onclick="onCheckBox()"> Art-174</label2>
+      </div></div></td>
+      <td>Modificación de vehículos de motor o remolques.</td>
+
+      <td><div class="input-group mb-3">
+      <div class="input-group-prepend">
+      <label2><input type="checkbox" text="" id="multa220"  onclick="onCheckBox()"> Art-220</label2>
+      </div></div></td>
+      <td>Conducción temeraria.</td>
+
+      <td><div class="input-group mb-3">
+      <div class="input-group-prepend">
+      <label2><input type="checkbox" text="" id="multa249"  onclick="onCheckBox()"> Art-249</label2>
+      </div></div></td>
+      <td>Deber del conductor alcanzado.</td>
+
+</tr>
+
+<tr>
+      <td><div class="input-group mb-3">
+      <div class="input-group-prepend">
+      <label2><input type="checkbox" text="" id="multa96"  onclick="onCheckBox()"> Art-96</label2>
+      </div></div></td>
+      <td>Vehículos para transpote funerario.</td>
+
+      <td><div class="input-group mb-3">
+      <div class="input-group-prepend">
+      <label2><input type="checkbox" text="" id="multa189-1"  onclick="onCheckBox()"> Art-189 No.1</label2>
+      </div></div></td>
+      <td>Sin matrícula.</td>
+
+      <td><div class="input-group mb-3">
+      <div class="input-group-prepend">
+      <label2><input type="checkbox" text="" id="multa221"  onclick="onCheckBox()"> Art-221</label2>
+      </div></div></td>
+      <td>Distracción durante la conducción.</td>
+
+      <td><div class="input-group mb-3">
+      <div class="input-group-prepend">
+      <label2><input type="checkbox" text="" id="multa250"  onclick="onCheckBox()"> Art-250</label2>
+      </div></div></td>
+      <td>Conducción entre carriles.</td>
+
+  </tr>
+
+  <tr>
+      <td><div class="input-group mb-3">
+      <div class="input-group-prepend">
+      <label2><input type="checkbox" text="" id="multa98"  onclick="onCheckBox()"> Art-98</label2>
+      </div></div></td>
+      <td>Prohibición para transportar pasajeros en vehículos fúnebres.</td>
+
+      <td><div class="input-group mb-3">
+      <div class="input-group-prepend">
+      <label2><input type="checkbox" text="" id="multa189-2"  onclick="onCheckBox()"> Art-189 No.2</label2>
+      </div></div></td>
+      <td>Conducir un vehículo o tirar de un remolque en un uso distinto al autorizado por la matrícula.</td>
+
+      <td><div class="input-group mb-3">
+      <div class="input-group-prepend">
+      <label2><input type="checkbox" text="" id="multa222"  onclick="onCheckBox()"> Art-222</label2>
+      </div></div></td>
+      <td>Deberes de los conductores hacia los peatones.</td>
+
+      <td><div class="input-group mb-3">
+      <div class="input-group-prepend">
+      <label2><input type="checkbox" text="" id="multa251"  onclick="onCheckBox()"> Art-251</label2>
+      </div></div></td>
+      <td>No uso de casco protector homologado, chalecos, o aditamentos de ropas reflectantes. Transitar en prupos de
+        dos o más en paralelo, sujetarse de otro vehículo en movimiento, transitar por túneles, pasos a desnivel y en vía contraria</td>
+</tr>
+
+<tr>
+      <td><div class="input-group mb-3">
+      <div class="input-group-prepend">
+      <label2><input type="checkbox" text="" id="multa120"  onclick="onCheckBox()"> Art-120</label2>
+      </div></div></td>
+      <td>Zonas y horarios de circulación de transporte de carga.</td>
+
+      <td><div class="input-group mb-3">
+      <div class="input-group-prepend">
+      <label2><input type="checkbox" text="" id="multa189-4"  onclick="onCheckBox()"> Art-189 No.4</label2>
+      </div></div></td>
+      <td>Sin placa.</td>
+
+      <td><div class="input-group mb-3">
+      <div class="input-group-prepend">
+      <label2><input type="checkbox" text="" id="multa223"  onclick="onCheckBox()"> Art-223</label2>
+      </div></div></td>
+      <td>Precaución al encontrarse con un autobús escolar.</td>
+
+      <td><div class="input-group mb-3">
+      <div class="input-group-prepend">
+      <label2><input type="checkbox" text="" id="multa252" onclick="onCheckBox()"> Art-252</label2>
+      </div></div></td>
+      <td>Cruzarse en sentidos opuestos.</td>
+
+</tr>
+
+<tr>
+
+      <td><div class="input-group mb-3">
+      <div class="input-group-prepend">
+      <label2><input type="checkbox" text="" id="multa122" onclick="onCheckBox()"> Art-122</label2>
+      </div></div></td>
+      <td>Prohibición a la circulación de transporte de carga con sobrepeso.</td>
+
+      <td><div class="input-group mb-3">
+      <div class="input-group-prepend">
+      <label2><input type="checkbox" text="" id="multa189-6" onclick="onCheckBox()"> Art-189 No.6</label2>
+      </div></div></td>
+      <td>Borrar o alterar información en el certificado de propiedad (matrícula).</td>
+
+      <td><div class="input-group mb-3">
+      <div class="input-group-prepend">
+      <label2><input type="checkbox" text="" id="multa224" onclick="onCheckBox()"> Art-224</label2>
+      </div></div></td>
+      <td>Distancia a mantener entre vehículos.</td>
+
+      <td><div class="input-group mb-3">
+      <div class="input-group-prepend">
+      <label2><input type="checkbox" text="" id="multa253"  onclick="onCheckBox()"> Art-253</label2>
+      </div></div></td>
+      <td>Movimiento en retroceso.</td>
+
+</tr>
+
+<tr>
+
+      <td><div class="input-group mb-3">
+      <div class="input-group-prepend">
+      <label2><input type="checkbox" text="" id="multa124"  onclick="onCheckBox()"> Art-124</label2>
+      </div></div></td>
+      <td>Prohibición del transporte de pasajeros sobre la carga.</td>
+
+      <td><div class="input-group mb-3">
+      <div class="input-group-prepend">
+      <label2><input type="checkbox" text="" id="multa189-7"  onclick="onCheckBox()"> Art-189 No.7</label2>
+      </div></div></td>
+      <td>Placas mutiladas, alteradas, fotocopiadas, etc.</td>
+
+      <td><div class="input-group mb-3">
+      <div class="input-group-prepend">
+      <label2><input type="checkbox" text="" id="multa225"  onclick="onCheckBox()"> Art-225</label2>
+      </div></div></td>
+      <td>Precaución al encontrarse con animales.</td>
+
+      <td><div class="input-group mb-3">
+      <div class="input-group-prepend">
+      <label2><input type="checkbox" text="" id="multa254"  onclick="onCheckBox()"> Art-254</label2>
+      </div></div></td>
+      <td>Ceder el paso.</td>
+
+</tr>
+
+<tr>
+
+      <td><div class="input-group mb-3">
+      <div class="input-group-prepend">
+      <label2><input type="checkbox" text="" id="multa133"  onclick="onCheckBox()"> Art-133</label2>
+      </div></div></td>
+      <td>Respeto a las señales del Semáforo.</td>
+
+      <td><div class="input-group mb-3">
+      <div class="input-group-prepend">
+      <label2><input type="checkbox" text="" id="multa189-8"  onclick="onCheckBox()"> Art-189 No.8</label2>
+      </div></div></td>
+      <td>Aditamentos a la placa.</td>
+
+      <td><div class="input-group mb-3">
+      <div class="input-group-prepend">
+      <label2><input type="checkbox" text="" id="multa226"  onclick="onCheckBox()"> Art-226</label2>
+      </div></div></td>
+      <td>Responsabilidad del propietariode animales.</td>
+
+      <td><div class="input-group mb-3">
+      <div class="input-group-prepend">
+      <label2><input type="checkbox" text="" id="multa256"  onclick="onCheckBox()"> Art-256</label2>
+      </div></div></td>
+      <td>Conducir en estado de embriaguez.</td>
+
+</tr>
+
+<tr>
+      <td><div class="input-group mb-3">
+      <div class="input-group-prepend">
+      <label2><input type="checkbox" text="" id="multa135"  onclick="onCheckBox()"> Art-135</label2>
+      </div></div></td>
+      <td>Semáforo para los peatones.</td>
+
+      <td><div class="input-group mb-3">
+      <div class="input-group-prepend">
+      <label2><input type="checkbox" text="" id="multa189-9"  onclick="onCheckBox()"> Art-189 No.9</label2>
+      </div></div></td>
+      <td>Uso de documentos falsos o alterados.</td>
+
+      <td><div class="input-group mb-3">
+      <div class="input-group-prepend">
+      <label2><input type="checkbox" text="" id="multa227-228-229"  onclick="onCheckBox()"> Art-227, 228 y 229</label2>
+      </div></div></td>
+      <td>Uso de putos, sirenas, bocinas, luces giratorias, intermitentes o rojas.</td>
+
+      <td><div class="input-group mb-3">
+      <div class="input-group-prepend">
+      <label2><input type="checkbox" text="" id="multa257"  onclick="onCheckBox()"> Art-257</label2>
+      </div></div></td>
+      <td>Conducción bajo los efectos de drogas o sustancias controladas.</td>
+
+</tr>
+
+<tr>
+
+  <td><div class="input-group mb-3">
   <div class="input-group-prepend">
-    <input type="checkbox"  value="" id="multa221">
-  </div>
-  </div>
-    </td>
-    <th scope="row">81</th>
-    <td>Art-250</td>
-    <td>
-      <div class="input-group mb-3">
+  <label2><input type="checkbox" text="" id="multa137"  onclick="onCheckBox()"> Art-137</label2>
+  </div></div></td>
+  <td>Semáforo de carriles.</td>
+
+  <td><div class="input-group mb-3">
   <div class="input-group-prepend">
-    <input type="checkbox"  value="" id="multa250">
-  </div>
-  </div>
-    </td>
-      </tr>
+  <label2><input type="checkbox" text="" id="multa189-11"  onclick="onCheckBox()"> Art-189 No.11</label2>
+  </div></div></td>
+  <td>Alterar o modificar la lectura del odómetro.</td>
 
-      <tr>
-        <th scope="row">13</th>
-        <td>Art-98</td>
-        <td>
-          <div class="input-group mb-3">
-      <div class="input-group-prepend">
-        <input type="checkbox"  value="" id="multa98">
-      </div>
-      </div>
-        </td>
-        <th scope="row">36</th>
-        <td>Art-189 No.2</td>
-        <td>
-          <div class="input-group mb-3">
-      <div class="input-group-prepend">
-        <input type="checkbox"  value="" id="multa189-2">
-      </div>
-      </div>
-        </td>
-        <th scope="row">59</th>
-        <td>Art-222</td>
-        <td>
-          <div class="input-group mb-3">
-      <div class="input-group-prepend">
-        <input type="checkbox"  value="" id="multa222">
-      </div>
-      </div>
-        </td>
-        <th scope="row">82</th>
-        <td>Art-251</td>
-        <td>
-          <div class="input-group mb-3">
-      <div class="input-group-prepend">
-        <input type="checkbox"  value="" id="multa251">
-      </div>
-      </div>
-        </td>
-      </tr>
+  <td><div class="input-group mb-3">
+  <div class="input-group-prepend">
+  <label2><input type="checkbox" text="" id="multa230"  onclick="onCheckBox()"> Art-230</label2>
+  </div></div></td>
+  <td>Deslizamiento en neutro por cuestas.</td>
 
-      <tr>
-        <th scope="row">14</th>
-        <td>Art-120</td>
-        <td>
-          <div class="input-group mb-3">
-      <div class="input-group-prepend">
-        <input type="checkbox"  value="" id="multa120">
-      </div>
-      </div>
-        </td>
-        <th scope="row">37</th>
-        <td>Art-189 No.4</td>
-        <td>
-          <div class="input-group mb-3">
-      <div class="input-group-prepend">
-        <input type="checkbox"  value="" id="multa189-4">
-      </div>
-      </div>
-        </td>
-        <th scope="row">60</th>
-        <td>Art-223</td>
-        <td>
-          <div class="input-group mb-3">
-      <div class="input-group-prepend">
-        <input type="checkbox"  value="" id="multa223">
-      </div>
-      </div>
-        </td>
-        <th scope="row">83</th>
-        <td>Art-252</td>
-        <td>
-          <div class="input-group mb-3">
-      <div class="input-group-prepend">
-        <input type="checkbox"  value="" id="multa252">
-      </div>
-      </div>
-        </td>
-      </tr>
+  <td><div class="input-group mb-3">
+  <div class="input-group-prepend">
+  <label2><input type="checkbox" text="" id="multa264"  onclick="onCheckBox()"> Art-264</label2>
+  </div></div></td>
+  <td>Límites de velocidad.</td>
 
+</tr>
 
-      <tr>
-        <th scope="row">15</th>
-        <td>Art-122</td>
-        <td>
-          <div class="input-group mb-3">
-      <div class="input-group-prepend">
-        <input type="checkbox"  value="" id="multa122">
-      </div>
-      </div>
-        </td>
-        <th scope="row">38</th>
-        <td>Art-189 No.6</td>
-        <td>
-          <div class="input-group mb-3">
-      <div class="input-group-prepend">
-        <input type="checkbox"  value="" id="multa189-6">
-      </div>
-      </div>
-        </td>
-        <th scope="row">61</th>
-        <td>Art-224</td>
-        <td>
-          <div class="input-group mb-3">
-      <div class="input-group-prepend">
-        <input type="checkbox"  value="" id="multa224">
-      </div>
-      </div>
-        </td>
-        <th scope="row">84</th>
-        <td>Art-253</td>
-        <td>
-          <div class="input-group mb-3">
-      <div class="input-group-prepend">
-        <input type="checkbox"  value="" id="multa253">
-      </div>
-      </div>
-        </td>
-      </tr>
+<tr>
+  <td><div class="input-group mb-3">
+  <div class="input-group-prepend">
+  <label2><input type="checkbox" text="" id="multa139"  onclick="onCheckBox()"> Art-139</label2>
+  </div></div></td>
+  <td>Semáforo de tránsito ante cruces ferroviarios.</td>
 
-      <th scope="row">16</th>
-      <td>Art-124</td>
-      <td>
-        <div class="input-group mb-3">
-      <div class="input-group-prepend">
-      <input type="checkbox"  value="" id="multa124">
-      </div>
-      </div>
-      </td>
+  <td><div class="input-group mb-3">
+  <div class="input-group-prepend">
+  <label2><input type="checkbox" text="" id="multa189-13"  onclick="onCheckBox()"> Art-189 No.13</label2>
+  </div></div></td>
+  <td>Sin marbete o placa vencida.</td>
 
-      <th scope="row">39</th>
-      <td>Art-189 No.7</td>
-      <td>
-        <div class="input-group mb-3">
+  <td><div class="input-group mb-3">
+  <div class="input-group-prepend">
+  <label2><input type="checkbox" text="" id="multa231-1"  onclick="onCheckBox()"> Art-231 No.1</label2>
+  </div></div></td>
+  <td>Uso de putos, sirenas, bocinas, luces giratorias, intermitentes o rojas.</td>
+
+  <td><div class="input-group mb-3">
+  <div class="input-group-prepend">
+  <label2><input type="checkbox" text="" id="multa266"  onclick="onCheckBox()"> Art-266</label2>
+  </div></div></td>
+  <td>Lugares de velocidad regulada.</td>
+
+</tr>
+
+<tr>
+  <td><div class="input-group mb-3">
+  <div class="input-group-prepend">
+  <label2><input type="checkbox" text="" id="multa140"  onclick="onCheckBox()"> Art-140</label2>
+  </div></div></td>
+  <td>Señales de tránsito ante intersecciones.</td>
+
+  <td><div class="input-group mb-3">
+  <div class="input-group-prepend">
+  <label2><input type="checkbox" text="" id="multa189-14"  onclick="onCheckBox()"> Art-189 No.14</label2>
+  </div></div></td>
+  <td>Placas no previstas por la ley.</td>
+
+  <td><div class="input-group mb-3">
+  <div class="input-group-prepend">
+  <label2><input type="checkbox" text="" id="multa231-2"  onclick="onCheckBox()"> Art-231 No.2</label2>
+  </div></div></td>
+  <td>Guía a la derecha.</td>
+
+  <td><div class="input-group mb-3">
+  <div class="input-group-prepend">
+  <label2><input type="checkbox" text="" id="multa267"  onclick="onCheckBox()"> Art-267</label2>
+  </div></div></td>
+  <td>Competencia de velocidad en las vías públicas.</td>
+
+</tr>
+
+<tr>
+  <td><div class="input-group mb-3">
+  <div class="input-group-prepend">
+  <label2><input type="checkbox" text="" id="multa141"  onclick="onCheckBox()"> Art-141</label2>
+  </div></div></td>
+  <td>Marca en el pavimento, bordillo y en el contén.</td>
+
+  <td><div class="input-group mb-3">
+  <div class="input-group-prepend">
+  <label2><input type="checkbox" text="" id="multa189-15"  onclick="onCheckBox()"> Art-189 No.15</label2>
+  </div></div></td>
+  <td>Indicadores de peso y capacidad en vehículo de carga.</td>
+
+  <td><div class="input-group mb-3">
+  <div class="input-group-prepend">
+  <label2><input type="checkbox" text="" id="multa231-4"  onclick="onCheckBox()"> Art-231 No.4</label2>
+  </div></div></td>
+  <td>Lanzar desperdios a la vía pública.</td>
+
+  <td><div class="input-group mb-3">
+  <div class="input-group-prepend">
+  <label2><input type="checkbox" text="" id="multa268"  onclick="onCheckBox()"> Art-268</label2>
+  </div></div></td>
+  <td>Límites máximos de velocidad.</td>
+
+</tr>
+
+<tr>
+
+  <td><div class="input-group mb-3">
+  <div class="input-group-prepend">
+  <label2><input type="checkbox" text="" id="multa142"  onclick="onCheckBox()"> Art-142</label2>
+  </div></div></td>
+  <td>Señales y marcas no autorizadas.</td>
+
+    <td><div class="input-group mb-3">
     <div class="input-group-prepend">
-      <input type="checkbox"  value="" id="multa189-7">
-    </div>
-    </div>
-      </td>
-      <th scope="row">62</th>
-      <td>Art-225</td>
-      <td>
-        <div class="input-group mb-3">
-    <div class="input-group-prepend">
-      <input type="checkbox"  value="" id="multa225">
-    </div>
-    </div>
-      </td>
-      <th scope="row">85</th>
-      <td>Art-254</td>
-      <td>
-        <div class="input-group mb-3">
-    <div class="input-group-prepend">
-      <input type="checkbox"  value="" id="multa254">
-    </div>
-    </div>
-      </td>
-      </tr>
+    <label2><input type="checkbox" text="" id="multa189-17"  onclick="onCheckBox()"> Art-189 No.17</label2>
+    </div></div></td>
+    <td>Placa vencida, suspendida o cancelada.</td>
 
-
-
-
-      <tr>
-      <th scope="row">17</th>
-      <td>Art-133</td>
-      <td>
-        <div class="input-group mb-3">
-      <div class="input-group-prepend">
-      <input type="checkbox"  value="" id="multa133">
-      </div>
-      </div>
-      </td>
-      <th scope="row">40</th>
-      <td>Art-189 No.8</td>
-      <td>
-        <div class="input-group mb-3">
+    <td><div class="input-group mb-3">
     <div class="input-group-prepend">
-      <input type="checkbox"  value="" id="multa189-8">
-    </div>
-    </div>
-      </td>
-      <th scope="row">63</th>
-      <td>Art-226</td>
-      <td>
-        <div class="input-group mb-3">
-    <div class="input-group-prepend">
-      <input type="checkbox"  value="" id="multa226">
-    </div>
-    </div>
-      </td>
-      <th scope="row">86</th>
-      <td>Art-256</td>
-      <td>
-        <div class="input-group mb-3">
-    <div class="input-group-prepend">
-      <input type="checkbox"  value="" id="multa256">
-    </div>
-    </div>
-      </td>
-      </tr>
+    <label2><input type="checkbox" text="" id="multa231-5"  onclick="onCheckBox()"> Art-231 No.5</label2>
+    </div></div></td>
+    <td>No uso del cinturón de seguridad</td>
 
-
-      <tr>
-      <th scope="row">18</th>
-      <td>Art-135</td>
-      <td>
-        <div class="input-group mb-3">
-      <div class="input-group-prepend">
-      <input type="checkbox"  value="" id="multa135">
-      </div>
-      </div>
-      </td>
-      <th scope="row">41</th>
-      <td>Art-189 No.9</td>
-      <td>
-        <div class="input-group mb-3">
+    <td><div class="input-group mb-3">
     <div class="input-group-prepend">
-      <input type="checkbox"  value="" id="multa189-9">
-    </div>
-    </div>
-  </td>
-  <th scope="row">64</th>
-  <td>Art-227,228 y 229</td>
-  <td>
-    <div class="input-group mb-3">
-<div class="input-group-prepend">
-  <input type="checkbox"  value="" id="multa227-228-229">
-</div>
-</div>
-  </td>
-  <th scope="row">87</th>
-  <td>Art-257</td>
-  <td>
-    <div class="input-group mb-3">
-<div class="input-group-prepend">
-  <input type="checkbox"  value="" id="multa257">
-</div>
-</div>
-  </td>
-      </tr>
+    <label2><input type="checkbox" text="" id="multa269"  onclick="onCheckBox()"> Art-269</label2>
+    </div></div></td>
+    <td>Velocidad muy reducida.</td>
 
-
-      <tr>
-      <th scope="row">19</th>
-      <td>Art-137</td>
-      <td>
-        <div class="input-group mb-3">
-      <div class="input-group-prepend">
-      <input type="checkbox"  value="" id="multa137">
-      </div>
-      </div>
-      </td>
-      <th scope="row">42</th>
-      <td>Art-189 No.11</td>
-      <td>
-        <div class="input-group mb-3">
-    <div class="input-group-prepend">
-      <input type="checkbox"  value="" id="multa189-11">
-    </div>
-    </div>
-      </td>
-      <th scope="row">65</th>
-      <td>Art-230</td>
-      <td>
-        <div class="input-group mb-3">
-    <div class="input-group-prepend">
-      <input type="checkbox"  value="" id="multa230">
-    </div>
-    </div>
-      </td>
-      <th scope="row">88</th>
-      <td>Art-264</td>
-      <td>
-        <div class="input-group mb-3">
-    <div class="input-group-prepend">
-      <input type="checkbox"  value="" id="multa264">
-    </div>
-    </div>
-      </td>
-      </tr>
-
-
-
-      <tr>
-      <th scope="row">20</th>
-      <td>Art-139</td>
-      <td>
-        <div class="input-group mb-3">
-      <div class="input-group-prepend">
-      <input type="checkbox"  value="" id="multa139">
-      </div>
-      </div>
-      </td>
-      <th scope="row">43</th>
-      <td>Art-189 No.13</td>
-      <td>
-        <div class="input-group mb-3">
-    <div class="input-group-prepend">
-      <input type="checkbox"  value="" id="multa189-13">
-    </div>
-    </div>
-  </td>
-  <th scope="row">66</th>
-  <td>Art-231 No.1</td>
-  <td>
-    <div class="input-group mb-3">
-<div class="input-group-prepend">
-  <input type="checkbox"  value="" id="multa231-1">
-</div>
-</div>
-  </td>
-  <th scope="row">89</th>
-  <td>Art-266</td>
-  <td>
-    <div class="input-group mb-3">
-<div class="input-group-prepend">
-  <input type="checkbox"  value="" id="multa266">
-</div>
-</div>
-  </td>
-      </tr>
-
-      <tr>
-      <th scope="row">21</th>
-      <td>Art-140</td>
-      <td>
-        <div class="input-group mb-3">
-      <div class="input-group-prepend">
-      <input type="checkbox"  value="" id="multa140">
-      </div>
-      </div>
-      </td>
-      <th scope="row">44</th>
-      <td>Art-189 No.14</td>
-      <td>
-        <div class="input-group mb-3">
-    <div class="input-group-prepend">
-      <input type="checkbox"  value="" id="multa189-14">
-    </div>
-    </div>
-      </td>
-      <th scope="row">67</th>
-      <td>Art-231 No.2</td>
-      <td>
-        <div class="input-group mb-3">
-    <div class="input-group-prepend">
-      <input type="checkbox"  value="" id="multa231-2">
-    </div>
-    </div>
-      </td>
-      <th scope="row">90</th>
-      <td>Art-267</td>
-      <td>
-        <div class="input-group mb-3">
-    <div class="input-group-prepend">
-      <input type="checkbox"  value="" id="multa267">
-    </div>
-    </div>
-      </td>
-      </tr>
-
-
-
-
-      <tr>
-      <th scope="row">22</th>
-      <td>Art-141</td>
-      <td>
-        <div class="input-group mb-3">
-      <div class="input-group-prepend">
-      <input type="checkbox"  value="" id="multa141">
-      </div>
-      </div>
-      </td>
-      <th scope="row">45</th>
-      <td>Art-189 No.15</td>
-      <td>
-        <div class="input-group mb-3">
-    <div class="input-group-prepend">
-      <input type="checkbox"  value="" id="multa189-15">
-    </div>
-    </div>
-      </td>
-      <th scope="row">68</th>
-      <td>Art-231 No.4</td>
-      <td>
-        <div class="input-group mb-3">
-    <div class="input-group-prepend">
-      <input type="checkbox"  value="" id="multa231-4">
-    </div>
-    </div>
-      </td>
-      <th scope="row">91</th>
-      <td>Art-268</td>
-      <td>
-        <div class="input-group mb-3">
-    <div class="input-group-prepend">
-      <input type="checkbox"  value="" id="multa268">
-    </div>
-    </div>
-      </td></tr>
-
-
-
-      <tr>
-      <th scope="row">23</th>
-      <td>Art-142</td>
-      <td>
-        <div class="input-group mb-3">
-      <div class="input-group-prepend">
-      <input type="checkbox"  value="" id="multa142">
-      </div>
-      </div>
-      </td>
-      <th scope="row">46</th>
-      <td>Art-189 No.17</td>
-      <td>
-        <div class="input-group mb-3">
-    <div class="input-group-prepend">
-      <input type="checkbox"  value="" id="multa189-17">
-    </div>
-    </div>
-      </td>
-      <th scope="row">69</th>
-      <td>Art-231 No.5</td>
-      <td>
-        <div class="input-group mb-3">
-    <div class="input-group-prepend">
-      <input type="checkbox"  value="" id="multa231-5">
-    </div>
-    </div>
-      </td>
-      <th scope="row">92</th>
-      <td>Art-269</td>
-      <td>
-        <div class="input-group mb-3">
-    <div class="input-group-prepend">
-      <input type="checkbox"  value="" id="multa269">
-    </div>
-    </div>
-      </td>
-      </tr>
+</tr>
 
 </tbody>
-
 
 </table>
 </div>
 </div>
 
 
-<form>
+
   <div class="form-group">
-    <input type="submit" value="Registrar" class=" registrar_btn">
+    <input type="submit" value="Registrar" class="registrar_btn">
   </div>
-</form>
+
 
 </form>
 </div>
@@ -1126,40 +827,6 @@ expre2 = /^[A-Z]+$/i;
 <script src="custom-js/buscar-user.js"></script>
 <script src="custom-js/buscar-articulo.js"></script>
 <script src="custom-js/Buscar-Agente.js"></script>
-
-<script>
-
-/*
-async function onCedulaChange(){
-  const busqueda = document.getElementById("busqueda").value;
-  const buscar = busqueda.substr(7);
-  //console.log(buscar);
-  extraccion = await http('GET','/getPersonaByCedula/'+buscar,null);
-  console.log(extraccion);
-  console.log(extraccion.usuario.nombre_1);
-
-if (extraccion.usuario!=null) {
-    $("#cedula").val(extraccion.usuario.cedula);
-    $("#primernombre").val(extraccion.usuario.nombre_1);
-    $("#primerapellido").val(extraccion.usuario.apellido_1);
-    //$("#").val(' no encontrado');
-  }
-if (extraccion.usuario.nombre_2!=null) {
-$("#segundonombre").val(extraccion.usuario.nombre_2);
-}
-if (extraccion.usuario.apellido_2!=null) {
-    $("#segundoapellido").val(extraccion.usuario.apellido_2);
-  }
-  if (extraccion.usuario.nacionalidad!=null) {
-  $("#nacionalidad").val(extraccion.usuario.nacionalidad);
-  }
-  if (extraccion.usuario.celular!=null) {
-  $("#telefonoconductor").val(extraccion.usuario.celular);
-}
-}
-*/
-
-</script>
 
   </body>
 </html>

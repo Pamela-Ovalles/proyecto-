@@ -17,8 +17,8 @@ router.post('/registrarUsers', UserController.registrarUser);
 
 //router.get('/registrarMulta', UserController.enviarPagina);
 //router.post('/registrarMulta', UserController.registrarUser);
-
-
+router.get('/conductor', UserController.enviarPa);
+router.post('/conductor', UserController.Consulta);
 router.post('/amet', UserController.principal);
 router.get('/colocacionMultas', UserController.enviar);
 router.post('/colocacionMultas', UserController.registrarMulta);
