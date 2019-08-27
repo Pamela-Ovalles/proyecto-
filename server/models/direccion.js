@@ -15,9 +15,21 @@ module.exports= (sequelize, DataTypes)=>{
             type: DataTypes.STRING,
             allowNull: true
         },
-        nom_res:{
-            type: DataTypes.STRING,
+        municipio:{
+            type: DataTypes.INTEGER,
             allowNull: true
+        },
+        sector:{
+            type: DataTypes.INTEGER,
+            allowNull: true
+        },
+        // nom_res:{
+        //     type: DataTypes.STRING,
+        //     allowNull: true
+        // },
+        persona_id:{
+            type: DataTypes.STRING,
+            allowNull: false
         },
         provincia_id:{
             type: DataTypes.INTEGER

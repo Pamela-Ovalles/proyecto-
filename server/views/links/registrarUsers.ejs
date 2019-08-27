@@ -204,6 +204,7 @@ function validar(){
       <div class="card-body">
         <img src="/imagenes/digesettLogo.png"></img>
         <h1><strong>Registrarse</strong></h1>
+        <h6>Todos los campos con * son obligatorios</h6>
         <br>
 
 
@@ -405,18 +406,28 @@ function validar(){
 
           <div class="form-row">
 
-              <div class="col-md-12">
-                  <label for="calle">Referencia*:</label>
-                  <div class="input-group form-group">
-                    <div class="input-group-prepend">
-                        <span class="input-group-text"><i class="fas fa-map-marker-alt"></i></span>
-                    </div>
-                        <input type="text" autocomplete="off" name="calle" class="form-control" id="calle" >
+            <div class="col-md-6">
+                <label for="calle">Calle*:</label>
+                <div class="input-group form-group">
+                  <div class="input-group-prepend">
+                      <span class="input-group-text"><i class="fas fa-map-marker-alt"></i></span>
                   </div>
-              </div>
+                      <input type="text" autocomplete="off" name="calle" class="form-control" id="calle" >
+                </div>
+            </div>
+
+            <div class="col-md-6">
+                <label for="casa">Nombre casa/residencial*:</label>
+                <div class="input-group form-group">
+                  <div class="input-group-prepend">
+                      <span class="input-group-text"><i class="fas fa-map-marker-alt"></i></span>
+                  </div>
+                      <input type="text" autocomplete="off" name="casa" class="form-control" id="casa" >
+                </div>
+            </div>
 
           </div>
-            <h6>Todos los campos con * son obligatorios</h6>
+
 
 
       </div>

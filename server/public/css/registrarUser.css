@@ -110,6 +110,7 @@ border-radius:  4px;
 
 .registrar_btn{
   position:relative;
+  top: -10px;
 }
 
 .registrar_btn:hover{

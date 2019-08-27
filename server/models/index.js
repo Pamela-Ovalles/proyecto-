@@ -82,8 +82,8 @@ db.direccion.hasOne(db.infracciones,{foreignKey:'direccion_id',foreignKeyConstra
 db.infracciones.belongsTo(db.policia,{foreignKey:'policia_id',foreignKeyConstraint:true});
 db.policia.hasMany(db.infracciones,{foreignKey:'policia_id',foreignKeyConstraint:true});
 
-db.persona.belongsTo(db.direccion,{foreignKey:'direccion_id',foreignKeyConstraint:true});
-db.direccion.hasOne(db.persona, {foreignKey:'direccion_id', foreignKeyConstraint:true});
+db.direccion.belongsTo(db.persona,{foreignKey:'persona_id',foreignKeyConstraint:true});
+db.persona.hasOne(db.direccion, {foreignKey:'persona_id', foreignKeyConstraint:true});
 
 db.persona.hasOne(db.policia, {foreignKey:'persona_id', foreignKeyConstraint:true});
 db.policia.belongsTo(db.persona, {foreignKey: 'persona_id',foreignKeyConstraint:true});
