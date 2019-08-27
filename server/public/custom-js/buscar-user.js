@@ -27,26 +27,35 @@ async function onCedulaChange(){
   extraccion = await http('GET','/getPersonaByCedula/'+buscar,null);
   //location.reload();
 
-  if (extraccion.usuario!=null) {
+  if (extraccion.usuario!=null && valido == extraccion.usuario.cedula) {
+
     const bus = extraccion.usuario.id;
     const busqueda = document.getElementById("busqueda").value= bus;
       $("#cedula").val(extraccion.usuario.cedula);
+      $("#cedulaoculta").val(extraccion.usuario.cedula);
       $("#primernombre").val(extraccion.usuario.nombre_1);
       $("#primerapellido").val(extraccion.usuario.apellido_1);
       //$("#").val(' no encontrado');
     }
-  /*if (extraccion.usuario.nombre_2!=null) {
-  $("#segundonombre").val(extraccion.usuario.nombre_2);
-}*/
-  if (extraccion.usuario.apellido_2!=null) {
+  if (extraccion.usuario.apellido_2!=null && valido == extraccion.usuario.cedula) {
       $("#segundoapellido").val(extraccion.usuario.apellido_2);
     }
-    if (extraccion.usuario.nacionalidad!=null) {
+    if (extraccion.usuario.nacionalidad!=null && valido == extraccion.usuario.cedula) {
     $("#nacionalidad").val(extraccion.usuario.nacionalidad);
     }
-    if (extraccion.usuario.celular!=null) {
+    if (extraccion.usuario.celular!=null && valido == extraccion.usuario.cedula) {
     $("#telefonoconductor").val(extraccion.usuario.celular);
   }
+  else {
+    const busqueda1 = document.getElementById("cedula").value= "";
+    const busqueda2 = document.getElementById("primernombre").value= "";
+    const busqueda3 = document.getElementById("primerapellido").value= "";
+    const busqueda4 = document.getElementById("segundoapellido").value= "";
+    const busqueda5 = document.getElementById("nacionalidad").value= "";
+    const busqueda6 = document.getElementById("telefonoconductor").value= "";
+  }
+
+
 
 }
 

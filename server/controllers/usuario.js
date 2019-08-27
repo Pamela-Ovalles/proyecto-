@@ -33,24 +33,60 @@ var controller = {
 		// return res.json('correcto');
 		return res.render('links/loginprueba');
 	},
+
 	registrarMulta: async function (req, res){
 
-		const {} = req.body;
+
+let infra="";
+	try {
+		// infra = await models.infracciones.create({
+		// 	descrip_infraccion: req.body.marca + " " +req.body.modelo + " " +req.body.placa +" " +req.body.tipovehiculo,
+		// 	fecha_infraccion: new Date(),
+		// 	precio_infraccion: 50,
+		// 	persona_id: req.body.cedula,
+		// 	policia_id: req.body.policia_id,
+		// 	direccion_id: 1
+		// });
+		//
+		// await models.articulo_infraccion.create({
+		// 	infraccion_id:infra.id,
+		// 	articulo_id:1,
+		// });
+		//
+		// res.json({
+		// 	infraccion: infra,
+		// 	});
+
+		// if (typeof(req.body.checklist) === 'string') {
+		// 	data.checklist=[req.body.checklist];
+		// }
+
+		res.json({
+			data: req.body,
+			});
+    } catch(e) {
+				res.json({error:"error",e:e});
+				return ;
+    }
+
+		//return res.render('links/colocacionMultas');
 
 
-		let infra = await models.infracciones.create({
-
-			descrip_infraccion: des-inf,
-			precio_infraccion: pre-inf,
-			persona_id: busqueda,
-			policia_id: policia
-	});
-		return res.render('links/colocacionMultas');
 
 	},
+
 	enviar: async function (req, res){
 		 res.render('links/colocacionMultas');
 	},
+
+	Consulta: async function (req, res){
+		 res.render('links/conductor');
+	},
+
+	enviarPa: async function (req, res){
+		 res.render('links/conductor');
+	},
+
 	enviarPagina: async function (req, res){
 		 res.render('links/registrarUsers');
 	},

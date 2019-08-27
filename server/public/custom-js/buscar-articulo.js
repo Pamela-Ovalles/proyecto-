@@ -5,6 +5,7 @@ function compare(element){
   return element !== null && element !== '' && typeof element !== "undefined";
 }
 
+
 function http(type, route, params){
   return new Promise(function(resolve, reject){
     var xhr = new XMLHttpRequest();
@@ -52,7 +53,7 @@ checkBox44 = document.getElementById("multa44").name="";
 if (checkBox62 == true){
 extramultas = await http('GET','/getArticulo/3',null);
 checkBox62 = document.getElementById("multa62").name="name[]";
-  console.log(extramultas.usua_arti.desc_infraccion);
+  console.log();
   }
   else {
 checkBox62 = document.getElementById("multa62").name="";

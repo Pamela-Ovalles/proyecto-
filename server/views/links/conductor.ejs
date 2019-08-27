@@ -17,12 +17,39 @@
 
 
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+<link rel="stylesheet" href="https://cdn.datatables.net/1.10.19/css/jquery.dataTables.min.css">
+
  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+ <script src="https://code.jquery.com/jquery-3.3.1.js"></script>
+ <script src="https://cdn.datatables.net/1.10.19/js/jquery.dataTables.min.js"></script>
+
 
  </head>
+<script>
 
+var dataSet = [
+    [ "1", "Art 42", "Tabilla de identificación personal", "RD$1,000", "2", "0001" ],
+];
+
+$(document).ready(function() {
+    $('#Conductor').DataTable( {
+        data: dataSet,
+        columns: [
+            { title: "Código Infracción" },
+            { title: "Artículo" },
+            { title: "Descripción" },
+            { title: "Precio." },
+            { title: "Lugar" },
+            { title: "Agente" }
+        ]
+    } );
+} );
+
+
+
+</script>
   <body>
     <!--INICIO NAVBAR-->
           <nav class="navbar navbar-expand-xl navbar-light" style="background-color: rgba(0,0,0,0.5);">
@@ -71,6 +98,7 @@
         </nav>
         <!-- FIN NAVBAR -->
         <h1> VISTA CONDUCTOR</h1>
+        <table id="Conductor" class="display" width="90%"></table>
 
 
 
