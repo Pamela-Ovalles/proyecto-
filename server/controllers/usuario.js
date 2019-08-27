@@ -39,7 +39,7 @@ var controller = {
 		// return res.json('correcto');
 		return res.render('links/loginprueba');
 	},
-<<<<<<< HEAD
+
 	registrarAgente: async function (req, res){
 
 		const {primernombre,segundonombre,primerapellido,segundoapellido,cedula,fechanacimiento,
@@ -81,9 +81,7 @@ var controller = {
 		// return res.json('correcto');
 		return res.render('links/administrador');
 	},
-=======
 
->>>>>>> 37688025f7b7ed299f943c889011ba6ff5cae89f
 	registrarMulta: async function (req, res){
 
 
