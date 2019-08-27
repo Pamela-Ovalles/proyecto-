@@ -9,7 +9,7 @@ var controller = {
 	registrarUser: async function (req, res){
 
 		const {primernombre,segundonombre,primerapellido,segundoapellido,cedula,fechanacimiento,
-		sexo,correo,clave,telefonousuario,provincia,calle,municipio,sector} = req.body;
+		sexo,correo,clave,telefonousuario,provincia,calle,casa} = req.body;
 
 		const privilegio = 1;
 
@@ -24,14 +24,61 @@ var controller = {
 		email: correo,
 		password: clave,
 		celular: telefonousuario,
-		provincia_id: provincia,
-		municipio_id: municipio,
-		sector_id: sector,
+		// provincia_id: provincia,
+		// municipio_id: municipio,
+		// sector_id: sector,
 		privilegio:privilegio
-		// direccion_id: Calle
+	});
+
+	let direccion = await models.direccion.create({
+		persona_id:cedula,
+		calle:calle,
+		no_casa:casa,
+		provincia_id:provincia
 	});
 		// return res.json('correcto');
 		return res.render('links/loginprueba');
+	},
+	registrarAgente: async function (req, res){
+
+		const {primernombre,segundonombre,primerapellido,segundoapellido,cedula,fechanacimiento,
+		sexo,correo,clave,telefonousuario,provincia,rango,funcion,tipoPoli,calle,casa} = req.body;
+
+		const privilegio = 2;
+
+		let agente = await models.persona.create({
+		nombre_1: primernombre,
+		nombre_2: segundonombre,
+		apellido_1: primerapellido,
+		apellido_2: segundoapellido,
+		cedula: cedula,
+		fecha_nacimiento: fechanacimiento,
+		sexo: sexo,
+		email: correo,
+		password: clave,
+		celular: telefonousuario,
+		privilegio:privilegio,
+		// calle:calle
+	});
+
+	let direccion = await models.direccion.create({
+		persona_id:cedula,
+		calle:calle,
+		no_casa:casa,
+		provincia_id:provincia
+		// /provincia_id: provincia,
+		// municipio_id: municipio,
+		// sector_id: sector,
+	});
+
+	let policia = await models.policia.create({
+		persona_id:cedula,
+		rango:rango,
+		cargo:funcion,
+		tipo_policia:tipoPoli
+	});
+		// return res.json('correcto');
+		return res.render('links/administrador');
 	},
 	registrarMulta: async function (req, res){
 
@@ -69,17 +116,21 @@ var controller = {
 
 		var mensaje = '';
 
+
 	 let vehiculo = await models.vehiculo.create({
+		 persona_id:cedula,
 		 placa:placa,
 		 matricula:matricula,
 		 tipo_vehiculo:tipoveh,
 		 color:color,
 		 marca_id:marca,
-		 modelo_id:modelo,
+		 // modelo:modelo,
 		 persona_id:cedula,
 		 ano_fabricante:fabricación
 
  });
+
+
  		mensaje = 'CORRECTO';
 	 // return res.json('correcto');
 	 res.render('links/conductor', {mensaje} );

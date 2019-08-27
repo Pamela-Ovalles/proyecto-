@@ -30,10 +30,10 @@ module.exports= (sequelize, DataTypes)=>{
             type: DataTypes.STRING,
             allowNull: false
         },
-        direccion_id:{
-            type: DataTypes.INTEGER,
-            allowNull: true
-        },
+        // direccion_id:{
+        //     type: DataTypes.INTEGER,
+        //     allowNull: true
+        // },
         fecha_nacimiento:{
             type: DataTypes.DATE,
             allowNull: false
@@ -59,7 +59,7 @@ module.exports= (sequelize, DataTypes)=>{
         },
         licencia:{
           type: DataTypes.STRING,
-          allowNull:false
+          allowNull:true
         }
     },{
         freezeTableName: true,

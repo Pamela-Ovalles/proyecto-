@@ -58,10 +58,10 @@ module.exports= (sequelize, DataTypes)=>{
           // cilindros:{
           //     type: DataTypes.INTEGER,
           //     allowNull: false
-          // },
-          // no_puerta:{
-          //     type: DataTypes.INTEGER,
-          //     allowNull: false
+          },
+          modelo:{
+              type: DataTypes.INTEGER,
+              allowNull: false
         }
     },{
         freezeTableName: true,

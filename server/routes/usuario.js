@@ -34,6 +34,7 @@ router.get('/getPersonas', Extracciones.getPersonas);
 router.get('/registrarAuto', UserController.registrarAutomovil);
 router.get('/registrarpoli', UserController.registrarPoli);
 router.post('/registrarVehiculo', UserController.registrarVehiculo);
+router.post('/registrarAgente', UserController.registrarAgente);
 //router.post('/prueba',UserController.leer);
 //router.put('')
 

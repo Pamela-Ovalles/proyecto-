@@ -5,7 +5,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
-    <title>Registrar Policía </title>
+    <title>Registrar Agente </title>
 
     <!--Fontawesome CDN-->
  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
@@ -25,15 +25,16 @@
       <div class="card">
         <div class="card-body">
           <img src="/imagenes/digesettLogo.png"></img>
-          <h1><strong>Registrarse</strong></h1>
+          <h1><strong>Registrar Agente</strong></h1>
+          <h6>Todos los campos con * son obligatorios</h6>
           <br>
-          <form name="registrarse" action="/registrarUsers" method="POST" onsubmit="return validar();">
+          <form name="registrarse" action="/registrarAgente" method="POST">
 
             <fieldset>
               <legend><h4>Información personal</h4></legend>
             <div class="form-row">
                   <div class="col-md-3">
-                      <label for="primernombre">Primer nombre:</label>
+                      <label for="primernombre">Primer nombre*:</label>
                       <div class="input-group form-group">
                         <div class="input-group-prepend">
                             <span class="input-group-text"><i class="fas fa-user"></i></span>
@@ -86,7 +87,7 @@
                       <div class="input-group-prepend">
                           <span class="input-group-text"><i class="fas fa-address-card"></i></span>
                       </div>
-                        <input type="text" autocomplete="off" name="cedula" class="form-control" id="cedula" >
+                        <input type="text" autocomplete="off" name="cedula" class="form-control" id="cedula">
                     </div>
                 </div>
 
@@ -227,8 +228,8 @@
 
             <div class="form-row">
 
-                <div class="col-md-12">
-                    <label for="calle">Referencia*:</label>
+                <div class="col-md-6">
+                    <label for="calle">Calle*:</label>
                     <div class="input-group form-group">
                       <div class="input-group-prepend">
                           <span class="input-group-text"><i class="fas fa-map-marker-alt"></i></span>
@@ -237,15 +238,89 @@
                     </div>
                 </div>
 
-            </div>
-              <h6>Todos los campos con * son obligatorios</h6>
+                <div class="col-md-6">
+                    <label for="casa">Nombre casa/residencial*:</label>
+                    <div class="input-group form-group">
+                      <div class="input-group-prepend">
+                          <span class="input-group-text"><i class="fas fa-map-marker-alt"></i></span>
+                      </div>
+                          <input type="text" autocomplete="off" name="casa" class="form-control" id="casa" >
+                    </div>
+                </div>
 
+            </div>
+
+
+          </fieldset>
+          <br>
+
+          <fieldset>
+            <legend><h4>Información Laboral</h4></legend>
+            <div class="form-row">
+
+                <div class="col-md-3">
+                    <label for="rango">Rango*:</label>
+                    <div class="input-group form-group">
+                      <div class="input-group-prepend">
+                          <span class="input-group-text"><i class="fas fa-map-marker-alt"></i></span>
+                      </div>
+                      <select id="rango" name="rango" class="form-control">
+                          <option selected>Seleccione</option>
+                          <option>Teniente General</option>
+                          <option>Mayor General</option>
+                          <option>General de Brigada</option>
+                          <option>Coronel</option>
+                          <option>Teniente Coronel</option>
+                          <option>Mayor</option>
+                          <option>Capitán</option>
+                          <option>Primer Teniente</option>
+                          <option>Segundo Teniente</option>
+                          <option>Cadete</option>
+                          <option>Civil</option>
+                      </select>
+
+                    </div>
+                </div>
+
+                <div class="col-md-3">
+                    <label for="funcion ">Función*:</label>
+                    <div class="input-group form-group">
+                      <div class="input-group-prepend">
+                          <span class="input-group-text"><i class="fas fa-map-marker-alt"></i></span>
+                      </div>
+                      <select id="funcion" name="funcion" class="form-control">
+                          <option selected>Seleccione</option>
+                          <option>Director general de DIGESETT</option>
+                          <option>Sub-director general</option>
+                      </select>
+                    </div>
+                </div>
+
+                <div class="col-md-3">
+                    <label for="tipoPoli">Tipo de policia*:</label>
+                    <div class="input-group form-group">
+                      <div class="input-group-prepend">
+                          <span class="input-group-text"><i class="fas fa-map-marker-alt"></i></span>
+                      </div>
+                      <select id="tipoPoli" class="form-control" name="tipoPoli">
+                          <option selected>Seleccione</option>
+                          <option>DIGESETT</option>
+                          <option>Policia Nacional</option>
+                      </select>
+                    </div>
+                </div>
+
+            </div>
 
         </div>
-        </fieldset>
+
+          </fieldset>
+
+        </div>
+
         <form>
         <div class="form-group">
-            <input type="submit" value="Registrar" class=" registrar_btn">
+            <input type="submit" value="Registrar" id="btn_poli"class=" registrar_btn">
 
         </div>
       </form>
